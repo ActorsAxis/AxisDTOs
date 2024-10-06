@@ -12,7 +12,7 @@ public struct SignInResponseDTO: Codable, Sendable {
 
 	public init(
 		token:   String,
-		email:   String?,
+		email:   String? = nil,
 		picture: String? = nil
 	) {
 		self.token   = token
