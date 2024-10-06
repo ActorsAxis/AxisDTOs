@@ -6,11 +6,17 @@
 //
 
 public struct SignInResponseDTO: Codable, Sendable {
-	public let token: String
+	public let token:   String
+	public let email:   String?
+	public let picture: String?
 
 	public init(
-		token: String
+		token:   String,
+		email:   String?,
+		picture: String? = nil
 	) {
-		self.token = token
+		self.token   = token
+		self.email   = email
+		self.picture = picture
 	}
 }
