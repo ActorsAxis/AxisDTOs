@@ -18,6 +18,8 @@ public struct SignInRequestDTO: Codable, Sendable {
 	}
 }
 
+// MARK: -
+
 public struct SignInResponseDTO: Codable, Sendable {
 	public let token:   String
 	public let email:   String?
