@@ -1,0 +1,90 @@
+//
+//  UserDTOs.swift
+//  AxisDTOs
+//
+//  Created by William J. C. Nesbitt on 10/8/24.
+//
+
+import Foundation
+
+public struct UserRequestDTO: Codable, Sendable {
+	public let subject:  String
+	public let email:    String?
+	public let password: String?
+
+	public let profilePictureURL: String?
+	public let profileName:       String?
+
+	public let biography: String?
+
+	public let resumeURL: String?
+
+	public init(
+		subject:  String,
+		email:    String? = nil,
+		password: String? = nil,
+
+		profilePictureURL: String? = nil,
+		profileName:       String? = nil,
+
+		biography: String? = nil,
+
+		resumeURL: String? = nil
+	) {
+		self.subject  = subject
+		self.email    = email
+		self.password = password
+
+		self.profilePictureURL = profilePictureURL
+		self.profileName       = profileName
+
+		self.biography = biography
+
+		self.resumeURL = resumeURL
+	}
+}
+
+// MARK: -
+
+public struct UserResponseDTO: Codable, Sendable, Hashable, Identifiable {
+	public let id: UUID
+
+	public let subject:  String
+	public let email:    String?
+	public let password: String?
+
+	public let profilePictureURL: String?
+	public let profileName:       String?
+
+	public let biography: String?
+
+	public let resumeURL: String?
+
+	public init(
+		id: UUID,
+
+		subject:  String,
+		email:    String? = nil,
+		password: String? = nil,
+
+		profilePictureURL: String? = nil,
+		profileName:       String? = nil,
+
+		biography: String? = nil,
+
+		resumeURL: String? = nil
+	) {
+		self.id = id
+
+		self.subject  = subject
+		self.email    = email
+		self.password = password
+
+		self.profilePictureURL = profilePictureURL
+		self.profileName       = profileName
+
+		self.biography = biography
+
+		self.resumeURL = resumeURL
+	}
+}
