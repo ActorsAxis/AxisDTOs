@@ -8,7 +8,7 @@
 import Foundation
 
 public struct UserRequestDTO: Codable, Sendable {
-	public let subject:  String
+	public let subject:  String?
 	public let email:    String?
 	public let password: String?
 
@@ -23,7 +23,7 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let resumeURL:         String?
 
 	public init(
-		subject:  String,
+		subject:  String? = nil,
 		email:    String? = nil,
 		password: String? = nil,
 
@@ -58,7 +58,7 @@ public struct UserRequestDTO: Codable, Sendable {
 public struct UserResponseDTO: Codable, Sendable, Hashable, Identifiable {
 	public let id: UUID
 
-	public let subject:  String
+	public let subject:  String?
 	public let email:    String?
 	public let password: String?
 
@@ -75,7 +75,7 @@ public struct UserResponseDTO: Codable, Sendable, Hashable, Identifiable {
 	public init(
 		id: UUID,
 
-		subject:  String,
+		subject:  String? = nil,
 		email:    String? = nil,
 		password: String? = nil,
 
