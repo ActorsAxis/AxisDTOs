@@ -5,33 +5,26 @@
 //  Created by William J. C. Nesbitt on 10/3/24.
 //
 
-public struct SignInRequestDTO: Codable, Sendable {
-	public let email:    String
-	public let password: String
+import Foundation
+
+public struct SignInWithIdentityTokenRequestDTO: Codable, Sendable {
+	public let identityToken: String
 
 	public init(
-		email:    String,
-		password: String
+		identityToken: String
 	) {
-		self.email    = email
-		self.password = password
+		self.identityToken = identityToken
 	}
 }
 
 // MARK: -
 
-public struct SignInResponseDTO: Codable, Sendable {
-	public let token:   String
-	public let email:   String?
-	public let picture: String?
+public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
+	public let axisToken: String
 
 	public init(
-		token:   String,
-		email:   String? = nil,
-		picture: String? = nil
+		axisToken: String
 	) {
-		self.token   = token
-		self.email   = email
-		self.picture = picture
+		self.axisToken = axisToken
 	}
 }
