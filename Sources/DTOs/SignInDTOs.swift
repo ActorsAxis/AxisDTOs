@@ -8,14 +8,15 @@
 import Foundation
 
 public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
-	public let axisToken: String
-	public let email:     String?
+	public let email:   String?
+	public let picture: String?
 
 	public init(
-		axisToken: String,
-		email:     String? = nil
+		email:   String? = nil,
+		picture: String? = nil
+
 	) {
-		self.axisToken = axisToken
-		self.email     = email
+		self.email   = email
+		self.picture = picture
 	}
 }
