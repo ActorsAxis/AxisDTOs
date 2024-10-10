@@ -7,24 +7,15 @@
 
 import Foundation
 
-public struct SignInWithIdentityTokenRequestDTO: Codable, Sendable {
-	public let identityToken: String
-
-	public init(
-		identityToken: String
-	) {
-		self.identityToken = identityToken
-	}
-}
-
-// MARK: -
-
 public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
 	public let axisToken: String
+	public let email:     String?
 
 	public init(
-		axisToken: String
+		axisToken: String,
+		email:     String? = nil
 	) {
 		self.axisToken = axisToken
+		self.email     = email
 	}
 }
