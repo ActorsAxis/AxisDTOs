@@ -12,7 +12,7 @@ public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
 	public let productionName: String?
 	public let productionType: String?
 	public let season:         String?
-	public let creditedAt:     String?
+	public let creditedAs:     String?
 	public let episode:        String?
 
 	public init(
@@ -20,14 +20,14 @@ public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
 		productionName: String? = nil,
 		productionType: String? = nil,
 		season:         String? = nil,
-		creditedAt:     String? = nil,
+		creditedAs:     String? = nil,
 		episode:        String? = nil
 	) {
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
 		self.season         = season
-		self.creditedAt     = creditedAt
+		self.creditedAs     = creditedAs
 		self.episode        = episode
 	}
 }
@@ -40,7 +40,7 @@ public struct CurrentlyFilmingResponseDTO: Codable, Sendable, Hashable, Identifi
 	public let productionName: String?
 	public let productionType: String?
 	public let season:         String?
-	public let creditedAt:     String?
+	public let creditedAs:     String?
 	public let episode:        String?
 
 	public init(
@@ -49,7 +49,7 @@ public struct CurrentlyFilmingResponseDTO: Codable, Sendable, Hashable, Identifi
 		productionName: String? = nil,
 		productionType: String? = nil,
 		season:         String? = nil,
-		creditedAt:     String? = nil,
+		creditedAs:     String? = nil,
 		episode:        String? = nil
 	) {
 		self.id             = id
@@ -57,7 +57,7 @@ public struct CurrentlyFilmingResponseDTO: Codable, Sendable, Hashable, Identifi
 		self.productionName = productionName
 		self.productionType = productionType
 		self.season         = season
-		self.creditedAt     = creditedAt
+		self.creditedAs     = creditedAs
 		self.episode        = episode
 	}
 }
