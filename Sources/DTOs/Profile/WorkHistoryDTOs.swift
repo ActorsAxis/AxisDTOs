@@ -9,6 +9,7 @@ import Foundation
 
 public struct WorkHistoryRequestDTO: Codable, Sendable {
 	public let id:             UUID?
+	public let userID:         UUID
 	public let actorType:      String?
 	public let productionName: String?
 	public let productionType: String?
@@ -18,6 +19,7 @@ public struct WorkHistoryRequestDTO: Codable, Sendable {
 
 	public init(
 		id:             UUID?   = nil,
+		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -26,6 +28,7 @@ public struct WorkHistoryRequestDTO: Codable, Sendable {
 		episode:        String? = nil
 	) {
 		self.id             = id
+		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
@@ -39,6 +42,7 @@ public struct WorkHistoryRequestDTO: Codable, Sendable {
 
 public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable {
 	public let id:             UUID
+	public let userID:         UUID
 	public let actorType:      String?
 	public let productionName: String?
 	public let productionType: String?
@@ -48,6 +52,7 @@ public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable 
 
 	public init(
 		id:             UUID,
+		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -56,6 +61,7 @@ public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable 
 		episode:        String? = nil
 	) {
 		self.id             = id
+		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
