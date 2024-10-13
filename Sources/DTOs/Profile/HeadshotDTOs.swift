@@ -8,6 +8,7 @@
 import Foundation
 
 public struct HeadshotRequestDTO: Codable, Sendable {
+	public let id:               UUID?
 	public let userID:           UUID
 	public let headshotURL:      String?
 	public let actorName:        String?
@@ -19,6 +20,7 @@ public struct HeadshotRequestDTO: Codable, Sendable {
 	public let actorSocialMedia: String?
 
 	public init(
+		id:               UUID?   = nil,
 		userID:           UUID,
 		headshotURL:      String? = nil,
 		actorName:        String? = nil,
@@ -29,6 +31,7 @@ public struct HeadshotRequestDTO: Codable, Sendable {
 		actorWebsiteURL:  String? = nil,
 		actorSocialMedia: String? = nil
 	) {
+		self.id               = id
 		self.userID           = userID
 		self.headshotURL      = headshotURL
 		self.actorName        = actorName

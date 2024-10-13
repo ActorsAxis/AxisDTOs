@@ -8,6 +8,8 @@
 import Foundation
 
 public struct UserRequestDTO: Codable, Sendable {
+	public let id: UUID?
+
 	public let subject:  String?
 	public let email:    String?
 	public let password: String?
@@ -23,6 +25,8 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let resumeURL:         String?
 
 	public init(
+		id: UUID? = nil,
+
 		subject:  String? = nil,
 		email:    String? = nil,
 		password: String? = nil,
@@ -37,6 +41,8 @@ public struct UserRequestDTO: Codable, Sendable {
 		currentlyFilming: [CurrentlyFilmingResponseDTO] = [],
 		resumeURL:         String?                      = nil
 	) {
+		self.id = id
+
 		self.subject  = subject
 		self.email    = email
 		self.password = password

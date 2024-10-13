@@ -1,5 +1,5 @@
 //
-//  WorkHistory.swift
+//  WorkHistoryDTOs.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/8/24.
@@ -8,26 +8,29 @@
 import Foundation
 
 public struct WorkHistoryRequestDTO: Codable, Sendable {
+	public let id:             UUID?
 	public let actorType:      String?
 	public let productionName: String?
 	public let productionType: String?
 	public let season:         String?
-	public let creditedAt:     String?
+	public let creditedAs:     String?
 	public let episode:        String?
 
 	public init(
+		id:             UUID?   = nil,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
 		season:         String? = nil,
-		creditedAt:     String? = nil,
+		creditedAs:     String? = nil,
 		episode:        String? = nil
 	) {
+		self.id             = id
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
 		self.season         = season
-		self.creditedAt     = creditedAt
+		self.creditedAs     = creditedAs
 		self.episode        = episode
 	}
 }
@@ -40,7 +43,7 @@ public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable 
 	public let productionName: String?
 	public let productionType: String?
 	public let season:         String?
-	public let creditedAt:     String?
+	public let creditedAs:     String?
 	public let episode:        String?
 
 	public init(
@@ -49,7 +52,7 @@ public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable 
 		productionName: String? = nil,
 		productionType: String? = nil,
 		season:         String? = nil,
-		creditedAt:     String? = nil,
+		creditedAs:     String? = nil,
 		episode:        String? = nil
 	) {
 		self.id             = id
@@ -57,7 +60,7 @@ public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable 
 		self.productionName = productionName
 		self.productionType = productionType
 		self.season         = season
-		self.creditedAt     = creditedAt
+		self.creditedAs     = creditedAs
 		self.episode        = episode
 	}
 }
