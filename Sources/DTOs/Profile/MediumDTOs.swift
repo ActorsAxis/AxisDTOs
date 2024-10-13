@@ -25,7 +25,8 @@ public struct MediumRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct MediumResponseDTO: Codable, Sendable, Hashable, Identifiable {
+public struct MediumResponseDTO: Codable,  Sendable,
+								 Hashable, Identifiable {
 	public let id:        UUID
 	public let userID:    UUID
 	public let mediumURL: String?

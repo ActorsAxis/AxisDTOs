@@ -40,7 +40,8 @@ public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct CurrentlyFilmingResponseDTO: Codable, Sendable, Hashable, Identifiable {
+public struct CurrentlyFilmingResponseDTO: Codable,  Sendable,
+										   Hashable, Identifiable {
 	public let id:             UUID
 	public let userID:         UUID
 	public let actorType:      String?

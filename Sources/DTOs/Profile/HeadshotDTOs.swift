@@ -46,7 +46,8 @@ public struct HeadshotRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct HeadshotResponseDTO: Codable, Sendable, Hashable, Identifiable {
+public struct HeadshotResponseDTO: Codable,  Sendable,
+								   Hashable, Identifiable {
 	public let id:               UUID
 	public let userID:           UUID
 	public let headshotURL:      String?

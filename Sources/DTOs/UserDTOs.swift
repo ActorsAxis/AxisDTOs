@@ -61,7 +61,8 @@ public struct UserRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct UserResponseDTO: Codable, Sendable, Hashable, Identifiable {
+public struct UserResponseDTO: Codable,  Sendable,
+							   Hashable, Identifiable {
 	public let id: UUID
 
 	public let subject:  String?

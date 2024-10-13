@@ -40,7 +40,8 @@ public struct WorkHistoryRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct WorkHistoryResponseDTO: Codable, Sendable, Hashable, Identifiable {
+public struct WorkHistoryResponseDTO: Codable,  Sendable,
+									  Hashable, Identifiable {
 	public let id:             UUID
 	public let userID:         UUID
 	public let actorType:      String?
