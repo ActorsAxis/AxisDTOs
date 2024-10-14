@@ -18,10 +18,10 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let profileName:       String?
 
 	public let biography:         String?
-	public let headshot:          HeadshotResponseDTO?
-	public let media:            [MediumResponseDTO]
-	public let workHistories:    [WorkHistoryResponseDTO]
-	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
+	public let headshot:                  HeadshotResponseDTO?
+	public let media:            [          MediumResponseDTO]?
+	public let workHistories:    [     WorkHistoryResponseDTO]?
+	public let currentlyFilming: [CurrentlyFilmingResponseDTO]?
 	public let resumeURL:         String?
 
 	public init(
@@ -34,12 +34,12 @@ public struct UserRequestDTO: Codable, Sendable {
 		profilePictureURL: String? = nil,
 		profileName:       String? = nil,
 
-		biography:         String?                      = nil,
-		headshot:          HeadshotResponseDTO?         = nil,
-		media:            [MediumResponseDTO]           = [],
-		workHistories:    [WorkHistoryResponseDTO]      = [],
-		currentlyFilming: [CurrentlyFilmingResponseDTO] = [],
-		resumeURL:         String?                      = nil
+		biography:         String?                       = nil,
+		headshot:                  HeadshotResponseDTO?  = nil,
+		media:            [          MediumResponseDTO]? = nil,
+		workHistories:    [     WorkHistoryResponseDTO]? = nil,
+		currentlyFilming: [CurrentlyFilmingResponseDTO]? = nil,
+		resumeURL:         String?                       = nil
 	) {
 		self.id = id
 
@@ -73,10 +73,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public let profileName:       String?
 
 	public let biography:         String?
-	public let headshot:          HeadshotResponseDTO?
-	public let media:            [MediumResponseDTO]
-	public let workHistories:    [WorkHistoryResponseDTO]
-	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
+	public let headshot:                  HeadshotResponseDTO?
+	public let media:            [          MediumResponseDTO]?
+	public let workHistories:    [     WorkHistoryResponseDTO]?
+	public let currentlyFilming: [CurrentlyFilmingResponseDTO]?
 	public let resumeURL:         String?
 
 	public init(
@@ -89,12 +89,12 @@ public struct UserResponseDTO: Codable,  Sendable,
 		profilePictureURL: String? = nil,
 		profileName:       String? = nil,
 
-		biography:         String?                      = nil,
-		headshot:          HeadshotResponseDTO?         = nil,
-		media:            [MediumResponseDTO]           = [],
-		workHistories:    [WorkHistoryResponseDTO]      = [],
-		currentlyFilming: [CurrentlyFilmingResponseDTO] = [],
-		resumeURL:         String?                      = nil
+		biography:         String?                       = nil,
+		headshot:                  HeadshotResponseDTO?  = nil,
+		media:            [          MediumResponseDTO]? = nil,
+		workHistories:    [     WorkHistoryResponseDTO]? = nil,
+		currentlyFilming: [CurrentlyFilmingResponseDTO]? = nil,
+		resumeURL:         String?                       = nil
 	) {
 		self.id = id
 
