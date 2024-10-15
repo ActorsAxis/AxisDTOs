@@ -80,9 +80,9 @@ public struct UserResponseDTO: Codable,  Sendable,
 							   Hashable, Identifiable {
 	public let id: UUID
 
-	public let accountType: AccountTypeResponseDTO
-	public let userLevel:     UserLevelResponseDTO
-	public let userType:       UserTypeResponseDTO
+	public let accountType: AccountTypeResponseDTO?
+	public let userLevel:     UserLevelResponseDTO?
+	public let userType:       UserTypeResponseDTO?
 
 	public let subject:    String?
 	public let email:      String?
@@ -102,9 +102,9 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public init(
 		id: UUID,
 
-		accountType: AccountTypeResponseDTO,
-		userLevel:     UserLevelResponseDTO,
-		userType:       UserTypeResponseDTO,
+		accountType: AccountTypeResponseDTO? = nil,
+		userLevel:     UserLevelResponseDTO? = nil,
+		userType:       UserTypeResponseDTO? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
