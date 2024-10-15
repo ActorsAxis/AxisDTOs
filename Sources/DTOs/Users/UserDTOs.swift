@@ -10,9 +10,9 @@ import Foundation
 public struct UserRequestDTO: Codable, Sendable {
 	public let id: UUID?
 
-	public let accountType: AccountTypeRequestDTO
-	public let userLevel:     UserLevelRequestDTO
-	public let userType:       UserTypeRequestDTO
+	public let accountType: AccountTypeRequestDTO?
+	public let userLevel:     UserLevelRequestDTO?
+	public let userType:       UserTypeRequestDTO?
 
 	public let subject:    String?
 	public let email:      String?
@@ -32,9 +32,9 @@ public struct UserRequestDTO: Codable, Sendable {
 	public init(
 		id: UUID? = nil,
 
-		accountType: AccountTypeRequestDTO,
-		userLevel:     UserLevelRequestDTO,
-		userType:       UserTypeRequestDTO,
+		accountType: AccountTypeRequestDTO? = nil,
+		userLevel:     UserLevelRequestDTO? = nil,
+		userType:       UserTypeRequestDTO? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
