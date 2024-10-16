@@ -25,10 +25,10 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let biography:  String?
 	public let resumeURL:  String?
 
+	public let currentlyFilming: [CurrentlyFilmingRequestDTO]
 	public let headshot:                  HeadshotRequestDTO?
 	public let media:            [          MediumRequestDTO]
 	public let works:            [            WorkRequestDTO]
-	public let currentlyFilming: [CurrentlyFilmingRequestDTO]
 
 	public init(
 		id: UUID? = nil,
@@ -48,10 +48,10 @@ public struct UserRequestDTO: Codable, Sendable {
 		biography:  String? = nil,
 		resumeURL:  String? = nil,
 
+		currentlyFilming: [CurrentlyFilmingRequestDTO] = [],
 		headshot:                  HeadshotRequestDTO? = nil,
 		media:            [          MediumRequestDTO] = [],
-		works:            [            WorkRequestDTO] = [],
-		currentlyFilming: [CurrentlyFilmingRequestDTO] = []
+		works:            [            WorkRequestDTO] = []
 	) {
 		self.id = id
 
@@ -98,10 +98,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public let biography:  String?
 	public let resumeURL:  String?
 
+	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
 	public let headshot:                  HeadshotResponseDTO?
 	public let media:            [          MediumResponseDTO]
 	public let works:            [            WorkResponseDTO]
-	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
 
 	public init(
 		id: UUID,
@@ -121,10 +121,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 		biography:  String? = nil,
 		resumeURL:  String? = nil,
 
+		currentlyFilming: [CurrentlyFilmingResponseDTO] = [],
 		headshot:                  HeadshotResponseDTO? = nil,
 		media:            [          MediumResponseDTO] = [],
-		works:            [            WorkResponseDTO] = [],
-		currentlyFilming: [CurrentlyFilmingResponseDTO] = []
+		works:            [            WorkResponseDTO] = []
 	) {
 		self.id = id
 
@@ -143,9 +143,9 @@ public struct UserResponseDTO: Codable,  Sendable,
 		self.biography  = biography
 		self.resumeURL  = resumeURL
 
+		self.currentlyFilming = currentlyFilming
 		self.headshot         = headshot
 		self.media            = media
 		self.works            = works
-		self.currentlyFilming = currentlyFilming
 	}
 }

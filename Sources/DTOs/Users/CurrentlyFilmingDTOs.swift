@@ -8,6 +8,8 @@
 import Foundation
 
 public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
+	public let id:             UUID?
+	public let userId:         UUID
 	public let actorType:      String?
 	public let productionName: String?
 	public let productionType: String?
@@ -16,6 +18,8 @@ public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
 	public let episode:        String?
 
 	public init(
+		id:             UUID?   = nil,
+		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -23,6 +27,8 @@ public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
 		creditedAs:     String? = nil,
 		episode:        String? = nil
 	) {
+		self.id             = id
+		self.userId         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
