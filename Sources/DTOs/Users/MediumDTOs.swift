@@ -28,16 +28,13 @@ public struct MediumRequestDTO: Codable, Sendable {
 public struct MediumResponseDTO: Codable,  Sendable,
 								 Hashable, Identifiable {
 	public let id:        UUID
-	public let userID:    UUID
 	public let mediumURL: String?
 
 	public init(
 		id:        UUID,
-		userID:    UUID,
 		mediumURL: String? = nil
 	) {
 		self.id        = id
-		self.userID    = userID
 		self.mediumURL = mediumURL
 	}
 }

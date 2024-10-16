@@ -10,10 +10,10 @@ import Foundation
 public struct UserRequestDTO: Codable, Sendable {
 	public let id: UUID?
 
-	public let accountType: AccountTypeRequestDTO?
-	public let userLevel:     UserLevelRequestDTO?
-	public let userType:       UserTypeRequestDTO?
-	public let workType:       WorkTypeRequestDTO?
+	public let accountType: AccountTypeDTO?
+	public let userLevel:     UserLevelDTO?
+	public let userType:       UserTypeDTO?
+	public let workType:       WorkTypeDTO?
 
 	public let subject:    String?
 	public let email:      String?
@@ -33,10 +33,10 @@ public struct UserRequestDTO: Codable, Sendable {
 	public init(
 		id: UUID? = nil,
 
-		accountType: AccountTypeRequestDTO? = nil,
-		userLevel:     UserLevelRequestDTO? = nil,
-		userType:       UserTypeRequestDTO? = nil,
-		workType:       WorkTypeRequestDTO? = nil,
+		accountType: AccountTypeDTO? = nil,
+		userLevel:     UserLevelDTO? = nil,
+		userType:       UserTypeDTO? = nil,
+		workType:       WorkTypeDTO? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -83,10 +83,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 							   Hashable, Identifiable {
 	public let id: UUID
 
-	public let accountType: AccountTypeResponseDTO?
-	public let userLevel:     UserLevelResponseDTO?
-	public let userType:       UserTypeResponseDTO?
-	public let workType:       WorkTypeResponseDTO?
+	public let accountType: AccountTypeDTO?
+	public let userLevel:     UserLevelDTO?
+	public let userType:       UserTypeDTO?
+	public let workType:       WorkTypeDTO?
 
 	public let subject:    String?
 	public let email:      String?
@@ -106,10 +106,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public init(
 		id: UUID,
 
-		accountType: AccountTypeResponseDTO? = nil,
-		userLevel:     UserLevelResponseDTO? = nil,
-		userType:       UserTypeResponseDTO? = nil,
-		workType:       WorkTypeResponseDTO? = nil,
+		accountType: AccountTypeDTO? = nil,
+		userLevel:     UserLevelDTO? = nil,
+		userType:       UserTypeDTO? = nil,
+		workType:       WorkTypeDTO? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,

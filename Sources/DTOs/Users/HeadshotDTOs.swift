@@ -49,7 +49,6 @@ public struct HeadshotRequestDTO: Codable, Sendable {
 public struct HeadshotResponseDTO: Codable,  Sendable,
 								   Hashable, Identifiable {
 	public let id:               UUID
-	public let userID:           UUID
 	public let headshotURL:      String?
 	public let actorName:        String?
 	public let actorType:        String?
@@ -61,7 +60,6 @@ public struct HeadshotResponseDTO: Codable,  Sendable,
 
 	public init(
 		id:               UUID,
-		userID:           UUID,
 		headshotURL:      String? = nil,
 		actorName:        String? = nil,
 		actorType:        String? = nil,
@@ -72,7 +70,6 @@ public struct HeadshotResponseDTO: Codable,  Sendable,
 		actorSocialMedia: String? = nil
 	) {
 		self.id               = id
-		self.userID           = userID
 		self.headshotURL      = headshotURL
 		self.actorName        = actorName
 		self.actorType        = actorType

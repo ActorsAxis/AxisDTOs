@@ -7,23 +7,8 @@
 
 import Foundation
 
-public struct UserTypeRequestDTO: Codable, Sendable {
-	public let id:   UUID?
-	public let name: String
-
-	public init(
-		id:   UUID?,
-		name: String
-	) {
-		self.id   = id
-		self.name = name
-	}
-}
-
-// MARK: -
-
-public struct UserTypeResponseDTO: Codable,  Sendable,
-								   Hashable, Identifiable {
+public struct UserTypeDTO: Codable,  Sendable,
+						   Hashable, Identifiable {
 	public let id:   UUID
 	public let name: String
 
