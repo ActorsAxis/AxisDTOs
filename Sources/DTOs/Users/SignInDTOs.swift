@@ -8,6 +8,7 @@
 import Foundation
 
 public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
+	public let userID:     UUID
 	public let axisToken:  String
 	public let email:      String?
 	public let givenName:  String?
@@ -17,6 +18,7 @@ public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
 	public let user:       UserResponseDTO?
 
 	public init(
+		userID:     UUID,
 		axisToken:  String,
 		email:      String?          = nil,
 		givenName:  String?          = nil,
@@ -26,6 +28,7 @@ public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
 		user:       UserResponseDTO? = nil
 
 	) {
+		self.userID     = userID
 		self.axisToken  = axisToken
 		self.email      = email
 		self.givenName  = givenName
