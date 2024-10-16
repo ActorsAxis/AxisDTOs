@@ -8,8 +8,6 @@
 import Foundation
 
 public struct WorkRequestDTO: Codable, Sendable {
-	public let id:             UUID?
-	public let userID:         UUID
 	public let actorType:      String?
 	public let productionName: String?
 	public let productionType: String?
@@ -18,8 +16,6 @@ public struct WorkRequestDTO: Codable, Sendable {
 	public let episode:        String?
 
 	public init(
-		id:             UUID?   = nil,
-		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -27,8 +23,6 @@ public struct WorkRequestDTO: Codable, Sendable {
 		creditedAs:     String? = nil,
 		episode:        String? = nil
 	) {
-		self.id             = id
-		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
@@ -43,7 +37,6 @@ public struct WorkRequestDTO: Codable, Sendable {
 public struct WorkResponseDTO: Codable,  Sendable,
 							   Hashable, Identifiable {
 	public let id:             UUID
-	public let userID:         UUID
 	public let actorType:      String?
 	public let productionName: String?
 	public let productionType: String?
@@ -53,7 +46,6 @@ public struct WorkResponseDTO: Codable,  Sendable,
 
 	public init(
 		id:             UUID,
-		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -62,7 +54,6 @@ public struct WorkResponseDTO: Codable,  Sendable,
 		episode:        String? = nil
 	) {
 		self.id             = id
-		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType

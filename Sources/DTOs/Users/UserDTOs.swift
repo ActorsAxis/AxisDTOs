@@ -8,8 +8,6 @@
 import Foundation
 
 public struct UserRequestDTO: Codable, Sendable {
-	public let id: UUID?
-
 	public let accountType: AccountTypeRequestDTO?
 	public let userLevel:     UserLevelRequestDTO?
 	public let userType:       UserTypeRequestDTO?
@@ -31,8 +29,6 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let currentlyFilming: [CurrentlyFilmingRequestDTO]
 
 	public init(
-		id: UUID? = nil,
-
 		accountType: AccountTypeRequestDTO? = nil,
 		userLevel:     UserLevelRequestDTO? = nil,
 		userType:       UserTypeRequestDTO? = nil,
@@ -53,8 +49,6 @@ public struct UserRequestDTO: Codable, Sendable {
 		works:            [            WorkRequestDTO] = [],
 		currentlyFilming: [CurrentlyFilmingRequestDTO] = []
 	) {
-		self.id = id
-
 		self.accountType = accountType
 		self.userLevel   = userLevel
 		self.userType    = userType
