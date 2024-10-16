@@ -1,5 +1,5 @@
 //
-//  WorkHistoryDTOs.swift
+//  WorkDTOs.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/8/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WorkHistoryRequestDTO: Codable, Sendable {
+public struct WorkRequestDTO: Codable, Sendable {
 	public let id:             UUID?
 	public let userID:         UUID
 	public let actorType:      String?
@@ -40,8 +40,8 @@ public struct WorkHistoryRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct WorkHistoryResponseDTO: Codable,  Sendable,
-									  Hashable, Identifiable {
+public struct WorkResponseDTO: Codable,  Sendable,
+							   Hashable, Identifiable {
 	public let id:             UUID
 	public let userID:         UUID
 	public let actorType:      String?

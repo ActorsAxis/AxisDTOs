@@ -26,7 +26,7 @@ public struct UserRequestDTO: Codable, Sendable {
 
 	public let headshot:                  HeadshotRequestDTO?
 	public let media:            [          MediumRequestDTO]
-	public let workHistories:    [     WorkHistoryRequestDTO]
+	public let works:            [            WorkRequestDTO]
 	public let currentlyFilming: [CurrentlyFilmingRequestDTO]
 
 	public init(
@@ -48,7 +48,7 @@ public struct UserRequestDTO: Codable, Sendable {
 
 		headshot:                  HeadshotRequestDTO? = nil,
 		media:            [          MediumRequestDTO] = [],
-		workHistories:    [     WorkHistoryRequestDTO] = [],
+		works:            [            WorkRequestDTO] = [],
 		currentlyFilming: [CurrentlyFilmingRequestDTO] = []
 	) {
 		self.id = id
@@ -69,7 +69,7 @@ public struct UserRequestDTO: Codable, Sendable {
 
 		self.headshot         = headshot
 		self.media            = media
-		self.workHistories    = workHistories
+		self.works            = works
 		self.currentlyFilming = currentlyFilming
 	}
 }
@@ -96,7 +96,7 @@ public struct UserResponseDTO: Codable,  Sendable,
 
 	public let headshot:                  HeadshotResponseDTO?
 	public let media:            [          MediumResponseDTO]
-	public let workHistories:    [     WorkHistoryResponseDTO]
+	public let works:            [            WorkResponseDTO]
 	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
 
 	public init(
@@ -118,7 +118,7 @@ public struct UserResponseDTO: Codable,  Sendable,
 
 		headshot:                  HeadshotResponseDTO? = nil,
 		media:            [          MediumResponseDTO] = [],
-		workHistories:    [     WorkHistoryResponseDTO] = [],
+		works:            [            WorkResponseDTO] = [],
 		currentlyFilming: [CurrentlyFilmingResponseDTO] = []
 	) {
 		self.id = id
@@ -139,7 +139,7 @@ public struct UserResponseDTO: Codable,  Sendable,
 
 		self.headshot         = headshot
 		self.media            = media
-		self.workHistories    = workHistories
+		self.works            = works
 		self.currentlyFilming = currentlyFilming
 	}
 }
