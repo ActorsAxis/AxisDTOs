@@ -13,6 +13,7 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let accountType: AccountTypeRequestDTO?
 	public let userLevel:     UserLevelRequestDTO?
 	public let userType:       UserTypeRequestDTO?
+	public let workType:       WorkTypeRequestDTO?
 
 	public let subject:    String?
 	public let email:      String?
@@ -35,6 +36,7 @@ public struct UserRequestDTO: Codable, Sendable {
 		accountType: AccountTypeRequestDTO? = nil,
 		userLevel:     UserLevelRequestDTO? = nil,
 		userType:       UserTypeRequestDTO? = nil,
+		workType:       WorkTypeRequestDTO? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -56,6 +58,7 @@ public struct UserRequestDTO: Codable, Sendable {
 		self.accountType = accountType
 		self.userLevel   = userLevel
 		self.userType    = userType
+		self.workType    = workType
 
 		self.subject    = subject
 		self.email      = email
@@ -83,6 +86,7 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public let accountType: AccountTypeResponseDTO?
 	public let userLevel:     UserLevelResponseDTO?
 	public let userType:       UserTypeResponseDTO?
+	public let workType:       WorkTypeResponseDTO?
 
 	public let subject:    String?
 	public let email:      String?
@@ -105,6 +109,7 @@ public struct UserResponseDTO: Codable,  Sendable,
 		accountType: AccountTypeResponseDTO? = nil,
 		userLevel:     UserLevelResponseDTO? = nil,
 		userType:       UserTypeResponseDTO? = nil,
+		workType:       WorkTypeResponseDTO? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -126,6 +131,7 @@ public struct UserResponseDTO: Codable,  Sendable,
 		self.accountType = accountType
 		self.userLevel   = userLevel
 		self.userType    = userType
+		self.workType    = workType
 
 		self.subject    = subject
 		self.email      = email
