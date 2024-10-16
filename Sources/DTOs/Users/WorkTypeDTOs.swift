@@ -1,5 +1,5 @@
 //
-//  UserTypeDTOs.swift
+//  WorkTypeDTOs.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/15/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WorkTypeRequestDTO: Codable, Sendable {
+public struct UserTypeRequestDTO: Codable, Sendable {
 	public let id:   UUID?
 	public let name: String
 
@@ -22,7 +22,7 @@ public struct WorkTypeRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct WorkTypeResponseDTO: Codable,  Sendable,
+public struct UserTypeResponseDTO: Codable,  Sendable,
 								   Hashable, Identifiable {
 	public let id:   UUID
 	public let name: String

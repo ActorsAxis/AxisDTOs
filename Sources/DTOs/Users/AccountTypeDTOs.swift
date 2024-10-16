@@ -8,18 +8,15 @@
 import Foundation
 
 public struct AccountTypeRequestDTO: Codable, Sendable {
-	public let id:       UUID?
-	public let name:     String
-	public let isActive: Bool
+	public let id:   UUID?
+	public let name: String
 
 	public init(
-		id:       UUID?,
-		name:     String,
-		isActive: Bool
+		id:   UUID?,
+		name: String
 	) {
-		self.id       = id
-		self.name     = name
-		self.isActive = isActive
+		self.id   = id
+		self.name = name
 	}
 }
 
@@ -27,17 +24,14 @@ public struct AccountTypeRequestDTO: Codable, Sendable {
 
 public struct AccountTypeResponseDTO: Codable,  Sendable,
 									  Hashable, Identifiable {
-	public let id:       UUID
-	public let name:     String
-	public let isActive: Bool
+	public let id:   UUID
+	public let name: String
 
 	public init(
-		id:       UUID,
-		name:     String,
-		isActive: Bool
+		id:   UUID,
+		name: String
 	) {
-		self.id       = id
-		self.name     = name
-		self.isActive = isActive
+		self.id   = id
+		self.name = name
 	}
 }
