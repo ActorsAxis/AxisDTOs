@@ -21,9 +21,9 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let givenName:  String?
 	public let familyName: String?
 	public let name:       String?
-	public let pictureURL: String?
+	public let picture:    String?
 	public let biography:  String?
-	public let resumeURL:  String?
+	public let resume:     String?
 
 	public let currentlyFilming: [CurrentlyFilmingRequestDTO]
 	public let headshot:                  HeadshotRequestDTO?
@@ -44,9 +44,9 @@ public struct UserRequestDTO: Codable, Sendable {
 		givenName:  String? = nil,
 		familyName: String? = nil,
 		name:       String? = nil,
-		pictureURL: String? = nil,
+		picture:    String? = nil,
 		biography:  String? = nil,
-		resumeURL:  String? = nil,
+		resume:     String? = nil,
 
 		currentlyFilming: [CurrentlyFilmingRequestDTO] = [],
 		headshot:                  HeadshotRequestDTO? = nil,
@@ -66,9 +66,9 @@ public struct UserRequestDTO: Codable, Sendable {
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.pictureURL = pictureURL
+		self.picture    = picture
 		self.biography  = biography
-		self.resumeURL  = resumeURL
+		self.resume     = resume
 
 		self.headshot         = headshot
 		self.media            = media
@@ -94,9 +94,9 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public let givenName:  String?
 	public let familyName: String?
 	public let name:       String?
-	public let pictureURL: String?
+	public let picture:    String?
 	public let biography:  String?
-	public let resumeURL:  String?
+	public let resume:     String?
 
 	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
 	public let headshot:                  HeadshotResponseDTO?
@@ -117,9 +117,9 @@ public struct UserResponseDTO: Codable,  Sendable,
 		givenName:  String? = nil,
 		familyName: String? = nil,
 		name:       String? = nil,
-		pictureURL: String? = nil,
+		picture:    String? = nil,
 		biography:  String? = nil,
-		resumeURL:  String? = nil,
+		resume:     String? = nil,
 
 		currentlyFilming: [CurrentlyFilmingResponseDTO] = [],
 		headshot:                  HeadshotResponseDTO? = nil,
@@ -139,9 +139,9 @@ public struct UserResponseDTO: Codable,  Sendable,
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.pictureURL = pictureURL
+		self.picture    = picture
 		self.biography  = biography
-		self.resumeURL  = resumeURL
+		self.resume     = resume
 
 		self.currentlyFilming = currentlyFilming
 		self.headshot         = headshot

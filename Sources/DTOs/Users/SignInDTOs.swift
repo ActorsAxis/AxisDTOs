@@ -15,17 +15,15 @@ public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
 	public let familyName: String?
 	public let name:       String?
 	public let picture:    String?
-	public let user:       UserResponseDTO?
 
 	public init(
 		userID:     UUID,
 		axisToken:  String,
-		email:      String?          = nil,
-		givenName:  String?          = nil,
-		familyName: String?          = nil,
-		name:       String?          = nil,
-		picture:    String?          = nil,
-		user:       UserResponseDTO? = nil
+		email:      String? = nil,
+		givenName:  String? = nil,
+		familyName: String? = nil,
+		name:       String? = nil,
+		picture:    String? = nil
 
 	) {
 		self.userID     = userID
@@ -35,6 +33,5 @@ public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
 		self.familyName = familyName
 		self.name       = name
 		self.picture    = picture
-		self.user       = user
 	}
 }
