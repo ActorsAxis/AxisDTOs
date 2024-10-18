@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
+public struct CurrentlyFilmingRequest: Codable, Sendable {
 	public let id:             UUID?
 	public let userId:         UUID
 	public let actorType:      String?
@@ -40,8 +40,8 @@ public struct CurrentlyFilmingRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct CurrentlyFilmingResponseDTO: Codable,  Sendable,
-										   Hashable, Identifiable {
+public struct CurrentlyFilmingResponse: Codable,  Sendable,
+										Hashable, Identifiable {
 	public let id:             UUID
 	public let actorType:      String?
 	public let productionName: String?

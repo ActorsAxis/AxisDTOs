@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct UserRequestDTO: Codable, Sendable {
+public struct UserRequest: Codable, Sendable {
 	public let id: UUID?
 
-	public let accountType: AccountTypeDTO?
-	public let userLevel:     UserLevelDTO?
-	public let userType:       UserTypeDTO?
-	public let workType:       WorkTypeDTO?
+	public let accountType: AccountType?
+	public let userLevel:     UserLevel?
+	public let userType:       UserType?
+	public let workType:       WorkType?
 
 	public let subject:    String?
 	public let email:      String?
@@ -25,18 +25,18 @@ public struct UserRequestDTO: Codable, Sendable {
 	public let biography:  String?
 	public let resume:     String?
 
-	public let currentlyFilming: [CurrentlyFilmingRequestDTO]
-	public let headshot:                  HeadshotRequestDTO?
-	public let media:            [          MediumRequestDTO]
-	public let works:            [            WorkRequestDTO]
+	public let currentlyFilming: [CurrentlyFilmingRequest]
+	public let headshot:                  HeadshotRequest?
+	public let media:            [          MediumRequest]
+	public let works:            [            WorkRequest]
 
 	public init(
 		id: UUID? = nil,
 
-		accountType: AccountTypeDTO? = nil,
-		userLevel:     UserLevelDTO? = nil,
-		userType:       UserTypeDTO? = nil,
-		workType:       WorkTypeDTO? = nil,
+		accountType: AccountType? = nil,
+		userLevel:     UserLevel? = nil,
+		userType:       UserType? = nil,
+		workType:       WorkType? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -48,10 +48,10 @@ public struct UserRequestDTO: Codable, Sendable {
 		biography:  String? = nil,
 		resume:     String? = nil,
 
-		currentlyFilming: [CurrentlyFilmingRequestDTO] = [],
-		headshot:                  HeadshotRequestDTO? = nil,
-		media:            [          MediumRequestDTO] = [],
-		works:            [            WorkRequestDTO] = []
+		currentlyFilming: [CurrentlyFilmingRequest] = [],
+		headshot:                  HeadshotRequest? = nil,
+		media:            [          MediumRequest] = [],
+		works:            [            WorkRequest] = []
 	) {
 		self.id = id
 
@@ -83,10 +83,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 							   Hashable, Identifiable {
 	public let id: UUID
 
-	public let accountType: AccountTypeDTO?
-	public let userLevel:     UserLevelDTO?
-	public let userType:       UserTypeDTO?
-	public let workType:       WorkTypeDTO?
+	public let accountType: AccountType?
+	public let userLevel:     UserLevel?
+	public let userType:       UserType?
+	public let workType:       WorkType?
 
 	public let subject:    String?
 	public let email:      String?
@@ -98,18 +98,18 @@ public struct UserResponseDTO: Codable,  Sendable,
 	public let biography:  String?
 	public let resume:     String?
 
-	public let currentlyFilming: [CurrentlyFilmingResponseDTO]
-	public let headshot:                  HeadshotResponseDTO?
-	public let media:            [          MediumResponseDTO]
-	public let works:            [            WorkResponseDTO]
+	public let currentlyFilming: [CurrentlyFilmingResponse]
+	public let headshot:                  HeadshotResponse?
+	public let media:            [          MediumResponse]
+	public let works:            [            WorkResponse]
 
 	public init(
 		id: UUID,
 
-		accountType: AccountTypeDTO? = nil,
-		userLevel:     UserLevelDTO? = nil,
-		userType:       UserTypeDTO? = nil,
-		workType:       WorkTypeDTO? = nil,
+		accountType: AccountType? = nil,
+		userLevel:     UserLevel? = nil,
+		userType:       UserType? = nil,
+		workType:       WorkType? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -121,10 +121,10 @@ public struct UserResponseDTO: Codable,  Sendable,
 		biography:  String? = nil,
 		resume:     String? = nil,
 
-		currentlyFilming: [CurrentlyFilmingResponseDTO] = [],
-		headshot:                  HeadshotResponseDTO? = nil,
-		media:            [          MediumResponseDTO] = [],
-		works:            [            WorkResponseDTO] = []
+		currentlyFilming: [CurrentlyFilmingResponse] = [],
+		headshot:                  HeadshotResponse? = nil,
+		media:            [          MediumResponse] = [],
+		works:            [            WorkResponse] = []
 	) {
 		self.id = id
 

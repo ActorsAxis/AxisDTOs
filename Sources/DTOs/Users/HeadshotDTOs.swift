@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct HeadshotRequestDTO: Codable, Sendable {
+public struct HeadshotRequest: Codable, Sendable {
 	public let id:               UUID?
 	public let userID:           UUID
 	public let headshotURL:      String?
@@ -46,8 +46,8 @@ public struct HeadshotRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct HeadshotResponseDTO: Codable,  Sendable,
-								   Hashable, Identifiable {
+public struct HeadshotResponse: Codable,  Sendable,
+								Hashable, Identifiable {
 	public let id:               UUID
 	public let headshotURL:      String?
 	public let actorName:        String?

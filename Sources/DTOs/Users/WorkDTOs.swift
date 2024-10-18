@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WorkRequestDTO: Codable, Sendable {
+public struct WorkRequest: Codable, Sendable {
 	public let id:             UUID?
 	public let userID:         UUID
 	public let actorType:      String?
@@ -40,8 +40,8 @@ public struct WorkRequestDTO: Codable, Sendable {
 
 // MARK: -
 
-public struct WorkResponseDTO: Codable,  Sendable,
-							   Hashable, Identifiable {
+public struct WorkResponse: Codable,  Sendable,
+							Hashable, Identifiable {
 	public let id:             UUID
 	public let actorType:      String?
 	public let productionName: String?

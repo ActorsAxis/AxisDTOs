@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SignInWithIdentityTokenResponseDTO: Codable, Sendable {
+public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 	public let userID:     UUID
 	public let axisToken:  String
 	public let email:      String?
