@@ -79,8 +79,8 @@ public struct UserRequest: Codable, Sendable {
 
 // MARK: -
 
-public struct UserResponseDTO: Codable,  Sendable,
-							   Hashable, Identifiable {
+public struct UserResponse: Codable,  Sendable,
+							Hashable, Identifiable {
 	public let id: UUID
 
 	public let accountType: AccountType?
