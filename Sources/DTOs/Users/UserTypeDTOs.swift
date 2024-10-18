@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct WorkType: Codable,  Sendable,
-						Hashable, Identifiable {
+public struct WorkTypeResponse: Codable,  Sendable,
+								Hashable, Identifiable {
 	public let id:   UUID
 	public let name: String
 

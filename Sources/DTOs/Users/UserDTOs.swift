@@ -10,10 +10,10 @@ import Foundation
 public struct UserRequest: Codable, Sendable {
 	public let id: UUID?
 
-	public let accountType: AccountType?
-	public let userLevel:     UserLevel?
-	public let userType:       UserType?
-	public let workType:       WorkType?
+	public let accountType: AccountTypeResponse?
+	public let userLevel:     UserLevelResponse?
+	public let userType:       UserTypeResponse?
+	public let workType:       WorkTypeResponse?
 
 	public let subject:    String?
 	public let email:      String?
@@ -33,10 +33,10 @@ public struct UserRequest: Codable, Sendable {
 	public init(
 		id: UUID? = nil,
 
-		accountType: AccountType? = nil,
-		userLevel:     UserLevel? = nil,
-		userType:       UserType? = nil,
-		workType:       WorkType? = nil,
+		accountType: AccountTypeResponse? = nil,
+		userLevel:     UserLevelResponse? = nil,
+		userType:       UserTypeResponse? = nil,
+		workType:       WorkTypeResponse? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -83,10 +83,10 @@ public struct UserResponse: Codable,  Sendable,
 							Hashable, Identifiable {
 	public let id: UUID
 
-	public let accountType: AccountType?
-	public let userLevel:     UserLevel?
-	public let userType:       UserType?
-	public let workType:       WorkType?
+	public let accountType: AccountTypeResponse?
+	public let userLevel:     UserLevelResponse?
+	public let userType:       UserTypeResponse?
+	public let workType:       WorkTypeResponse?
 
 	public let subject:    String?
 	public let email:      String?
@@ -106,10 +106,10 @@ public struct UserResponse: Codable,  Sendable,
 	public init(
 		id: UUID,
 
-		accountType: AccountType? = nil,
-		userLevel:     UserLevel? = nil,
-		userType:       UserType? = nil,
-		workType:       WorkType? = nil,
+		accountType: AccountTypeResponse? = nil,
+		userLevel:     UserLevelResponse? = nil,
+		userType:       UserTypeResponse? = nil,
+		workType:       WorkTypeResponse? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
