@@ -19,7 +19,7 @@ public struct WorkTypeRequest: Codable,  Sendable {
 		self.name = name
 	}
 
-	public init(from response: WorkTypeResponse) {
+	public init(response: WorkTypeResponse) {
 		self.init(
 			id:   response.id,
 			name: response.name
