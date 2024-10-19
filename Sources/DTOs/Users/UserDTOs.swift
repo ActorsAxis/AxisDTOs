@@ -10,10 +10,10 @@ import Foundation
 public struct UserRequest: Codable, Sendable {
 	public var id: UUID?
 
-	public var accountType: AccountTypeResponse?
-	public var userLevel:     UserLevelResponse?
-	public var userType:       UserTypeResponse?
-	public var workType:       WorkTypeResponse?
+	public var accountType: AccountTypeRequest?
+	public var userLevel:     UserLevelRequest?
+	public var userType:       UserTypeRequest?
+	public var workType:       WorkTypeRequest?
 
 	public var subject:    String?
 	public var email:      String?
@@ -33,10 +33,10 @@ public struct UserRequest: Codable, Sendable {
 	public init(
 		id: UUID? = nil,
 
-		accountType: AccountTypeResponse? = nil,
-		userLevel:     UserLevelResponse? = nil,
-		userType:       UserTypeResponse? = nil,
-		workType:       WorkTypeResponse? = nil,
+		accountType: AccountTypeRequest? = nil,
+		userLevel:     UserLevelRequest? = nil,
+		userType:       UserTypeRequest? = nil,
+		workType:       WorkTypeRequest? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -80,10 +80,10 @@ public struct UserRequest: Codable, Sendable {
 		self.init(
 			id:               response.id,
 
-			accountType:      response.accountType,
-			userLevel:        response.userLevel,
-			userType:         response.userType,
-			workType:         response.workType,
+			accountType:      response.accountType.flatMap(AccountTypeRequest.init),
+			userLevel:        response.userLevel  .flatMap(UserLevelRequest  .init),
+			userType:         response.userType   .flatMap(UserTypeRequest   .init),
+			workType:         response.workType   .flatMap(WorkTypeRequest   .init),
 
 			subject:          response.subject,
 			email:            response.email,
@@ -177,12 +177,12 @@ public struct UserResponse: Codable,  Sendable,
 
 	public mutating func copyNonOptionals(from request: UserRequest) {
 		if let id = request.id { self.id = id }
-
+#if false
 		if let accountType = request.accountType { self.accountType = accountType }
 		if let userLevel   = request.userLevel   { self.userLevel   = userLevel }
 		if let userType    = request.userType    { self.userType    = userType }
 		if let workType    = request.workType    { self.workType    = workType }
-
+#endif
 		if let subject    = request.subject    { self.subject    = subject }
 		if let email      = request.email      { self.email      = email   }
 		if let password   = request.password   { self.password   = password }
