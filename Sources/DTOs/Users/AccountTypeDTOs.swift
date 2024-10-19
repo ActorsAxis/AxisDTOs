@@ -19,7 +19,7 @@ public struct AccountTypeRequest: Codable, Sendable {
 		self.name = name
 	}
 
-	public init(response: AccountTypeResponse) {
+	public init(from response: AccountTypeResponse) {
 		self.init(
 			id:   response.id,
 			name: response.name
