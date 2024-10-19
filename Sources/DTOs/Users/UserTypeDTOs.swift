@@ -8,11 +8,11 @@
 import Foundation
 
 public struct UserTypeRequest: Codable,  Sendable {
-	public var id:   UUID?
+	public var id:   UUID
 	public var name: String
 
 	public init(
-		id:   UUID? = nil,
+		id:   UUID,
 		name: String
 	) {
 		self.id   = id
@@ -44,7 +44,7 @@ public struct UserTypeResponse: Codable,  Sendable,
 
 	public init(from request: UserTypeRequest) {
 		self.init(
-			id:   request.id!,
+			id:   request.id,
 			name: request.name
 		)
 	}

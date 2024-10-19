@@ -8,12 +8,12 @@
 import Foundation
 
 public struct UserLevelRequest: Codable,  Sendable {
-	public var id:          UUID?
+	public var id:          UUID
 	public var title:       String
 	public var coinsNeeded: Int
 
 	public init(
-		id:          UUID? = nil,
+		id:          UUID,
 		title:       String,
 		coinsNeeded: Int
 	) {
@@ -51,7 +51,7 @@ public struct UserLevelResponse: Codable,  Sendable,
 
 	public init(from request: UserLevelRequest) {
 		self.init(
-			id:          request.id!,
+			id:          request.id,
 			title:       request.title,
 			coinsNeeded: request.coinsNeeded
 		)
