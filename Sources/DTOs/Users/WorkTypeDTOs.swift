@@ -7,10 +7,32 @@
 
 import Foundation
 
-public struct UserTypeResponse: Codable,  Sendable,
+public struct WorkTypeRequest: Codable,  Sendable {
+	public var id:   UUID?
+	public var name: String
+
+	public init(
+		id:   UUID? = nil,
+		name: String
+	) {
+		self.id   = id
+		self.name = name
+	}
+
+	public init(from response: WorkTypeResponse) {
+		self.init(
+			id:   response.id,
+			name: response.name
+		)
+	}
+}
+
+// MARK: -
+
+public struct WorkTypeResponse: Codable,  Sendable,
 								Hashable, Identifiable {
-	public let id:   UUID
-	public let name: String
+	public var id:   UUID
+	public var name: String
 
 	public init(
 		id:   UUID,
@@ -18,5 +40,10 @@ public struct UserTypeResponse: Codable,  Sendable,
 	) {
 		self.id   = id
 		self.name = name
+	}
+
+	public mutating func copyNonOptionals(from request: WorkTypeRequest) {
+		if let id = request.id { self.id = id }
+		name = request.name
 	}
 }

@@ -8,18 +8,26 @@
 import Foundation
 
 public struct MediumRequest: Codable, Sendable {
-	public let id:        UUID?
-	public let userID:    UUID
-	public let mediumURL: String?
+	public var id:     UUID?
+	public var userID: UUID
+	public var medium: String?
 
 	public init(
-		id:        UUID?   = nil,
-		userID:    UUID,
-		mediumURL: String? = nil
+		id:     UUID?   = nil,
+		userID: UUID,
+		medium: String? = nil
 	) {
-		self.id        = id
-		self.userID    = userID
-		self.mediumURL = mediumURL
+		self.id     = id
+		self.userID = userID
+		self.medium = medium
+	}
+
+	public init(from response: MediumResponse) {
+		self.init(
+			id:     response.id,
+			userID: response.userID,
+			medium: response.medium
+		)
 	}
 }
 
@@ -27,14 +35,23 @@ public struct MediumRequest: Codable, Sendable {
 
 public struct MediumResponse: Codable,  Sendable,
 							  Hashable, Identifiable {
-	public let id:        UUID
-	public let mediumURL: String?
+	public var id:     UUID
+	public var userID: UUID
+	public var medium: String?
 
 	public init(
-		id:        UUID,
-		mediumURL: String? = nil
+		id:     UUID,
+		userID: UUID,
+		medium: String? = nil
 	) {
-		self.id        = id
-		self.mediumURL = mediumURL
+		self.id     = id
+		self.userID = userID
+		self.medium = medium
+	}
+
+	public mutating func copyNonOptionals(from request: MediumRequest) {
+		if let id = request.id { self.id = id }
+		userID = request.userID
+		if let medium = request.medium { self.medium = medium }
 	}
 }

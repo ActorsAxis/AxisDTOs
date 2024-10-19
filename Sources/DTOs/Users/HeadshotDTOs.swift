@@ -8,39 +8,54 @@
 import Foundation
 
 public struct HeadshotRequest: Codable, Sendable {
-	public let id:               UUID?
-	public let userID:           UUID
-	public let headshotURL:      String?
-	public let actorName:        String?
-	public let actorType:        String?
-	public let actorLocation:    String?
-	public let actorEmail:       String?
-	public let actorPhone:       String?
-	public let actorWebsiteURL:  String?
-	public let actorSocialMedia: String?
+	public var id:               UUID?
+	public var userID:           UUID
+	public var headshot:         String?
+	public var actorName:        String?
+	public var actorType:        String?
+	public var actorLocation:    String?
+	public var actorEmail:       String?
+	public var actorPhone:       String?
+	public var actorWebsite:     String?
+	public var actorSocialMedia: String?
 
 	public init(
 		id:               UUID?   = nil,
 		userID:           UUID,
-		headshotURL:      String? = nil,
+		headshot:        String? = nil,
 		actorName:        String? = nil,
 		actorType:        String? = nil,
 		actorLocation:    String? = nil,
 		actorEmail:       String? = nil,
 		actorPhone:       String? = nil,
-		actorWebsiteURL:  String? = nil,
+		actorWebsite:     String? = nil,
 		actorSocialMedia: String? = nil
 	) {
 		self.id               = id
 		self.userID           = userID
-		self.headshotURL      = headshotURL
+		self.headshot         = headshot
 		self.actorName        = actorName
 		self.actorType        = actorType
 		self.actorLocation    = actorLocation
 		self.actorEmail       = actorEmail
 		self.actorPhone       = actorPhone
-		self.actorWebsiteURL  = actorWebsiteURL
+		self.actorWebsite     = actorWebsite
 		self.actorSocialMedia = actorSocialMedia
+	}
+
+	public init(from response: HeadshotResponse) {
+		self.init(
+			id:               response.id,
+			userID:           response.userID,
+			headshot:         response.headshot,
+			actorName:        response.actorName,
+			actorType:        response.actorType,
+			actorLocation:    response.actorLocation,
+			actorEmail:       response.actorEmail,
+			actorPhone:       response.actorPhone,
+			actorWebsite:     response.actorWebsite,
+			actorSocialMedia: response.actorSocialMedia
+		)
 	}
 }
 
@@ -48,35 +63,51 @@ public struct HeadshotRequest: Codable, Sendable {
 
 public struct HeadshotResponse: Codable,  Sendable,
 								Hashable, Identifiable {
-	public let id:               UUID
-	public let headshotURL:      String?
-	public let actorName:        String?
-	public let actorType:        String?
-	public let actorLocation:    String?
-	public let actorEmail:       String?
-	public let actorPhone:       String?
-	public let actorWebsiteURL:  String?
-	public let actorSocialMedia: String?
+	public var id:               UUID
+	public var userID:           UUID
+	public var headshot:         String?
+	public var actorName:        String?
+	public var actorType:        String?
+	public var actorLocation:    String?
+	public var actorEmail:       String?
+	public var actorPhone:       String?
+	public var actorWebsite:     String?
+	public var actorSocialMedia: String?
 
 	public init(
 		id:               UUID,
-		headshotURL:      String? = nil,
+		userID:           UUID,
+		headshot:         String? = nil,
 		actorName:        String? = nil,
 		actorType:        String? = nil,
 		actorLocation:    String? = nil,
 		actorEmail:       String? = nil,
 		actorPhone:       String? = nil,
-		actorWebsiteURL:  String? = nil,
+		actorWebsite:     String? = nil,
 		actorSocialMedia: String? = nil
 	) {
 		self.id               = id
-		self.headshotURL      = headshotURL
+		self.userID           = userID
+		self.headshot         = headshot
 		self.actorName        = actorName
 		self.actorType        = actorType
 		self.actorLocation    = actorLocation
 		self.actorEmail       = actorEmail
 		self.actorPhone       = actorPhone
-		self.actorWebsiteURL  = actorWebsiteURL
+		self.actorWebsite     = actorWebsite
 		self.actorSocialMedia = actorSocialMedia
+	}
+
+	public mutating func copyNonOptionals(from request: HeadshotRequest) {
+		if let id = request.id { self.id = id }
+		userID = request.userID
+		if let headshot         = request.headshot         { self.headshot         = headshot }
+		if let actorName        = request.actorName        { self.actorName        = actorName }
+		if let actorType        = request.actorType        { self.actorType        = actorType }
+		if let actorLocation    = request.actorLocation    { self.actorLocation    = actorLocation }
+		if let actorEmail       = request.actorEmail       { self.actorEmail       = actorEmail }
+		if let actorPhone       = request.actorPhone       { self.actorPhone       = actorPhone }
+		if let actorWebsite     = request.actorWebsite     { self.actorWebsite     = actorWebsite }
+		if let actorSocialMedia = request.actorSocialMedia { self.actorSocialMedia = actorSocialMedia }
 	}
 }

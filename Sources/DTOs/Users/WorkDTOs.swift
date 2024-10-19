@@ -8,14 +8,14 @@
 import Foundation
 
 public struct WorkRequest: Codable, Sendable {
-	public let id:             UUID?
-	public let userID:         UUID
-	public let actorType:      String?
-	public let productionName: String?
-	public let productionType: String?
-	public let season:         String?
-	public let creditedAs:     String?
-	public let episode:        String?
+	public var id:             UUID?
+	public var userID:         UUID
+	public var actorType:      String?
+	public var productionName: String?
+	public var productionType: String?
+	public var season:         String?
+	public var creditedAs:     String?
+	public var episode:        String?
 
 	public init(
 		id:             UUID?   = nil,
@@ -36,22 +36,37 @@ public struct WorkRequest: Codable, Sendable {
 		self.creditedAs     = creditedAs
 		self.episode        = episode
 	}
+
+	public init(from response: WorkResponse) {
+		self.init(
+			id:             response.id,
+			userID:         response.userID,
+			actorType:      response.actorType,
+			productionName: response.productionName,
+			productionType: response.productionType,
+			season:         response.season,
+			creditedAs:     response.creditedAs,
+			episode:        response.episode
+		)
+	}
 }
 
 // MARK: -
 
 public struct WorkResponse: Codable,  Sendable,
 							Hashable, Identifiable {
-	public let id:             UUID
-	public let actorType:      String?
-	public let productionName: String?
-	public let productionType: String?
-	public let season:         String?
-	public let creditedAs:     String?
-	public let episode:        String?
+	public var id:             UUID
+	public var userID:         UUID
+	public var actorType:      String?
+	public var productionName: String?
+	public var productionType: String?
+	public var season:         String?
+	public var creditedAs:     String?
+	public var episode:        String?
 
 	public init(
 		id:             UUID,
+		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -60,11 +75,23 @@ public struct WorkResponse: Codable,  Sendable,
 		episode:        String? = nil
 	) {
 		self.id             = id
+		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
 		self.season         = season
 		self.creditedAs     = creditedAs
 		self.episode        = episode
+	}
+
+	public mutating func copyNonOptionals(from request: WorkRequest) {
+		if let id = request.id { self.id = id }
+		userID = request.userID
+		if let actorType      = request.actorType      { self.actorType      = actorType }
+		if let productionName = request.productionName { self.productionName = productionName }
+		if let productionType = request.productionType { self.productionType = productionType }
+		if let season         = request.season         { self.season         = season }
+		if let creditedAs     = request.creditedAs     { self.creditedAs     = creditedAs }
+		if let episode        = request.episode        { self.episode        = episode }
 	}
 }

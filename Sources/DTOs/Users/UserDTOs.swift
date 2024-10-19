@@ -8,27 +8,27 @@
 import Foundation
 
 public struct UserRequest: Codable, Sendable {
-	public let id: UUID?
+	public var id: UUID?
 
-	public let accountType: AccountTypeResponse?
-	public let userLevel:     UserLevelResponse?
-	public let userType:       UserTypeResponse?
-	public let workType:       WorkTypeResponse?
+	public var accountType: AccountTypeResponse?
+	public var userLevel:     UserLevelResponse?
+	public var userType:       UserTypeResponse?
+	public var workType:       WorkTypeResponse?
 
-	public let subject:    String?
-	public let email:      String?
-	public let password:   String?
-	public let givenName:  String?
-	public let familyName: String?
-	public let name:       String?
-	public let picture:    String?
-	public let biography:  String?
-	public let resume:     String?
+	public var subject:    String?
+	public var email:      String?
+	public var password:   String?
+	public var givenName:  String?
+	public var familyName: String?
+	public var name:       String?
+	public var picture:    String?
+	public var biography:  String?
+	public var resume:     String?
 
-	public let currentlyFilming: [CurrentlyFilmingRequest]
-	public let headshot:                  HeadshotRequest?
-	public let media:            [          MediumRequest]
-	public let works:            [            WorkRequest]
+	public var currentlyFilming: [CurrentlyFilmingRequest]
+	public var headshot:                  HeadshotRequest?
+	public var media:            [          MediumRequest]
+	public var works:            [            WorkRequest]
 
 	public init(
 		id: UUID? = nil,
@@ -70,10 +70,36 @@ public struct UserRequest: Codable, Sendable {
 		self.biography  = biography
 		self.resume     = resume
 
+		self.currentlyFilming = currentlyFilming
 		self.headshot         = headshot
 		self.media            = media
 		self.works            = works
-		self.currentlyFilming = currentlyFilming
+	}
+
+	public init(from response: UserResponse) {
+		self.init(
+			id:               response.id,
+
+			accountType:      response.accountType,
+			userLevel:        response.userLevel,
+			userType:         response.userType,
+			workType:         response.workType,
+
+			subject:          response.subject,
+			email:            response.email,
+			password:         response.password,
+			givenName:        response.givenName,
+			familyName:       response.familyName,
+			name:             response.name,
+			picture:          response.picture,
+			biography:        response.biography,
+			resume:           response.resume,
+
+			currentlyFilming: response.currentlyFilming.map(CurrentlyFilmingRequest.init),
+			headshot:         response.headshot    .flatMap(HeadshotRequest.init),
+			media:            response.media           .map(MediumRequest.init),
+			works:            response.works           .map(WorkRequest.init)
+		)
 	}
 }
 
@@ -81,27 +107,27 @@ public struct UserRequest: Codable, Sendable {
 
 public struct UserResponse: Codable,  Sendable,
 							Hashable, Identifiable {
-	public let id: UUID
+	public var id: UUID
 
-	public let accountType: AccountTypeResponse?
-	public let userLevel:     UserLevelResponse?
-	public let userType:       UserTypeResponse?
-	public let workType:       WorkTypeResponse?
+	public var accountType: AccountTypeResponse?
+	public var userLevel:     UserLevelResponse?
+	public var userType:       UserTypeResponse?
+	public var workType:       WorkTypeResponse?
 
-	public let subject:    String?
-	public let email:      String?
-	public let password:   String?
-	public let givenName:  String?
-	public let familyName: String?
-	public let name:       String?
-	public let picture:    String?
-	public let biography:  String?
-	public let resume:     String?
+	public var subject:    String?
+	public var email:      String?
+	public var password:   String?
+	public var givenName:  String?
+	public var familyName: String?
+	public var name:       String?
+	public var picture:    String?
+	public var biography:  String?
+	public var resume:     String?
 
-	public let currentlyFilming: [CurrentlyFilmingResponse]
-	public let headshot:                  HeadshotResponse?
-	public let media:            [          MediumResponse]
-	public let works:            [            WorkResponse]
+	public var currentlyFilming: [CurrentlyFilmingResponse]
+	public var headshot:                  HeadshotResponse?
+	public var media:            [          MediumResponse]
+	public var works:            [            WorkResponse]
 
 	public init(
 		id: UUID,
@@ -147,5 +173,26 @@ public struct UserResponse: Codable,  Sendable,
 		self.headshot         = headshot
 		self.media            = media
 		self.works            = works
+	}
+
+	public mutating func copyNonOptionals(from request: UserRequest) {
+		if let id = request.id { self.id = id }
+
+		if let accountType = request.accountType { self.accountType = accountType }
+		if let userLevel   = request.userLevel   { self.userLevel   = userLevel }
+		if let userType    = request.userType    { self.userType    = userType }
+		if let workType    = request.workType    { self.workType    = workType }
+
+		if let subject    = request.subject    { self.subject    = subject }
+		if let email      = request.email      { self.email      = email   }
+		if let password   = request.password   { self.password   = password }
+		if let givenName  = request.givenName  { self.givenName  = givenName }
+		if let familyName = request.familyName { self.familyName = familyName }
+		if let name       = request.name       { self.name       = name }
+		if let picture    = request.picture    { self.picture    = picture }
+		if let biography  = request.biography  { self.biography  = biography }
+		if let resume     = request.resume     { self.resume     = resume }
+
+		// TODO: <#Comment#>
 	}
 }
