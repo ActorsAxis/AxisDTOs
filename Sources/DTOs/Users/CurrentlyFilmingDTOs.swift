@@ -87,11 +87,11 @@ public struct CurrentlyFilmingResponse: Codable,  Sendable,
 	public mutating func copyNonOptionals(from request: CurrentlyFilmingRequest) {
 		if let id = request.id { self.id = id }
 		userId = request.userId
-		if let actorType      = request.actorType      { self.actorType      = actorType }
+		if let actorType      = request.actorType      { self.actorType      = actorType      }
 		if let productionName = request.productionName { self.productionName = productionName }
 		if let productionType = request.productionType { self.productionType = productionType }
-		if let season         = request.season         { self.season         = season }
-		if let creditedAs     = request.creditedAs     { self.creditedAs     = creditedAs }
-		if let episode        = request.episode        { self.episode        = episode }
+		if let season         = request.season         { self.season         = season         }
+		if let creditedAs     = request.creditedAs     { self.creditedAs     = creditedAs     }
+		if let episode        = request.episode        { self.episode        = episode        }
 	}
 }
