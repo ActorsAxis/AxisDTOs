@@ -5,6 +5,7 @@
 //  Created by William J. C. Nesbitt on 10/15/24.
 //
 
+#if false
 import Foundation
 
 public struct UserTypeRequest: Codable,  Sendable {
@@ -49,3 +50,4 @@ public struct UserTypeResponse: Codable,  Sendable,
 		)
 	}
 }
+#endif

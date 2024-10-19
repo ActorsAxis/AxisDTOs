@@ -5,6 +5,7 @@
 //  Created by William J. C. Nesbitt on 10/15/24.
 //
 
+#if false
 import Foundation
 
 public struct UserLevelRequest: Codable,  Sendable {
@@ -57,3 +58,4 @@ public struct UserLevelResponse: Codable,  Sendable,
 		)
 	}
 }
+#endif

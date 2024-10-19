@@ -10,10 +10,10 @@ import Foundation
 public struct UserRequest: Codable, Sendable {
 	public var id: UUID?
 
-	public var accountType: AccountTypeRequest?
-	public var userLevel:     UserLevelRequest?
-	public var userType:       UserTypeRequest?
-	public var workType:       WorkTypeRequest?
+	public var accountType: UUID?
+	public var userLevel:   UUID?
+	public var userType:    UUID?
+	public var workType:    UUID?
 
 	public var subject:    String?
 	public var email:      String?
@@ -28,10 +28,10 @@ public struct UserRequest: Codable, Sendable {
 	public init(
 		id: UUID? = nil,
 
-		accountType: AccountTypeRequest? = nil,
-		userLevel:     UserLevelRequest? = nil,
-		userType:       UserTypeRequest? = nil,
-		workType:       WorkTypeRequest? = nil,
+		accountType: UUID? = nil,
+		userLevel:   UUID? = nil,
+		userType:    UUID? = nil,
+		workType:    UUID? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -65,10 +65,10 @@ public struct UserRequest: Codable, Sendable {
 		self.init(
 			id: response.id,
 
-			accountType: response.accountType.flatMap(AccountTypeRequest.init),
-			userLevel:   response.userLevel  .flatMap(  UserLevelRequest.init),
-			userType:    response.userType   .flatMap(   UserTypeRequest.init),
-			workType:    response.workType   .flatMap(   WorkTypeRequest.init),
+			accountType: response.accountType,
+			userLevel:   response.userLevel,
+			userType:    response.userType,
+			workType:    response.workType,
 
 			subject:    response.subject,
 			email:      response.email,
@@ -89,10 +89,10 @@ public struct UserResponse: Codable,  Sendable,
 							Hashable, Identifiable {
 	public var id: UUID
 
-	public var accountType: AccountTypeResponse?
-	public var userLevel:     UserLevelResponse?
-	public var userType:       UserTypeResponse?
-	public var workType:       WorkTypeResponse?
+	public var accountType: UUID?
+	public var userLevel:   UUID?
+	public var userType:    UUID?
+	public var workType:    UUID?
 
 	public var subject:    String?
 	public var email:      String?
@@ -107,10 +107,10 @@ public struct UserResponse: Codable,  Sendable,
 	public init(
 		id: UUID,
 
-		accountType: AccountTypeResponse? = nil,
-		userLevel:     UserLevelResponse? = nil,
-		userType:       UserTypeResponse? = nil,
-		workType:       WorkTypeResponse? = nil,
+		accountType: UUID? = nil,
+		userLevel:   UUID? = nil,
+		userType:    UUID? = nil,
+		workType:    UUID? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -143,18 +143,10 @@ public struct UserResponse: Codable,  Sendable,
 	public mutating func copyNonOptionals(from request: UserRequest) {
 		if let id = request.id { self.id = id }
 
-		if request.accountType != nil {
-			self.accountType = request.accountType.flatMap(AccountTypeResponse.init)
-		}
-		if request.userLevel != nil {
-			self.userLevel = request.userLevel.flatMap(UserLevelResponse.init)
-		}
-		if request.userType != nil {
-			self.userType = request.userType.flatMap(UserTypeResponse.init)
-		}
-		if request.workType != nil {
-			self.workType = request.workType.flatMap(WorkTypeResponse.init)
-		}
+		if let accountType = request.accountType { self.accountType = accountType }
+		if let userLevel   = request.userLevel   { self.userLevel   = userLevel   }
+		if let userType    = request.userType    { self.userType    = userType    }
+		if let workType    = request.workType    { self.workType    = workType    }
 
 		if let subject    = request.subject    { self.subject    = subject    }
 		if let email      = request.email      { self.email      = email      }
