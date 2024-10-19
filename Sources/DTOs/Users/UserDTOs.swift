@@ -10,10 +10,10 @@ import Foundation
 public struct UserRequest: Codable, Sendable {
 	public var id: UUID?
 
-	public var accountTypeID: UUID?
-	public var userLevelID:   UUID?
-	public var userTypeID:    UUID?
-	public var workTypeID:    UUID?
+	public var accountType: AccountTypeRequest?
+	public var userLevel:     UserLevelRequest?
+	public var userType:       UserTypeRequest?
+	public var workType:       WorkTypeRequest?
 
 	public var subject:    String?
 	public var email:      String?
@@ -28,10 +28,10 @@ public struct UserRequest: Codable, Sendable {
 	public init(
 		id: UUID? = nil,
 
-		accountTypeID: UUID? = nil,
-		userLevelID:   UUID? = nil,
-		userTypeID:    UUID? = nil,
-		workTypeID:    UUID? = nil,
+		accountType: AccountTypeRequest? = nil,
+		userLevel:     UserLevelRequest? = nil,
+		userType:       UserTypeRequest? = nil,
+		workType:       WorkTypeRequest? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -45,10 +45,10 @@ public struct UserRequest: Codable, Sendable {
 	) {
 		self.id = id
 
-		self.accountTypeID = accountTypeID
-		self.userLevelID   = userLevelID
-		self.userTypeID    = userTypeID
-		self.workTypeID    = workTypeID
+		self.accountType = accountType
+		self.userLevel   = userLevel
+		self.userType    = userType
+		self.workType    = workType
 
 		self.subject    = subject
 		self.email      = email
@@ -65,10 +65,10 @@ public struct UserRequest: Codable, Sendable {
 		self.init(
 			id: response.id,
 
-			accountTypeID: response.accountTypeID,
-			userLevelID:   response.userLevelID,
-			userTypeID:    response.userTypeID,
-			workTypeID:    response.workTypeID,
+			accountType: response.accountType.flatMap(AccountTypeRequest.init),
+			userLevel:   response.userLevel  .flatMap(  UserLevelRequest.init),
+			userType:    response.userType   .flatMap(   UserTypeRequest.init),
+			workType:    response.workType   .flatMap(   WorkTypeRequest.init),
 
 			subject:    response.subject,
 			email:      response.email,
@@ -89,10 +89,10 @@ public struct UserResponse: Codable,  Sendable,
 							Hashable, Identifiable {
 	public var id: UUID
 
-	public var accountTypeID: UUID?
-	public var userLevelID:   UUID?
-	public var userTypeID:    UUID?
-	public var workTypeID:    UUID?
+	public var accountType: AccountTypeResponse?
+	public var userLevel:     UserLevelResponse?
+	public var userType:       UserTypeResponse?
+	public var workType:       WorkTypeResponse?
 
 	public var subject:    String?
 	public var email:      String?
@@ -107,10 +107,10 @@ public struct UserResponse: Codable,  Sendable,
 	public init(
 		id: UUID,
 
-		accountTypeID: UUID? = nil,
-		userLevelID:   UUID? = nil,
-		userTypeID:    UUID? = nil,
-		workTypeID:    UUID? = nil,
+		accountType: AccountTypeResponse? = nil,
+		userLevel:     UserLevelResponse? = nil,
+		userType:       UserTypeResponse? = nil,
+		workType:       WorkTypeResponse? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -124,10 +124,10 @@ public struct UserResponse: Codable,  Sendable,
 	) {
 		self.id = id
 
-		self.accountTypeID = accountTypeID
-		self.userLevelID   = userLevelID
-		self.userTypeID    = userTypeID
-		self.workTypeID    = workTypeID
+		self.accountType = accountType
+		self.userLevel   = userLevel
+		self.userType    = userType
+		self.workType    = workType
 
 		self.subject    = subject
 		self.email      = email
@@ -143,10 +143,18 @@ public struct UserResponse: Codable,  Sendable,
 	public mutating func copyNonOptionals(from request: UserRequest) {
 		if let id = request.id { self.id = id }
 
-		if let accountTypeID = request.accountTypeID { self.accountTypeID = accountTypeID }
-		if let userLevelID   = request.userLevelID   { self.userLevelID   = userLevelID   }
-		if let userTypeID    = request.userTypeID    { self.userTypeID    = userTypeID    }
-		if let workTypeID    = request.workTypeID    { self.workTypeID    = workTypeID    }
+		if request.accountType != nil {
+			self.accountType = request.accountType.flatMap(AccountTypeResponse.init)
+		}
+		if request.userLevel != nil {
+			self.userLevel = request.userLevel.flatMap(UserLevelResponse.init)
+		}
+		if request.userType != nil {
+			self.userType = request.userType.flatMap(UserTypeResponse.init)
+		}
+		if request.workType != nil {
+			self.workType = request.workType.flatMap(WorkTypeResponse.init)
+		}
 
 		if let subject    = request.subject    { self.subject    = subject    }
 		if let email      = request.email      { self.email      = email      }

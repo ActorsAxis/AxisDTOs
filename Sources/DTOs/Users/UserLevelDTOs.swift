@@ -49,9 +49,11 @@ public struct UserLevelResponse: Codable,  Sendable,
 		self.coinsNeeded = coinsNeeded
 	}
 
-	public mutating func copyNonOptionals(from request: UserLevelRequest) {
-		if let id = request.id { self.id = id }
-		title       = request.title
-		coinsNeeded = request.coinsNeeded
+	public init(from request: UserLevelRequest) {
+		self.init(
+			id:          request.id!,
+			title:       request.title,
+			coinsNeeded: request.coinsNeeded
+		)
 	}
 }

@@ -42,8 +42,10 @@ public struct AccountTypeResponse: Codable,  Sendable,
 		self.name = name
 	}
 
-	public mutating func copyNonOptionals(from request: AccountTypeRequest) {
-		if let id = request.id { self.id = id }
-		name = request.name
+	public init(from request: AccountTypeRequest) {
+		self.init(
+			id:   request.id!,
+			name: request.name
+		)
 	}
 }

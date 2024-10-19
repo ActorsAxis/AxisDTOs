@@ -42,8 +42,10 @@ public struct WorkTypeResponse: Codable,  Sendable,
 		self.name = name
 	}
 
-	public mutating func copyNonOptionals(from request: WorkTypeRequest) {
-		if let id = request.id { self.id = id }
-		name = request.name
+	public init(from request: WorkTypeRequest) {
+		self.init(
+			id:   request.id!,
+			name: request.name
+		)
 	}
 }
