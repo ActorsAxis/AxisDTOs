@@ -10,7 +10,7 @@ import Foundation
 public struct HeadshotRequest: Codable, Sendable {
 	public var id:               UUID?
 	public var userID:           UUID
-	public var headshot:         String?
+	public var picture:          String?
 	public var actorName:        String?
 	public var actorType:        String?
 	public var actorLocation:    String?
@@ -22,7 +22,7 @@ public struct HeadshotRequest: Codable, Sendable {
 	public init(
 		id:               UUID?   = nil,
 		userID:           UUID,
-		headshot:        String? = nil,
+		picture:          String? = nil,
 		actorName:        String? = nil,
 		actorType:        String? = nil,
 		actorLocation:    String? = nil,
@@ -33,7 +33,7 @@ public struct HeadshotRequest: Codable, Sendable {
 	) {
 		self.id               = id
 		self.userID           = userID
-		self.headshot         = headshot
+		self.picture          = picture
 		self.actorName        = actorName
 		self.actorType        = actorType
 		self.actorLocation    = actorLocation
@@ -47,7 +47,7 @@ public struct HeadshotRequest: Codable, Sendable {
 		self.init(
 			id:               response.id,
 			userID:           response.userID,
-			headshot:         response.headshot,
+			picture:          response.picture,
 			actorName:        response.actorName,
 			actorType:        response.actorType,
 			actorLocation:    response.actorLocation,
@@ -65,7 +65,7 @@ public struct HeadshotResponse: Codable,  Sendable,
 								Hashable, Identifiable {
 	public var id:               UUID
 	public var userID:           UUID
-	public var headshot:         String?
+	public var picture:          String?
 	public var actorName:        String?
 	public var actorType:        String?
 	public var actorLocation:    String?
@@ -77,7 +77,7 @@ public struct HeadshotResponse: Codable,  Sendable,
 	public init(
 		id:               UUID,
 		userID:           UUID,
-		headshot:         String? = nil,
+		picture:          String? = nil,
 		actorName:        String? = nil,
 		actorType:        String? = nil,
 		actorLocation:    String? = nil,
@@ -88,7 +88,7 @@ public struct HeadshotResponse: Codable,  Sendable,
 	) {
 		self.id               = id
 		self.userID           = userID
-		self.headshot         = headshot
+		self.picture          = picture
 		self.actorName        = actorName
 		self.actorType        = actorType
 		self.actorLocation    = actorLocation
@@ -101,13 +101,13 @@ public struct HeadshotResponse: Codable,  Sendable,
 	public mutating func copyNonOptionals(from request: HeadshotRequest) {
 		if let id = request.id { self.id = id }
 		userID = request.userID
-		if let headshot         = request.headshot         { self.headshot         = headshot }
-		if let actorName        = request.actorName        { self.actorName        = actorName }
-		if let actorType        = request.actorType        { self.actorType        = actorType }
-		if let actorLocation    = request.actorLocation    { self.actorLocation    = actorLocation }
-		if let actorEmail       = request.actorEmail       { self.actorEmail       = actorEmail }
-		if let actorPhone       = request.actorPhone       { self.actorPhone       = actorPhone }
-		if let actorWebsite     = request.actorWebsite     { self.actorWebsite     = actorWebsite }
+		if let picture          = request.picture          { self.picture          = picture          }
+		if let actorName        = request.actorName        { self.actorName        = actorName        }
+		if let actorType        = request.actorType        { self.actorType        = actorType        }
+		if let actorLocation    = request.actorLocation    { self.actorLocation    = actorLocation    }
+		if let actorEmail       = request.actorEmail       { self.actorEmail       = actorEmail       }
+		if let actorPhone       = request.actorPhone       { self.actorPhone       = actorPhone       }
+		if let actorWebsite     = request.actorWebsite     { self.actorWebsite     = actorWebsite     }
 		if let actorSocialMedia = request.actorSocialMedia { self.actorSocialMedia = actorSocialMedia }
 	}
 }
