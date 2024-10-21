@@ -1,5 +1,5 @@
 //
-//  WorkDTO.swift
+//  CurrentlyFilmingDTO.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/8/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WorkDTO: Codable, Sendable {
+public struct CurrentlyFilmingDTO: Codable, Sendable {
 	public var id:             UUID?
 	public var actorType:      String?
 	public var productionName: String?
