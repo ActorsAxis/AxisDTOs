@@ -9,7 +9,6 @@ import Foundation
 
 public struct WorkRequest: Codable, Sendable {
 	public var id:             UUID?
-	public var userID:         UUID
 	public var actorType:      String?
 	public var productionName: String?
 	public var productionType: String?
@@ -19,7 +18,6 @@ public struct WorkRequest: Codable, Sendable {
 
 	public init(
 		id:             UUID?   = nil,
-		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -28,7 +26,6 @@ public struct WorkRequest: Codable, Sendable {
 		episode:        String? = nil
 	) {
 		self.id             = id
-		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
@@ -40,7 +37,6 @@ public struct WorkRequest: Codable, Sendable {
 	public init(from response: WorkResponse) {
 		self.init(
 			id:             response.id,
-			userID:         response.userID,
 			actorType:      response.actorType,
 			productionName: response.productionName,
 			productionType: response.productionType,
@@ -56,7 +52,6 @@ public struct WorkRequest: Codable, Sendable {
 public struct WorkResponse: Codable,  Sendable,
 							Hashable, Identifiable {
 	public var id:             UUID
-	public var userID:         UUID
 	public var actorType:      String?
 	public var productionName: String?
 	public var productionType: String?
@@ -66,7 +61,6 @@ public struct WorkResponse: Codable,  Sendable,
 
 	public init(
 		id:             UUID,
-		userID:         UUID,
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,
@@ -75,7 +69,6 @@ public struct WorkResponse: Codable,  Sendable,
 		episode:        String? = nil
 	) {
 		self.id             = id
-		self.userID         = userID
 		self.actorType      = actorType
 		self.productionName = productionName
 		self.productionType = productionType
@@ -85,13 +78,12 @@ public struct WorkResponse: Codable,  Sendable,
 	}
 
 	public mutating func copyNonOptionals(from request: WorkRequest) {
-		if let id = request.id { self.id = id }
-		userID = request.userID
-		if let actorType      = request.actorType      { self.actorType      = actorType }
+		if let id             = request.id             { self.id             = id             }
+		if let actorType      = request.actorType      { self.actorType      = actorType      }
 		if let productionName = request.productionName { self.productionName = productionName }
 		if let productionType = request.productionType { self.productionType = productionType }
-		if let season         = request.season         { self.season         = season }
-		if let creditedAs     = request.creditedAs     { self.creditedAs     = creditedAs }
-		if let episode        = request.episode        { self.episode        = episode }
+		if let season         = request.season         { self.season         = season         }
+		if let creditedAs     = request.creditedAs     { self.creditedAs     = creditedAs     }
+		if let episode        = request.episode        { self.episode        = episode        }
 	}
 }
