@@ -1,5 +1,5 @@
 //
-//  UserLevelDTOs.swift
+//  UserLevelDTO.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/15/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct UserLevelResponse: Codable,  Sendable,
-								 Hashable, Identifiable {
+public struct UserLevelDTO: Codable,  Sendable,
+							Hashable, Identifiable {
 	public let id:          UUID
 	public let title:       String
 	public let coinsNeeded: Int

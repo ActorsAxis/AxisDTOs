@@ -1,5 +1,5 @@
 //
-//  UserTypeDTOs.swift
+//  UserTypeDTO.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/15/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct UserTypeResponse: Codable,  Sendable,
-								Hashable, Identifiable {
+public struct UserTypeDTO: Codable,  Sendable,
+						   Hashable, Identifiable {
 	public let id:   UUID
 	public let name: String
 
