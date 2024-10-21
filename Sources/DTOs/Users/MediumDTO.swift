@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct MediumDTOt: Codable, Sendable {
+public struct MediumDTO: Codable, Sendable {
 	public var id:     UUID?
 	public var medium: String?
 
