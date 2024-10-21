@@ -8,49 +8,53 @@
 import Foundation
 
 public struct HeadshotRequest: Codable, Sendable {
-	public var id:               UUID?
-	public var picture:          String?
-	public var actorName:        String?
-	public var actorType:        String?
-	public var actorLocation:    String?
-	public var actorEmail:       String?
-	public var actorPhone:       String?
-	public var actorWebsite:     String?
-	public var actorSocialMedia: String?
+	public var id:          UUID?
+	public var eyeColor:    String?
+	public var hairColor:   String?
+	public var height:      String?
+	public var location:    String?
+	public var phone:       String?
+	public var picture:     String?
+	public var socialMedia: String?
+	public var website:     String?
+	public var weight:      String?
 
 	public init(
-		id:               UUID?   = nil,
-		picture:          String? = nil,
-		actorName:        String? = nil,
-		actorType:        String? = nil,
-		actorLocation:    String? = nil,
-		actorEmail:       String? = nil,
-		actorPhone:       String? = nil,
-		actorWebsite:     String? = nil,
-		actorSocialMedia: String? = nil
+		id:          UUID?   = nil,
+		eyeColor:    String? = nil,
+		hairColor:   String? = nil,
+		height:      String? = nil,
+		location:    String? = nil,
+		phone:       String? = nil,
+		picture:     String? = nil,
+		socialMedia: String? = nil,
+		website:     String? = nil,
+		weight:      String? = nil
 	) {
-		self.id               = id
-		self.picture          = picture
-		self.actorName        = actorName
-		self.actorType        = actorType
-		self.actorLocation    = actorLocation
-		self.actorEmail       = actorEmail
-		self.actorPhone       = actorPhone
-		self.actorWebsite     = actorWebsite
-		self.actorSocialMedia = actorSocialMedia
+		self.id          = id
+		self.eyeColor    = eyeColor
+		self.hairColor   = hairColor
+		self.height      = height
+		self.location    = location
+		self.phone       = phone
+		self.picture     = picture
+		self.socialMedia = socialMedia
+		self.website     = website
+		self.weight      = weight
 	}
 
 	public init(from response: HeadshotResponse) {
 		self.init(
-			id:               response.id,
-			picture:          response.picture,
-			actorName:        response.actorName,
-			actorType:        response.actorType,
-			actorLocation:    response.actorLocation,
-			actorEmail:       response.actorEmail,
-			actorPhone:       response.actorPhone,
-			actorWebsite:     response.actorWebsite,
-			actorSocialMedia: response.actorSocialMedia
+			id:          response.id,
+			eyeColor:    response.eyeColor,
+			hairColor:   response.hairColor,
+			height:      response.height,
+			location:    response.location,
+			phone:       response.phone,
+			picture:     response.picture,
+			socialMedia: response.socialMedia,
+			website:     response.website,
+			weight:      response.weight
 		)
 	}
 }
@@ -59,47 +63,51 @@ public struct HeadshotRequest: Codable, Sendable {
 
 public struct HeadshotResponse: Codable,  Sendable,
 								Hashable, Identifiable {
-	public var id:               UUID
-	public var picture:          String?
-	public var actorName:        String?
-	public var actorType:        String?
-	public var actorLocation:    String?
-	public var actorEmail:       String?
-	public var actorPhone:       String?
-	public var actorWebsite:     String?
-	public var actorSocialMedia: String?
+	public var id:          UUID
+	public var eyeColor:    String?
+	public var hairColor:   String?
+	public var height:      String?
+	public var location:    String?
+	public var phone:       String?
+	public var picture:     String?
+	public var socialMedia: String?
+	public var website:     String?
+	public var weight:      String?
 
 	public init(
-		id:               UUID,
-		picture:          String? = nil,
-		actorName:        String? = nil,
-		actorType:        String? = nil,
-		actorLocation:    String? = nil,
-		actorEmail:       String? = nil,
-		actorPhone:       String? = nil,
-		actorWebsite:     String? = nil,
-		actorSocialMedia: String? = nil
+		id:          UUID,
+		eyeColor:    String? = nil,
+		hairColor:   String? = nil,
+		height:      String? = nil,
+		location:    String? = nil,
+		phone:       String? = nil,
+		picture:     String? = nil,
+		socialMedia: String? = nil,
+		website:     String? = nil,
+		weight:      String? = nil
 	) {
-		self.id               = id
-		self.picture          = picture
-		self.actorName        = actorName
-		self.actorType        = actorType
-		self.actorLocation    = actorLocation
-		self.actorEmail       = actorEmail
-		self.actorPhone       = actorPhone
-		self.actorWebsite     = actorWebsite
-		self.actorSocialMedia = actorSocialMedia
+		self.id          = id
+		self.eyeColor    = eyeColor
+		self.hairColor   = hairColor
+		self.height      = height
+		self.location    = location
+		self.phone       = phone
+		self.picture     = picture
+		self.socialMedia = socialMedia
+		self.website     = website
+		self.weight      = weight
 	}
 
 	public mutating func copyNonOptionals(from request: HeadshotRequest) {
-		if let id               = request.id               { self.id               = id               }
-		if let picture          = request.picture          { self.picture          = picture          }
-		if let actorName        = request.actorName        { self.actorName        = actorName        }
-		if let actorType        = request.actorType        { self.actorType        = actorType        }
-		if let actorLocation    = request.actorLocation    { self.actorLocation    = actorLocation    }
-		if let actorEmail       = request.actorEmail       { self.actorEmail       = actorEmail       }
-		if let actorPhone       = request.actorPhone       { self.actorPhone       = actorPhone       }
-		if let actorWebsite     = request.actorWebsite     { self.actorWebsite     = actorWebsite     }
-		if let actorSocialMedia = request.actorSocialMedia { self.actorSocialMedia = actorSocialMedia }
+		if let id          = request.id          { self.id          = id          }
+		if let eyeColor    = request.eyeColor    { self.eyeColor    = eyeColor    }
+		if let hairColor   = request.hairColor   { self.hairColor   = hairColor   }
+		if let height      = request.height      { self.height      = height      }
+		if let location    = request.location    { self.location    = location    }
+		if let phone       = request.phone       { self.phone       = phone       }
+		if let picture     = request.picture     { self.picture     = picture     }
+		if let socialMedia = request.socialMedia { self.socialMedia = socialMedia }
+		if let website     = request.website     { self.website     = website     }
+		if let weight      = request.weight      { self.weight      = weight      }
 	}
 }
