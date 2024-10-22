@@ -9,29 +9,20 @@ import Foundation
 
 public struct WorkDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
-	public let id:             UUID
-	public var actorType:      String?
-	public var productionName: String?
-	public var productionType: String?
-	public var season:         String?
-	public var creditedAs:     String?
-	public var episode:        String?
+	public let id:         UUID
+	public var workTypeID: UUID?
+	public var startDate:  Date?
+	public var endDate:    Date?
 
 	public init(
-		id:             UUID    = UUID(),
-		actorType:      String? = nil,
-		productionName: String? = nil,
-		productionType: String? = nil,
-		season:         String? = nil,
-		creditedAs:     String? = nil,
-		episode:        String? = nil
+		id:         UUID  = UUID(),
+		workTypeID: UUID? = nil,
+		startDate:  Date? = nil,
+		endDate:    Date? = nil
 	) {
-		self.id             = id
-		self.actorType      = actorType
-		self.productionName = productionName
-		self.productionType = productionType
-		self.season         = season
-		self.creditedAs     = creditedAs
-		self.episode        = episode
+		self.id         = id
+		self.workTypeID = workTypeID
+		self.startDate  = startDate
+		self.endDate    = endDate
 	}
 }
