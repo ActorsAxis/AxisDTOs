@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct HeadshotDTO: Codable, Sendable {
+public struct HeadshotDTO: Codable,  Sendable,
+						   Hashable, Identifiable {
 	public let id:          UUID
 	public var eyeColor:    String?
 	public var hairColor:   String?

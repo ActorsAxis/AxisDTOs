@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct WorkDTO: Codable, Sendable {
+public struct WorkDTO: Codable,  Sendable,
+					   Hashable, Identifiable {
 	public let id:             UUID
 	public var actorType:      String?
 	public var productionName: String?
