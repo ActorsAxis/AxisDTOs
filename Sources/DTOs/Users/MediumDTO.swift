@@ -8,11 +8,11 @@
 import Foundation
 
 public struct MediumDTO: Codable, Sendable {
-	public var id:     UUID?
+	public let id:     UUID
 	public var medium: String?
 
 	public init(
-		id:     UUID?   = nil,
+		id:     UUID    = UUID(),
 		medium: String? = nil
 	) {
 		self.id     = id

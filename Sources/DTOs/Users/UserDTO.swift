@@ -8,7 +8,7 @@
 import Foundation
 
 public struct UserDTO: Codable, Sendable {
-	public var id: UUID?
+	public let id: UUID
 
 	public var accountType: UUID?
 	public var userLevel:   UUID?
@@ -26,7 +26,7 @@ public struct UserDTO: Codable, Sendable {
 	public var resume:     String?
 
 	public init(
-		id: UUID? = nil,
+		id: UUID = UUID(),
 
 		accountType: UUID? = nil,
 		userLevel:   UUID? = nil,

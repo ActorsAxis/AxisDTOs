@@ -8,7 +8,7 @@
 import Foundation
 
 public struct WorkDTO: Codable, Sendable {
-	public var id:             UUID?
+	public let id:             UUID
 	public var actorType:      String?
 	public var productionName: String?
 	public var productionType: String?
@@ -17,7 +17,7 @@ public struct WorkDTO: Codable, Sendable {
 	public var episode:        String?
 
 	public init(
-		id:             UUID?   = nil,
+		id:             UUID    = UUID(),
 		actorType:      String? = nil,
 		productionName: String? = nil,
 		productionType: String? = nil,

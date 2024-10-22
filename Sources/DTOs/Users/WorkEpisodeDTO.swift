@@ -8,13 +8,13 @@
 import Foundation
 
 public struct WorkEpisodeDTO: Codable, Sendable {
-	public var id:         UUID?
+	public var id:         UUID
 	public var name:       String?
 	public var number:     Int?
 	public var creditedAs: String?
 
 	public init(
-		id:         UUID?   = nil,
+		id:         UUID    = UUID(),
 		name:       String? = nil,
 		number:     Int?    = nil,
 		creditedAs: String? = nil
