@@ -1,5 +1,5 @@
 //
-//  WorkEpisodeDTO.swift
+//  TVSeriesDTO.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/20/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WorkEpisodeDTO: Codable, Sendable {
+public struct TVSeriesDTO: Codable, Sendable {
 	public var id:         UUID
 	public var name:       String?
 	public var number:     Int?
