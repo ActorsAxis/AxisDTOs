@@ -14,7 +14,7 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 	public let givenName:  String?
 	public let familyName: String?
 	public let name:       String?
-	public let picture:    URL?
+	public let picture:    String?
 
 	public init(
 		userID:     UUID,
@@ -31,6 +31,6 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.picture    = picture != nil ? URL(string: picture!) : nil
+		self.picture    = picture
 	}
 }

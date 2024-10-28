@@ -15,10 +15,10 @@ public struct HeadshotDTO: Codable,  Sendable,
 	public var height:      String?
 	public var location:    String?
 	public var phone:       String?
-	public var picture:     URL?
+	public var picture:     String?
 	public var socialMedia: String?
 	public var unionStatus: String?
-	public var website:     URL?
+	public var website:     String?
 	public var weight:      String?
 
 	public init(
@@ -40,10 +40,10 @@ public struct HeadshotDTO: Codable,  Sendable,
 		self.height      = height
 		self.location    = location
 		self.phone       = phone
-		self.picture     = picture != nil ? URL(string: picture!) : nil
+		self.picture     = picture
 		self.socialMedia = socialMedia
 		self.unionStatus = unionStatus
-		self.website     = website != nil ? URL(string: website!) : nil
+		self.website     = website
 		self.weight      = weight
 	}
 }

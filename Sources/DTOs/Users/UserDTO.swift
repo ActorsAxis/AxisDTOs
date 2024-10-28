@@ -22,9 +22,9 @@ public struct UserDTO: Codable,  Sendable,
 	public var givenName:  String?
 	public var familyName: String?
 	public var name:       String?
-	public var picture:    URL?
+	public var picture:    String?
 	public var biography:  String?
-	public var resume:     URL?
+	public var resume:     String?
 
 	public init(
 		id: UUID = UUID(),
@@ -57,8 +57,8 @@ public struct UserDTO: Codable,  Sendable,
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.picture    = picture != nil ? URL(string: picture!) : nil
+		self.picture    = picture
 		self.biography  = biography
-		self.resume     = resume  != nil ? URL(string: resume!)  : nil
+		self.resume     = resume
 	}
 }
