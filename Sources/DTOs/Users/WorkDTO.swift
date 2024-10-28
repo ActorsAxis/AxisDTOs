@@ -9,17 +9,20 @@ import Foundation
 
 public struct WorkDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
-	public let id:        UUID
-	public var startDate: Date?
-	public var endDate:   Date?
+	public let id:         UUID
+	public var workTypeID: UUID
+	public var startDate:  Date?
+	public var endDate:    Date?
 
 	public init(
-		id:        UUID  = UUID(),
-		startDate: Date? = nil,
-		endDate:   Date? = nil
+		id:         UUID  = UUID(),
+		workTypeID: UUID,
+		startDate:  Date? = nil,
+		endDate:    Date? = nil
 	) {
-		self.id        = id
-		self.startDate = startDate
-		self.endDate   = endDate
+		self.id         = id
+		self.workTypeID = workTypeID
+		self.startDate  = startDate
+		self.endDate    = endDate
 	}
 }
