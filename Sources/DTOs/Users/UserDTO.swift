@@ -22,9 +22,45 @@ public struct UserDTO: Codable,  Sendable,
 	public var givenName:  String?
 	public var familyName: String?
 	public var name:       String?
-	public var picture:    String?
+	public var picture:    URL?
 	public var biography:  String?
-	public var resume:     String?
+	public var resume:     URL?
+
+	public init(
+		id: UUID = UUID(),
+
+		accountType: UUID? = nil,
+		userLevel:   UUID? = nil,
+		userType:    UUID? = nil,
+		workType:    UUID? = nil,
+
+		subject:    String? = nil,
+		email:      String? = nil,
+		password:   String? = nil,
+		givenName:  String? = nil,
+		familyName: String? = nil,
+		name:       String? = nil,
+		picture:    URL?    = nil,
+		biography:  String? = nil,
+		resume:     URL?    = nil
+	) {
+		self.id = id
+
+		self.accountType = accountType
+		self.userLevel   = userLevel
+		self.userType    = userType
+		self.workType    = workType
+
+		self.subject    = subject
+		self.email      = email
+		self.password   = password
+		self.givenName  = givenName
+		self.familyName = familyName
+		self.name       = name
+		self.picture    = picture
+		self.biography  = biography
+		self.resume     = resume
+	}
 
 	public init(
 		id: UUID = UUID(),
@@ -44,21 +80,23 @@ public struct UserDTO: Codable,  Sendable,
 		biography:  String? = nil,
 		resume:     String? = nil
 	) {
-		self.id = id
+		self.init(
+			id: id,
 
-		self.accountType = accountType
-		self.userLevel   = userLevel
-		self.userType    = userType
-		self.workType    = workType
+			accountType: accountType,
+			userLevel:   userLevel,
+			userType:    userType,
+			workType:    workType,
 
-		self.subject    = subject
-		self.email      = email
-		self.password   = password
-		self.givenName  = givenName
-		self.familyName = familyName
-		self.name       = name
-		self.picture    = picture
-		self.biography  = biography
-		self.resume     = resume
+			subject:    subject,
+			email:      email,
+			password:   password,
+			givenName:  givenName,
+			familyName: familyName,
+			name:       name,
+			picture:    picture != nil ? URL(string: picture!) : nil,
+			biography:  biography,
+			resume:     resume  != nil ? URL(string: resume!)  : nil
+		)
 	}
 }

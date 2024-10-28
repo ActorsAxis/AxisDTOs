@@ -14,7 +14,25 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 	public let givenName:  String?
 	public let familyName: String?
 	public let name:       String?
-	public let picture:    String?
+	public let picture:    URL?
+
+	public init(
+		userID:     UUID,
+		axisToken:  String,
+		email:      String? = nil,
+		givenName:  String? = nil,
+		familyName: String? = nil,
+		name:       String? = nil,
+		picture:    URL?    = nil
+	) {
+		self.userID     = userID
+		self.axisToken  = axisToken
+		self.email      = email
+		self.givenName  = givenName
+		self.familyName = familyName
+		self.name       = name
+		self.picture    = picture
+	}
 
 	public init(
 		userID:     UUID,
@@ -24,14 +42,15 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 		familyName: String? = nil,
 		name:       String? = nil,
 		picture:    String? = nil
-
 	) {
-		self.userID     = userID
-		self.axisToken  = axisToken
-		self.email      = email
-		self.givenName  = givenName
-		self.familyName = familyName
-		self.name       = name
-		self.picture    = picture
+		self.init(
+			userID:     userID,
+			axisToken:  axisToken,
+			email:      email,
+			givenName:  givenName,
+			familyName: familyName,
+			name:       name,
+			picture:    picture != nil ? URL(string: picture!) : nil
+		)
 	}
 }
