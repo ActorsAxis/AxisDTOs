@@ -28,10 +28,10 @@ public struct HeadshotDTO: Codable,  Sendable,
 		height:      String? = nil,
 		location:    String? = nil,
 		phone:       String? = nil,
-		picture:     URL?    = nil,
+		picture:     String? = nil,
 		socialMedia: String? = nil,
 		unionStatus: String? = nil,
-		website:     URL?    = nil,
+		website:     String? = nil,
 		weight:      String? = nil
 	) {
 		self.id          = id
@@ -40,39 +40,10 @@ public struct HeadshotDTO: Codable,  Sendable,
 		self.height      = height
 		self.location    = location
 		self.phone       = phone
-		self.picture     = picture
+		self.picture     = picture != nil ? URL(string: picture!) : nil
 		self.socialMedia = socialMedia
 		self.unionStatus = unionStatus
-		self.website     = website
+		self.website     = website != nil ? URL(string: website!) : nil
 		self.weight      = weight
-
-	}
-
-	public init(
-		id:          UUID    = UUID(),
-		eyeColor:    String? = nil,
-		hairColor:   String? = nil,
-		height:      String? = nil,
-		location:    String? = nil,
-		phone:       String? = nil,
-		picture:     String? = nil,
-		socialMedia: String? = nil,
-		unionStatus: String? = nil,
-		website:     String? = nil,
-		weight:      String? = nil
-	) {
-		self.init(
-			id:          id,
-			eyeColor:    eyeColor,
-			hairColor:   hairColor,
-			height:      height,
-			location:    location,
-			phone:       phone,
-			picture:     picture != nil ? URL(string: picture!) : nil,
-			socialMedia: socialMedia,
-			unionStatus: unionStatus,
-			website:     website != nil ? URL(string: website!) : nil,
-			weight:      weight
-		)
 	}
 }

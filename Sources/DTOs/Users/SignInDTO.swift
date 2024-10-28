@@ -23,7 +23,7 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 		givenName:  String? = nil,
 		familyName: String? = nil,
 		name:       String? = nil,
-		picture:    URL?    = nil
+		picture:    String? = nil
 	) {
 		self.userID     = userID
 		self.axisToken  = axisToken
@@ -31,26 +31,6 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.picture    = picture
-	}
-
-	public init(
-		userID:     UUID,
-		axisToken:  String,
-		email:      String? = nil,
-		givenName:  String? = nil,
-		familyName: String? = nil,
-		name:       String? = nil,
-		picture:    String? = nil
-	) {
-		self.init(
-			userID:     userID,
-			axisToken:  axisToken,
-			email:      email,
-			givenName:  givenName,
-			familyName: familyName,
-			name:       name,
-			picture:    picture != nil ? URL(string: picture!) : nil
-		)
+		self.picture    = picture != nil ? URL(string: picture!) : nil
 	}
 }

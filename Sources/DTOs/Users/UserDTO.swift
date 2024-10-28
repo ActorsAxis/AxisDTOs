@@ -40,9 +40,9 @@ public struct UserDTO: Codable,  Sendable,
 		givenName:  String? = nil,
 		familyName: String? = nil,
 		name:       String? = nil,
-		picture:    URL?    = nil,
+		picture:    String? = nil,
 		biography:  String? = nil,
-		resume:     URL?    = nil
+		resume:     String? = nil
 	) {
 		self.id = id
 
@@ -57,46 +57,8 @@ public struct UserDTO: Codable,  Sendable,
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.picture    = picture
+		self.picture    = picture != nil ? URL(string: picture!) : nil
 		self.biography  = biography
-		self.resume     = resume
-	}
-
-	public init(
-		id: UUID = UUID(),
-
-		accountType: UUID? = nil,
-		userLevel:   UUID? = nil,
-		userType:    UUID? = nil,
-		workType:    UUID? = nil,
-
-		subject:    String? = nil,
-		email:      String? = nil,
-		password:   String? = nil,
-		givenName:  String? = nil,
-		familyName: String? = nil,
-		name:       String? = nil,
-		picture:    String? = nil,
-		biography:  String? = nil,
-		resume:     String? = nil
-	) {
-		self.init(
-			id: id,
-
-			accountType: accountType,
-			userLevel:   userLevel,
-			userType:    userType,
-			workType:    workType,
-
-			subject:    subject,
-			email:      email,
-			password:   password,
-			givenName:  givenName,
-			familyName: familyName,
-			name:       name,
-			picture:    picture != nil ? URL(string: picture!) : nil,
-			biography:  biography,
-			resume:     resume  != nil ? URL(string: resume!)  : nil
-		)
+		self.resume     = resume  != nil ? URL(string: resume!)  : nil
 	}
 }
