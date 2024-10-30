@@ -14,7 +14,6 @@ public struct UserDTO: Codable,  Sendable,
 	public var accountType: UUID?
 	public var userLevel:   UUID?
 	public var userType:    UUID?
-	public var workType:    UUID?
 
 	public var subject:    String?
 	public var email:      String?
@@ -32,7 +31,6 @@ public struct UserDTO: Codable,  Sendable,
 		accountType: UUID? = nil,
 		userLevel:   UUID? = nil,
 		userType:    UUID? = nil,
-		workType:    UUID? = nil,
 
 		subject:    String? = nil,
 		email:      String? = nil,
@@ -49,7 +47,6 @@ public struct UserDTO: Codable,  Sendable,
 		self.accountType = accountType
 		self.userLevel   = userLevel
 		self.userType    = userType
-		self.workType    = workType
 
 		self.subject    = subject
 		self.email      = email
