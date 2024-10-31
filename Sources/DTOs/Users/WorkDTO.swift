@@ -11,17 +11,20 @@ public struct WorkDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id:         UUID
 	public var workTypeID: UUID
+	public var name:       String?
 	public var startDate:  Date?
 	public var endDate:    Date?
 
 	public init(
-		id:         UUID  = UUID(),
+		id:         UUID    = UUID(),
 		workTypeID: UUID,
-		startDate:  Date? = nil,
-		endDate:    Date? = nil
+		name:       String? = nil,
+		startDate:  Date?   = nil,
+		endDate:    Date?   = nil
 	) {
 		self.id         = id
 		self.workTypeID = workTypeID
+		self.name       = name
 		self.startDate  = startDate
 		self.endDate    = endDate
 	}
