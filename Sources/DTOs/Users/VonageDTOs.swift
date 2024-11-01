@@ -1,5 +1,5 @@
 //
-//  VonageDTOs.swift
+//  Vonage.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 11/1/24.
@@ -8,7 +8,7 @@
 import Foundation
 
 public enum VonageRequest {
-	public struct RequestDTO: Codable, Sendable {
+	public struct Request: Codable, Sendable {
 		public struct Workflow: Codable, Sendable {
 			public enum Channel: String {
 				case email
@@ -94,7 +94,7 @@ public enum VonageRequest {
 
 	// MARK: -
 
-	public struct ResponseDTO: Codable, Sendable {
+	public struct Response: Codable, Sendable {
 		public let requestID: String
 		public let checkURL:  URL?
 
