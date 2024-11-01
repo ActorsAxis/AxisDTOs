@@ -5,7 +5,9 @@
 //  Created by William J. C. Nesbitt on 11/1/24.
 //
 
-public struct VonageDTO: Codable, Sendable {
+import Foundation
+
+public struct VonageRequestDTO: Codable, Sendable {
 	public enum ChannelType: String {
 		case email
 		case silentAuthentication = "silent_auth"
@@ -26,5 +28,25 @@ public struct VonageDTO: Codable, Sendable {
 		self.channel = channel.rawValue
 		self.from    = from
 		self.to      = to
+	}
+}
+
+// MARK: -
+
+public struct VonageResponseDTO: Codable, Sendable {
+	public let requestID: String
+	public let checkURL:  URL
+
+	public init(
+		requestID: String,
+		checkURL:  URL
+	) {
+		self.requestID = requestID
+		self.checkURL  = checkURL
+	}
+
+	private enum CodingKeys: String, CodingKey {
+		case requestID = "request_id"
+		case checkURL  = "check_url"
 	}
 }
