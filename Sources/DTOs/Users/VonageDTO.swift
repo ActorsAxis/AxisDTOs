@@ -5,7 +5,7 @@
 //  Created by William J. C. Nesbitt on 11/1/24.
 //
 
-public struct VonageDTO {
+public struct VonageDTO: Codable, Sendable {
 	public enum ChannelType: String {
 		case email
 		case silentAuthentication = "silent_auth"
