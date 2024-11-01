@@ -8,7 +8,7 @@
 import Foundation
 
 public enum VonageRequest {
-	public struct RequestDTO {
+	public struct RequestDTO: Codable, Sendable {
 		public struct Workflow: Codable, Sendable {
 			public enum Channel: String {
 				case email
