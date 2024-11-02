@@ -112,3 +112,35 @@ public enum VonageRequest {
 		}
 	}
 }
+
+// MARK: -
+
+public enum VonageVerify {
+	public struct Request: Codable, Sendable {
+		public let code: String
+
+		public init(code: String) {
+			self.code = code
+		}
+	}
+
+	// MARK: -
+
+	public struct Response: Codable, Sendable {
+		public let requestID: String?
+		public let status:    String?
+
+		public init(
+			requestID: String? = nil,
+			status:    String? = nil
+		) {
+			self.requestID = requestID
+			self.status    = status
+		}
+
+		private enum CodingKeys: String, CodingKey {
+			case requestID = "request_id"
+			case status
+		}
+	}
+}
