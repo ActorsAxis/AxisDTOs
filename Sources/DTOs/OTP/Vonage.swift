@@ -127,12 +127,12 @@ public enum VonageVerify {
 	// MARK: -
 
 	public struct Response: Codable, Sendable {
-		public let requestID: String?
-		public let status:    String?
+		public let requestID: String
+		public let status:    String
 
 		public init(
-			requestID: String? = nil,
-			status:    String? = nil
+			requestID: String,
+			status:    String
 		) {
 			self.requestID = requestID
 			self.status    = status
