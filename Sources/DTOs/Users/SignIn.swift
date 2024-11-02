@@ -38,21 +38,18 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 // MARK: -
 
 public struct SignInWithEmailRequest: Codable, Sendable {
-	public let code:      String?
-	public let requestID: String?
-	public let email:     String
-	public var password:  String
+	public let code:     String?
+	public let email:    String
+	public var password: String
 
 	public init(
-		code:      String? = nil,
-		requestID: String? = nil,
-		email:     String,
-		password:  String
+		code:     String? = nil,
+		email:    String,
+		password: String
 	) {
-		self.code      = code
-		self.requestID = requestID
-		self.email     = email
-		self.password  = password
+		self.code     = code
+		self.email    = email
+		self.password = password
 	}
 }
 
