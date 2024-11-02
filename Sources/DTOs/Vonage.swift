@@ -61,13 +61,13 @@ public enum VonageRequest {
 		public let workflow:       [Workflow]
 
 		public init(
-			locale:          String?,
-			channelTimeout:  Int?,
-			clientReference: String?,
-			codeLength:      Int?,
-			code:            String?,
-			brand:           String = .vonage.brand,
-			templateID:      UUID?,
+			locale:          String? = nil,
+			channelTimeout:  Int?    = nil,
+			clientReference: String? = nil,
+			codeLength:      Int?    = nil,
+			code:            String? = nil,
+			brand:           String  = .vonage.brand,
+			templateID:      UUID?   = nil,
 			workflow:       [Workflow]
 		) {
 			self.locale          = locale
