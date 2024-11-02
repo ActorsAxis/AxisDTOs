@@ -40,7 +40,7 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 public struct SignInWithEmailRequest: Codable, Sendable {
 	public let code:     String?
 	public let email:    String
-	public var password: String
+	public let password: String
 
 	public init(
 		code:     String? = nil,
