@@ -55,3 +55,18 @@ public struct SignInWithEmailRequest: Codable, Sendable {
 		self.password  = password
 	}
 }
+
+// MARK: -
+
+public struct SignInWithEmailResponse: Codable, Sendable {
+	public let userID:    UUID
+	public let axisToken: String
+
+	public init(
+		userID:    UUID,
+		axisToken: String
+	) {
+		self.userID    = userID
+		self.axisToken = axisToken
+	}
+}
