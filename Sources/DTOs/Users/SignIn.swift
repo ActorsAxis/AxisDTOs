@@ -86,8 +86,8 @@ public struct RequestOTPResponse: Codable, Sendable {
 	}
 
 	private enum CodingKeys: String, CodingKey {
-		case requestID = "request_id"
-		case checkURL  = "check_url"
+		case requestID = "requestId"
+		case checkURL  = "checkUrl"
 	}
 }
 
