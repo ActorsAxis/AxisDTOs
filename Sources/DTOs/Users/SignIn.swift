@@ -41,7 +41,7 @@ public struct SignInWithEmailRequest: Codable, Sendable {
 	public let code:      String?
 	public let requestID: String?
 	public let email:     String
-	public let password:  String
+	public var password:  String
 
 	public init(
 		code:      String? = nil,
