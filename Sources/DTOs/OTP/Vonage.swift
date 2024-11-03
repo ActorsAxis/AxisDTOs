@@ -12,7 +12,7 @@ public enum VonageRequest {
 		public struct Workflow: Codable, Sendable {
 			public enum Channel: String {
 				case email
-				case silentAuthentication = "silent_auth"
+				case silentAuthentication = "silentAuth"
 				case sms
 				case voice
 				case whatsApp             = "whatsapp"
@@ -45,9 +45,9 @@ public enum VonageRequest {
 				case channel
 				case to
 				case from
-				case entityID        = "entity_id"
-				case contentID       = "content_id"
-				case applicationHash = "app_hash"
+				case entityID        = "entityId"
+				case contentID       = "contentId"
+				case applicationHash = "appHash"
 			}
 		}
 
@@ -82,12 +82,12 @@ public enum VonageRequest {
 
 		private enum CodingKeys: String, CodingKey {
 			case locale
-			case channelTimeout  = "channel_timeout"
-			case clientReference = "client_ref"
-			case codeLength      = "code_length"
+			case channelTimeout  = "channelTimeout"
+			case clientReference = "clientRef"
+			case codeLength      = "codeLength"
 			case code
 			case brand
-			case templateID      = "template_id"
+			case templateID      = "templateId"
 			case workflow
 		}
 	}
@@ -107,8 +107,8 @@ public enum VonageRequest {
 		}
 
 		private enum CodingKeys: String, CodingKey {
-			case requestID = "request_id"
-			case checkURL  = "check_url"
+			case requestID = "requestId"
+			case checkURL  = "checkUrl"
 		}
 	}
 }
@@ -139,7 +139,7 @@ public enum VonageVerify {
 		}
 
 		private enum CodingKeys: String, CodingKey {
-			case requestID = "request_id"
+			case requestID = "requestId"
 			case status
 		}
 	}
