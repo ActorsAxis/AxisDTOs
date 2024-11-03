@@ -73,26 +73,6 @@ public struct SignUpWithEmailRequest: Codable, Sendable {
 
 // MARK: -
 
-public struct RequestOTPResponse: Codable, Sendable {
-	public let requestID: String
-	public let checkURL:  URL?
-
-	public init(
-		requestID: String,
-		checkURL:  URL? = nil
-	) {
-		self.requestID = requestID
-		self.checkURL  = checkURL
-	}
-
-	private enum CodingKeys: String, CodingKey {
-		case requestID = "requestId"
-		case checkURL  = "checkUrl"
-	}
-}
-
-// MARK: -
-
 public struct SignInWithEmailResponse: Codable, Sendable {
 	public let userID:    UUID
 	public let axisToken: String
