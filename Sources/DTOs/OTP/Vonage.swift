@@ -12,48 +12,39 @@ public enum VonageRequest {
 		public struct Workflow: Codable, Sendable {
 			public enum Channel: String {
 				case email
-				case silentAuthentication = "silentAuth"
+				case silentAuth = "silent_auth"
 				case sms
 				case voice
-				case whatsApp             = "whatsapp"
+				case whatsApp
 			}
 
-			public let channel:         String
-			public let to:              String
-			public let from:            String?
-			public let entityID:        String?
-			public let contentID:       String?
-			public let applicationHash: String?
+			public let channel:   String
+			public let to:        String
+			public let from:      String?
+			public let entityID:  String?
+			public let contentID: String?
+			public let appHash:   String?
 
 			public init(
-				channel:         Channel,
-				to:              String,
-				from:            String? = nil,
-				entityID:        String? = nil,
-				contentID:       String? = nil,
-				applicationHash: String? = nil
+				channel:   Channel,
+				to:        String,
+				from:      String? = nil,
+				entityID:  String? = nil,
+				contentID: String? = nil,
+				appHash:   String? = nil
 			) {
-				self.channel         = channel.rawValue
-				self.to              = to
-				self.from            = from
-				self.entityID        = entityID
-				self.contentID       = contentID
-				self.applicationHash = applicationHash
-			}
-
-			private enum CodingKeys: String, CodingKey {
-				case channel
-				case to
-				case from
-				case entityID        = "entityId"
-				case contentID       = "contentId"
-				case applicationHash = "appHash"
+				self.channel   = channel.rawValue.lowercased()
+				self.to        = to
+				self.from      = from
+				self.entityID  = entityID
+				self.contentID = contentID
+				self.appHash   = appHash
 			}
 		}
 
 		public let locale:          String?
 		public let channelTimeout:  Int?
-		public let clientReference: String?
+		public let clientRef:       String?
 		public let codeLength:      Int?
 		public let code:            String?
 		public let brand:           String
@@ -63,7 +54,7 @@ public enum VonageRequest {
 		public init(
 			locale:          String? = nil,
 			channelTimeout:  Int?    = nil,
-			clientReference: String? = nil,
+			clientRef:       String? = nil,
 			codeLength:      Int?    = nil,
 			code:            String? = nil,
 			brand:           String  = .vonage.brand,
@@ -72,23 +63,12 @@ public enum VonageRequest {
 		) {
 			self.locale          = locale
 			self.channelTimeout  = channelTimeout
-			self.clientReference = clientReference
+			self.clientRef       = clientRef
 			self.codeLength      = codeLength
 			self.code            = code
 			self.brand           = brand
 			self.templateID      = templateID
 			self.workflow        = workflow
-		}
-
-		private enum CodingKeys: String, CodingKey {
-			case locale
-			case channelTimeout
-			case clientReference = "clientRef"
-			case codeLength
-			case code
-			case brand
-			case templateID      = "templateId"
-			case workflow
 		}
 	}
 
@@ -104,11 +84,6 @@ public enum VonageRequest {
 		) {
 			self.requestID = requestID
 			self.checkURL  = checkURL
-		}
-
-		private enum CodingKeys: String, CodingKey {
-			case requestID = "requestId"
-			case checkURL  = "checkUrl"
 		}
 	}
 }
@@ -136,11 +111,6 @@ public enum VonageVerify {
 		) {
 			self.requestID = requestID
 			self.status    = status
-		}
-
-		private enum CodingKeys: String, CodingKey {
-			case requestID = "requestId"
-			case status
 		}
 	}
 }
