@@ -82,9 +82,9 @@ public enum VonageRequest {
 
 		private enum CodingKeys: String, CodingKey {
 			case locale
-			case channelTimeout  = "channelTimeout"
+			case channelTimeout
 			case clientReference = "clientRef"
-			case codeLength      = "codeLength"
+			case codeLength
 			case code
 			case brand
 			case templateID      = "templateId"
