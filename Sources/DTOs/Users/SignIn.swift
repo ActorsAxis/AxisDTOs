@@ -38,7 +38,7 @@ public struct SignInWithIdentityTokenResponse: Codable, Sendable {
 // MARK: -
 
 public struct SignInWithEmailRequest: Codable, Sendable {
-	public let email:    String
+	public var email:    String
 	public let password: String
 
 	public init(
@@ -55,7 +55,7 @@ public struct SignInWithEmailRequest: Codable, Sendable {
 public struct SignUpWithEmailRequest: Codable, Sendable {
 	public let code:      String
 	public let requestID: String
-	public let email:     String
+	public var email:     String
 	public let password:  String
 
 	public init(
