@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SignInWithIdentityTokenResponse: Codable, Sendable {
+public struct SignInResponse: Codable, Sendable {
 	public let userID:     UUID
 	public let axisToken:  String
 	public let email:      String?
@@ -68,20 +68,5 @@ public struct SignUpWithEmailRequest: Codable, Sendable {
 		self.requestID = requestID
 		self.email     = email
 		self.password  = password
-	}
-}
-
-// MARK: -
-
-public struct SignInWithEmailResponse: Codable, Sendable {
-	public let userID:    UUID
-	public let axisToken: String
-
-	public init(
-		userID:    UUID,
-		axisToken: String
-	) {
-		self.userID    = userID
-		self.axisToken = axisToken
 	}
 }
