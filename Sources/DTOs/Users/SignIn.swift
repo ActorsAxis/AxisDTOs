@@ -7,6 +7,42 @@
 
 import Foundation
 
+public struct SignUpWithEmailRequest: Codable, Sendable {
+	public let code:      String
+	public let requestID: String
+	public var email:     String
+	public let password:  String
+
+	public init(
+		code:      String,
+		requestID: String,
+		email:     String,
+		password:  String
+	) {
+		self.code      = code
+		self.requestID = requestID
+		self.email     = email
+		self.password  = password
+	}
+}
+
+// MARK: -
+
+public struct SignInWithEmailRequest: Codable, Sendable {
+	public var email:    String
+	public let password: String
+
+	public init(
+		email:    String,
+		password: String
+	) {
+		self.email    = email
+		self.password = password
+	}
+}
+
+// MARK: -
+
 public struct SignInResponse: Codable, Sendable {
 	public let userID:     UUID
 	public let axisToken:  String
@@ -32,41 +68,5 @@ public struct SignInResponse: Codable, Sendable {
 		self.familyName = familyName
 		self.name       = name
 		self.picture    = picture
-	}
-}
-
-// MARK: -
-
-public struct SignInWithEmailRequest: Codable, Sendable {
-	public var email:    String
-	public let password: String
-
-	public init(
-		email:    String,
-		password: String
-	) {
-		self.email    = email
-		self.password = password
-	}
-}
-
-// MARK: -
-
-public struct SignUpWithEmailRequest: Codable, Sendable {
-	public let code:      String
-	public let requestID: String
-	public var email:     String
-	public let password:  String
-
-	public init(
-		code:      String,
-		requestID: String,
-		email:     String,
-		password:  String
-	) {
-		self.code      = code
-		self.requestID = requestID
-		self.email     = email
-		self.password  = password
 	}
 }
