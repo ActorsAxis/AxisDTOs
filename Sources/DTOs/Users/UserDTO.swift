@@ -15,6 +15,7 @@ public struct UserDTO: Codable,  Sendable,
 	public var userLevel:   UUID?
 	public var userType:    UUID?
 
+	public var issuer:     String?
 	public var subject:    String?
 	public var email:      String?
 	public var password:   String?
@@ -32,6 +33,7 @@ public struct UserDTO: Codable,  Sendable,
 		userLevel:   UUID? = nil,
 		userType:    UUID? = nil,
 
+		issuer:     String? = nil,
 		subject:    String? = nil,
 		email:      String? = nil,
 		password:   String? = nil,
@@ -48,6 +50,7 @@ public struct UserDTO: Codable,  Sendable,
 		self.userLevel   = userLevel
 		self.userType    = userType
 
+		self.issuer     = issuer
 		self.subject    = subject
 		self.email      = email
 		self.password   = password
