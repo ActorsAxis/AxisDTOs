@@ -39,3 +39,13 @@ public struct AgoraTokenRequest: Codable, Sendable {
 		)
 	}
 }
+
+// MARK: -
+
+public struct AgoraTokenResponse: Codable, Sendable {
+	public let token: String
+
+	public init(token: String) {
+		self.token = token
+	}
+}
