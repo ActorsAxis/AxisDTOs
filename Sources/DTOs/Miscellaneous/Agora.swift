@@ -13,9 +13,9 @@ public struct AgoraTokenRequest: Codable, Sendable {
 		case subscriber
 	}
 
-	let channel: String
-	let userID:  UUID
-	let role:    String
+	public let channel: String
+	public let userID:  UUID
+	public let role:    String
 
 	public init(
 		channel: String,
