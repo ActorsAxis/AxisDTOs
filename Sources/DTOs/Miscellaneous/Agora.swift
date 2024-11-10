@@ -32,8 +32,10 @@ public struct AgoraTokenRequest: Codable, Sendable {
 		userID:  UUID,
 		role:    Role
 	) {
-		self.channel  = channel
-		self.uniqueID = userID.uniqueID
-		self.role     = role
+		self.init(
+			channel:  channel,
+			uniqueID: userID.uniqueID,
+			role:     role
+		)
 	}
 }
