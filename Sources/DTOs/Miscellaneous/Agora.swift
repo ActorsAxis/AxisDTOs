@@ -8,22 +8,32 @@
 import Foundation
 
 public struct AgoraTokenRequest: Codable, Sendable {
-	public enum Role: String {
-		case publisher
-		case subscriber
+	public enum Role: Int, Codable, Sendable {
+		case publisher  = 1
+		case subscriber = 2
 	}
 
-	public let channel: String
-	public let userID:  UUID
-	public let role:    String
+	public let channel:  String
+	public let uniqueID: UInt
+	public let role:     Role
+
+	public init(
+		channel:  String,
+		uniqueID: UInt,
+		role:     Role
+	) {
+		self.channel  = channel
+		self.uniqueID = uniqueID
+		self.role     = role
+	}
 
 	public init(
 		channel: String,
 		userID:  UUID,
 		role:    Role
 	) {
-		self.channel = channel
-		self.userID  = userID
-		self.role    = role.rawValue
+		self.channel  = channel
+		self.uniqueID = userID.uid
+		self.role     = role
 	}
 }
