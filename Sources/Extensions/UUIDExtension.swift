@@ -8,7 +8,7 @@
 import Foundation
 
 extension UUID {
-	public var uid: UInt {
+	public var uniqueID: UInt {
 		UInt(abs(hashValue))
 	}
 }
