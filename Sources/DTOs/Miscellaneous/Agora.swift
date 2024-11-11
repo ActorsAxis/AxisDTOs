@@ -9,8 +9,8 @@ import Foundation
 
 public struct AgoraTokenRequest: Codable, Sendable {
 	public enum Role: Int, Codable, Sendable {
-		case publisher  = 1
-		case subscriber = 2
+		case broadcaster = 1
+		case audience    = 2
 	}
 
 	public let channel:  String
