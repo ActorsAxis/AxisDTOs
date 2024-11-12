@@ -7,6 +7,16 @@
 
 import Foundation
 
+public struct AgoraAppIDResponse: Codable, Sendable {
+	public let appID: String
+
+	public init(appID: String) {
+		self.appID = appID
+	}
+}
+
+// MARK: -
+
 public struct AgoraTokenRequest: Codable, Sendable {
 	public enum Role: Int, Codable, Sendable {
 		case broadcaster = 1
