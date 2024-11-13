@@ -23,29 +23,29 @@ public struct ChannelDTO: Codable,  Sendable,
 		}
 	}
 
-	public let id:              UUID
-	public let title:           String
-	public let description:     String?
-	public let startLivestream: Date?
-	public let endLivestream:   Date?
-	public let scheduled:       Date?
-	public let user:            User?
+	public let id:                 UUID
+	public let title:              String
+	public let description:        String?
+	public let beginBroadcasting:  Date?
+	public let endBroadcasting:    Date?
+	public let scheduledBroadcast: Date?
+	public let user:               User?
 
 	public init(
-		id:              UUID    = UUID(),
-		title:           String,
-		description:     String? = nil,
-		startLivestream: Date?   = nil,
-		endLivestream:   Date?   = nil,
-		scheduled:       Date?   = nil,
-		user:            User?   = nil
+		id:                 UUID    = UUID(),
+		title:              String,
+		description:        String? = nil,
+		beginBroadcasting:  Date?   = nil,
+		endBroadcasting:    Date?   = nil,
+		scheduledBroadcast: Date?   = nil,
+		user:               User?   = nil
 	) {
-		self.id              = id
-		self.title           = title
-		self.description     = description
-		self.startLivestream = startLivestream
-		self.endLivestream   = endLivestream
-		self.scheduled       = scheduled
-		self.user            = user
+		self.id                 = id
+		self.title              = title
+		self.description        = description
+		self.beginBroadcasting  = beginBroadcasting
+		self.endBroadcasting    = endBroadcasting
+		self.scheduledBroadcast = scheduledBroadcast
+		self.user               = user
 	}
 }
