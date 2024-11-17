@@ -17,7 +17,7 @@ public struct AgoraAppIDResponse: Codable, Sendable {
 
 // MARK: -
 
-public struct AgoraTokenRequest: Codable, Sendable {
+public struct AgoraRTCTokenRequest: Codable, Sendable {
 	public enum Role: Int, Codable, Sendable {
 		case broadcaster = 1
 		case audience    = 2
@@ -47,6 +47,18 @@ public struct AgoraTokenRequest: Codable, Sendable {
 			uniqueID: userID.uniqueID,
 			role:     role
 		)
+	}
+}
+
+// MARK: -
+
+public struct AgoraRTMTokenRequest: Codable, Sendable {
+	public let userID: UUID
+
+	public init(
+		userID: UUID
+	) {
+		self.userID = userID
 	}
 }
 
