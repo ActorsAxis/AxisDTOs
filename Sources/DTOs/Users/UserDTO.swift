@@ -22,6 +22,7 @@ public struct UserDTO: Codable,  Sendable,
 	public var givenName:  String?
 	public var familyName: String?
 	public var name:       String?
+	public var username:   String?
 	public var picture:    String?
 	public var biography:  String?
 	public var resume:     String?
@@ -40,6 +41,7 @@ public struct UserDTO: Codable,  Sendable,
 		givenName:  String? = nil,
 		familyName: String? = nil,
 		name:       String? = nil,
+		username:   String? = nil,
 		picture:    String? = nil,
 		biography:  String? = nil,
 		resume:     String? = nil
@@ -57,6 +59,7 @@ public struct UserDTO: Codable,  Sendable,
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
+		self.username   = username
 		self.picture    = picture
 		self.biography  = biography
 		self.resume     = resume
