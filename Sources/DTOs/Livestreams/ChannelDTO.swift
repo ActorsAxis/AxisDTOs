@@ -9,28 +9,15 @@ import Foundation
 
 public struct ChannelDTO: Codable,  Sendable,
 						  Hashable, Identifiable {
-	public struct User: Codable, Sendable,
-						Hashable {
-		public let name:    String?
-		public let picture: String?
-
-		public init(
-			name:    String? = nil,
-			picture: String? = nil
-		) {
-			self.name    = name
-			self.picture = picture
-		}
-	}
-
-	public let id:                 UUID
+	public var id:                 UUID    = UUID()
 	public let title:              String
-	public let description:        String?
-	public let beginBroadcasting:  Date?
-	public let endBroadcasting:    Date?
-	public let scheduledBroadcast: Date?
-	public let user:               User?
+	public var description:        String? = nil
+	public var beginBroadcasting:  Date?   = nil
+	public var endBroadcasting:    Date?   = nil
+	public var scheduledBroadcast: Date?   = nil
+	public var user:               User?   = nil
 
+#if false
 	public init(
 		id:                 UUID    = UUID(),
 		title:              String,
@@ -47,5 +34,22 @@ public struct ChannelDTO: Codable,  Sendable,
 		self.endBroadcasting    = endBroadcasting
 		self.scheduledBroadcast = scheduledBroadcast
 		self.user               = user
+	}
+#endif
+
+	public struct User: Codable, Sendable,
+						Hashable {
+		public let name:    String?
+		public let picture: String?
+
+#if false
+		public init(
+			name:    String? = nil,
+			picture: String? = nil
+		) {
+			self.name    = name
+			self.picture = picture
+		}
+#endif
 	}
 }

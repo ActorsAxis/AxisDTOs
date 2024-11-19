@@ -9,24 +9,25 @@ import Foundation
 
 public struct UserDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
-	public let id: UUID
+	public var id: UUID = UUID()
 
-	public var accountType: UUID?
-	public var userLevel:   UUID?
-	public var userType:    UUID?
+	public var accountType: UUID? = nil
+	public var userLevel:   UUID? = nil
+	public var userType:    UUID? = nil
 
-	public var email:      String?
-	public var password:   String?
-	public var issuer:     String?
-	public var subject:    String?
-	public var givenName:  String?
-	public var familyName: String?
-	public var name:       String?
-	public var username:   String?
-	public var picture:    String?
-	public var biography:  String?
-	public var resume:     String?
+	public var email:      String? = nil
+	public var password:   String? = nil
+	public var issuer:     String? = nil
+	public var subject:    String? = nil
+	public var givenName:  String? = nil
+	public var familyName: String? = nil
+	public var name:       String? = nil
+	public var username:   String? = nil
+	public var picture:    String? = nil
+	public var biography:  String? = nil
+	public var resume:     String? = nil
 
+#if false
 	public init(
 		id: UUID = UUID(),
 
@@ -64,4 +65,5 @@ public struct UserDTO: Codable,  Sendable,
 		self.biography  = biography
 		self.resume     = resume
 	}
+#endif
 }

@@ -9,13 +9,14 @@ import Foundation
 
 public struct MediumDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
-	public let id:                     UUID
-	public var medium:                 String?
-	public var imageWidth:             Int?
-	public var imageHeight:            Int?
-	public var videoDurationInSeconds: Int?
-	public var videoThumbnail:         String?
+	public var id:                     UUID    = UUID()
+	public var medium:                 String? = nil
+	public var imageWidth:             Int?    = nil
+	public var imageHeight:            Int?    = nil
+	public var videoDurationInSeconds: Int?    = nil
+	public var videoThumbnail:         String? = nil
 
+#if false
 	public init(
 		id:                     UUID    = UUID(),
 		medium:                 String? = nil,
@@ -31,4 +32,5 @@ public struct MediumDTO: Codable,  Sendable,
 		self.videoDurationInSeconds = videoDurationInSeconds
 		self.videoThumbnail         = videoThumbnail
 	}
+#endif
 }
