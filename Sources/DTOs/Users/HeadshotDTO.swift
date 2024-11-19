@@ -9,19 +9,18 @@ import Foundation
 
 public struct HeadshotDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
-	public var id:          UUID    = UUID()
-	public var eyeColor:    String? = nil
-	public var hairColor:   String? = nil
-	public var height:      String? = nil
-	public var location:    String? = nil
-	public var phone:       String? = nil
-	public var picture:     String? = nil
-	public var socialMedia: String? = nil
-	public var unionStatus: String? = nil
-	public var website:     String? = nil
-	public var weight:      String? = nil
+	public let id:          UUID
+	public let eyeColor:    String?
+	public let hairColor:   String?
+	public let height:      String?
+	public let location:    String?
+	public let phone:       String?
+	public let picture:     String?
+	public let socialMedia: String?
+	public let unionStatus: String?
+	public let website:     String?
+	public let weight:      String?
 
-#if false
 	public init(
 		id:          UUID    = UUID(),
 		eyeColor:    String? = nil,
@@ -47,5 +46,4 @@ public struct HeadshotDTO: Codable,  Sendable,
 		self.website     = website
 		self.weight      = weight
 	}
-#endif
 }

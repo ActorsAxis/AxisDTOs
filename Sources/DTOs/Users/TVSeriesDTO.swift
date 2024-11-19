@@ -9,14 +9,13 @@ import Foundation
 
 public struct TVSeriesDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
-	public var id:         UUID    = UUID()
-	public var name:       String? = nil
-	public var airDate:    Date?   = nil
-	public var creditedAs: String? = nil
-	public var season:     Int?    = nil
-	public var episode:    Int?    = nil
+	public let id:         UUID
+	public let name:       String?
+	public let airDate:    Date?
+	public let creditedAs: String?
+	public let season:     Int?
+	public let episode:    Int?
 
-#if false
 	public init(
 		id:         UUID    = UUID(),
 		name:       String? = nil,
@@ -32,5 +31,4 @@ public struct TVSeriesDTO: Codable,  Sendable,
 		self.season     = season
 		self.episode    = episode
 	}
-#endif
 }

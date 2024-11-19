@@ -13,7 +13,6 @@ public struct SignUpWithEmailRequest: Codable, Sendable {
 	public var email:     String
 	public let password:  String
 
-#if false
 	public init(
 		code:      String,
 		requestID: String,
@@ -25,7 +24,6 @@ public struct SignUpWithEmailRequest: Codable, Sendable {
 		self.email     = email
 		self.password  = password
 	}
-#endif
 }
 
 // MARK: -
@@ -34,7 +32,6 @@ public struct SignInWithEmailRequest: Codable, Sendable {
 	public var email:    String
 	public let password: String
 
-#if false
 	public init(
 		email:    String,
 		password: String
@@ -42,7 +39,6 @@ public struct SignInWithEmailRequest: Codable, Sendable {
 		self.email    = email
 		self.password = password
 	}
-#endif
 }
 
 // MARK: -
@@ -50,13 +46,12 @@ public struct SignInWithEmailRequest: Codable, Sendable {
 public struct SignInResponse: Codable, Sendable {
 	public let userID:     UUID
 	public let axisToken:  String
-	public var email:      String? = nil
-	public var givenName:  String? = nil
-	public var familyName: String? = nil
-	public var name:       String? = nil
-	public var picture:    String? = nil
+	public var email:      String?
+	public let givenName:  String?
+	public let familyName: String?
+	public let name:       String?
+	public let picture:    String?
 
-#if false
 	public init(
 		userID:     UUID,
 		axisToken:  String,
@@ -74,5 +69,4 @@ public struct SignInResponse: Codable, Sendable {
 		self.name       = name
 		self.picture    = picture
 	}
-#endif
 }

@@ -12,7 +12,6 @@ public struct WorkTypeDTO: Codable,  Sendable,
 	public let id:   UUID
 	public let name: String
 
-#if false
 	public init(
 		id:   UUID,
 		name: String
@@ -20,5 +19,4 @@ public struct WorkTypeDTO: Codable,  Sendable,
 		self.id   = id
 		self.name = name
 	}
-#endif
 }

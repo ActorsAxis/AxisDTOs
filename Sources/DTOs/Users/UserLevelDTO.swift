@@ -13,7 +13,6 @@ public struct UserLevelDTO: Codable,  Sendable,
 	public let title:       String
 	public let coinsNeeded: Int
 
-#if false
 	public init(
 		id:          UUID,
 		title:       String,
@@ -23,5 +22,4 @@ public struct UserLevelDTO: Codable,  Sendable,
 		self.title       = title
 		self.coinsNeeded = coinsNeeded
 	}
-#endif
 }

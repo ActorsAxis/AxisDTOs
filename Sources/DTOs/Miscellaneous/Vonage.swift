@@ -9,14 +9,34 @@ import Foundation
 
 public enum VonageRequest {
 	public struct Request: Codable, Sendable {
-		public var locale:          String? = nil
-		public var channelTimeout:  Int?    = nil
-		public var clientRef:       String? = nil
-		public var codeLength:      Int?    = nil
-		public var code:            String? = nil
-		public var brand:           String  = .vonage.brand
-		public var templateID:      UUID?   = nil
+		public let locale:          String?
+		public let channelTimeout:  Int?
+		public let clientRef:       String?
+		public let codeLength:      Int?
+		public let code:            String?
+		public let brand:           String
+		public let templateID:      UUID?
 		public let workflow:       [Workflow]
+
+		public init(
+			locale:          String? = nil,
+			channelTimeout:  Int?    = nil,
+			clientRef:       String? = nil,
+			codeLength:      Int?    = nil,
+			code:            String? = nil,
+			brand:           String  = .vonage.brand,
+			templateID:      UUID?   = nil,
+			workflow:       [Workflow]
+		) {
+			self.locale          = locale
+			self.channelTimeout  = channelTimeout
+			self.clientRef       = clientRef
+			self.codeLength      = codeLength
+			self.code            = code
+			self.brand           = brand
+			self.templateID      = templateID
+			self.workflow        = workflow
+		}
 
 		// MARK: -
 
@@ -54,37 +74,14 @@ public enum VonageRequest {
 				case whatsApp
 			}
 		}
-
-#if false
-		public init(
-			locale:          String? = nil,
-			channelTimeout:  Int?    = nil,
-			clientRef:       String? = nil,
-			codeLength:      Int?    = nil,
-			code:            String? = nil,
-			brand:           String  = .vonage.brand,
-			templateID:      UUID?   = nil,
-			workflow:       [Workflow]
-		) {
-			self.locale          = locale
-			self.channelTimeout  = channelTimeout
-			self.clientRef       = clientRef
-			self.codeLength      = codeLength
-			self.code            = code
-			self.brand           = brand
-			self.templateID      = templateID
-			self.workflow        = workflow
-		}
-#endif
 	}
 
 	// MARK: -
 
 	public struct Response: Codable, Sendable {
 		public let requestID: String
-		public var checkURL:  URL? = nil
+		public let checkURL:  URL?
 
-#if false
 		public init(
 			requestID: String,
 			checkURL:  URL? = nil
@@ -92,7 +89,6 @@ public enum VonageRequest {
 			self.requestID = requestID
 			self.checkURL  = checkURL
 		}
-#endif
 	}
 }
 
@@ -102,11 +98,9 @@ public enum VonageVerify {
 	public struct Request: Codable, Sendable {
 		public let code: String
 
-#if false
 		public init(code: String) {
 			self.code = code
 		}
-#endif
 	}
 
 	// MARK: -
@@ -115,7 +109,6 @@ public enum VonageVerify {
 		public let requestID: String
 		public let status:    String
 
-#if false
 		public init(
 			requestID: String,
 			status:    String
@@ -123,6 +116,5 @@ public enum VonageVerify {
 			self.requestID = requestID
 			self.status    = status
 		}
-#endif
 	}
 }
