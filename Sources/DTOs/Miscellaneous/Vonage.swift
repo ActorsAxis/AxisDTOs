@@ -56,7 +56,7 @@ public enum VonageRequest {
 				contentID: String? = nil,
 				appHash:   String? = nil
 			) {
-				self.channel   = channel.rawValue.lowercased()
+				self.channel   = channel.rawValue
 				self.to        = to
 				self.from      = from
 				self.entityID  = entityID
@@ -71,7 +71,7 @@ public enum VonageRequest {
 				case silentAuth = "silent_auth"
 				case sms
 				case voice
-				case whatsApp
+				case whatsApp   = "whatsapp"
 			}
 		}
 	}

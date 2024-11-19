@@ -129,12 +129,12 @@ public struct AgoraUserResponse: Codable, Sendable {
 	// MARK: -
 
 	public struct Entity: Codable, Sendable {
-		let activated: Bool
-		let created:   Int
-		let modified:  Int
-		let type:      String
-		let username:  String
-		let uuid:      String
+		public let activated: Bool
+		public let created:   Int
+		public let modified:  Int
+		public let type:      String
+		public let username:  String
+		public let uuid:      String
 
 		public init(
 			activated: Bool,
