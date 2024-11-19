@@ -30,6 +30,21 @@ public struct AgoraRTCTokenRequest: Codable, Sendable {
 
 // MARK: -
 
+public struct AgoraRTMRegisterRequest: Codable, Sendable {
+	public let userID:   UUID
+	public let username: String
+
+	public init(
+		userID:   UUID,
+		username: String
+	) {
+		self.userID   = userID
+		self.username = username
+	}
+}
+
+// MARK: -
+
 public struct AgoraRTMTokenRequest: Codable, Sendable {
 	public let userID: UUID
 
