@@ -11,21 +11,21 @@ public struct UserDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id: UUID
 
-	public let accountType: UUID?
-	public let userLevel:   UUID?
-	public let userType:    UUID?
+	public var accountType: UUID?
+	public var userLevel:   UUID?
+	public var userType:    UUID?
 
-	public let email:      String?
-	public let password:   String?
-	public let issuer:     String?
-	public let subject:    String?
-	public let givenName:  String?
-	public let familyName: String?
-	public let name:       String?
-	public let username:   String?
-	public let picture:    String?
-	public let biography:  String?
-	public let resume:     String?
+	public var email:      String?
+	public var password:   String?
+	public var issuer:     String?
+	public var subject:    String?
+	public var givenName:  String?
+	public var familyName: String?
+	public var name:       String?
+	public var username:   String?
+	public var picture:    String?
+	public var biography:  String?
+	public var resume:     String?
 
 	public init(
 		id: UUID = UUID(),

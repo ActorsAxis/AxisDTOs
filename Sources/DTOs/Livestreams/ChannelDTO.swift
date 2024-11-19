@@ -10,12 +10,12 @@ import Foundation
 public struct ChannelDTO: Codable,  Sendable,
 						  Hashable, Identifiable {
 	public let id:                 UUID
-	public let title:              String
-	public let description:        String?
-	public let beginBroadcasting:  Date?
-	public let endBroadcasting:    Date?
-	public let scheduledBroadcast: Date?
-	public let user:               User?
+	public var title:              String
+	public var description:        String?
+	public var beginBroadcasting:  Date?
+	public var endBroadcasting:    Date?
+	public var scheduledBroadcast: Date?
+	public var user:               User?
 
 	public init(
 		id:                 UUID    = UUID(),

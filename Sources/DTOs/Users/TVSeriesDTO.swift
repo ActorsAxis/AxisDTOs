@@ -10,11 +10,11 @@ import Foundation
 public struct TVSeriesDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:         UUID
-	public let name:       String?
-	public let airDate:    Date?
-	public let creditedAs: String?
-	public let season:     Int?
-	public let episode:    Int?
+	public var name:       String?
+	public var airDate:    Date?
+	public var creditedAs: String?
+	public var season:     Int?
+	public var episode:    Int?
 
 	public init(
 		id:         UUID    = UUID(),

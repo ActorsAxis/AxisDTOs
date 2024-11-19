@@ -10,11 +10,11 @@ import Foundation
 public struct MediumDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:                     UUID
-	public let medium:                 String?
-	public let imageWidth:             Int?
-	public let imageHeight:            Int?
-	public let videoDurationInSeconds: Int?
-	public let videoThumbnail:         String?
+	public var medium:                 String?
+	public var imageWidth:             Int?
+	public var imageHeight:            Int?
+	public var videoDurationInSeconds: Int?
+	public var videoThumbnail:         String?
 
 	public init(
 		id:                     UUID    = UUID(),

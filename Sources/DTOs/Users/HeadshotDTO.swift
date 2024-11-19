@@ -10,16 +10,16 @@ import Foundation
 public struct HeadshotDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:          UUID
-	public let eyeColor:    String?
-	public let hairColor:   String?
-	public let height:      String?
-	public let location:    String?
-	public let phone:       String?
-	public let picture:     String?
-	public let socialMedia: String?
-	public let unionStatus: String?
-	public let website:     String?
-	public let weight:      String?
+	public var eyeColor:    String?
+	public var hairColor:   String?
+	public var height:      String?
+	public var location:    String?
+	public var phone:       String?
+	public var picture:     String?
+	public var socialMedia: String?
+	public var unionStatus: String?
+	public var website:     String?
+	public var weight:      String?
 
 	public init(
 		id:          UUID    = UUID(),
