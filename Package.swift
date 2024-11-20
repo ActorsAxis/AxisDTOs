@@ -18,7 +18,7 @@ let package = Package(
 		.target(
 			name: "AxisDTOs",
 			swiftSettings: [
-				// .enableExperimentalFeature("StrictConcurrency"),
+				//				.enableExperimentalFeature("StrictConcurrency"),
 				.swiftLanguageMode(.v6),
 			]
 		),
