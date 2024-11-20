@@ -8,8 +8,9 @@ let package = Package(
 	products: [
 		// Products define the executables and libraries a package produces, making them visible to other packages.
 		.library(
-			name: "AxisDTOs",
-			targets: ["AxisDTOs"]),
+			name:     "AxisDTOs",
+			targets: ["AxisDTOs"]
+		),
 	],
 	targets: [
 		// Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -17,6 +18,7 @@ let package = Package(
 		.target(
 			name: "AxisDTOs",
 			swiftSettings: [
+				// .enableExperimentalFeature("StrictConcurrency"),
 				.swiftLanguageMode(.v6),
 			]
 		),
