@@ -15,6 +15,7 @@ public struct ChannelDTO: Codable,  Sendable,
 	public var beginBroadcasting:  Date?
 	public var endBroadcasting:    Date?
 	public var scheduledBroadcast: Date?
+	public var broadcasting:       Date?
 	public var user:               User?
 	public let createdAt:          Date?
 	public let updatedAt:          Date?
@@ -26,6 +27,7 @@ public struct ChannelDTO: Codable,  Sendable,
 		beginBroadcasting:  Date?   = nil,
 		endBroadcasting:    Date?   = nil,
 		scheduledBroadcast: Date?   = nil,
+		broadcasting:       Date?   = nil,
 		user:               User?   = nil,
 		createdAt:          Date?   = nil,
 		updatedAt:          Date?   = nil
@@ -36,6 +38,7 @@ public struct ChannelDTO: Codable,  Sendable,
 		self.beginBroadcasting  = beginBroadcasting
 		self.endBroadcasting    = endBroadcasting
 		self.scheduledBroadcast = scheduledBroadcast
+		self.broadcasting       = broadcasting
 		self.user               = user
 		self.createdAt          = createdAt
 		self.updatedAt          = updatedAt
