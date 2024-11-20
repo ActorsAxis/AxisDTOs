@@ -16,8 +16,8 @@ public struct ChannelDTO: Codable,  Sendable,
 	public var endBroadcasting:    Date?
 	public var scheduledBroadcast: Date?
 	public var user:               User?
-	public var createdAt:          Date?
-	public var updatedAt:          Date?
+	public let createdAt:          Date?
+	public let updatedAt:          Date?
 
 	public init(
 		id:                 UUID    = UUID(),
