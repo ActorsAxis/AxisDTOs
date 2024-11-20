@@ -43,6 +43,14 @@ public struct AgoraRTMRegisterRequest: Codable, Sendable {
 	}
 }
 
+public struct AgoraRTMRegisterResponse: Codable, Sendable {
+	public let username: String
+
+	public init(username: String) {
+		self.username = username
+	}
+}
+
 // MARK: -
 
 public struct AgoraRTMTokenRequest: Codable, Sendable {
