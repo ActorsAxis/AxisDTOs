@@ -16,6 +16,8 @@ public struct ChannelDTO: Codable,  Sendable,
 	public var endBroadcasting:    Date?
 	public var scheduledBroadcast: Date?
 	public var user:               User?
+	public var createdAt:          Date?
+	public var updatedAt:          Date?
 
 	public init(
 		id:                 UUID    = UUID(),
@@ -24,7 +26,9 @@ public struct ChannelDTO: Codable,  Sendable,
 		beginBroadcasting:  Date?   = nil,
 		endBroadcasting:    Date?   = nil,
 		scheduledBroadcast: Date?   = nil,
-		user:               User?   = nil
+		user:               User?   = nil,
+		createdAt:          Date?   = nil,
+		updatedAt:          Date?   = nil
 	) {
 		self.id                 = id
 		self.title              = title
@@ -33,6 +37,8 @@ public struct ChannelDTO: Codable,  Sendable,
 		self.endBroadcasting    = endBroadcasting
 		self.scheduledBroadcast = scheduledBroadcast
 		self.user               = user
+		self.createdAt          = createdAt
+		self.updatedAt          = updatedAt
 	}
 
 	// MARK: -
