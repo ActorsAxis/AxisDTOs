@@ -6,14 +6,23 @@
 //
 
 import Foundation
+import zlib
 
 extension UUID {
 	public var uniqueID: UInt32 {
-		let size   = MemoryLayout<UInt32>.size
-		let data   = withUnsafeBytes(of: uuid) { Data($0) }
-		let prefix = data.prefix(size).withUnsafeBytes { $0.load(as: UInt32.self) }
-		let suffix = data.suffix(size).withUnsafeBytes { $0.load(as: UInt32.self) }
-		// XOR the prefix and the suffix for better entropy distribution.
-		return prefix ^ suffix
+		// Convert the UUID to Data (128 bits / 16 bytes).
+		let data = withUnsafeBytes(of: uuid) { Data($0) }
+
+		// Compute the CRC32 hash.
+		let crc = data.withUnsafeBytes { buffer -> UInt in
+			crc32(
+				0,
+				buffer.baseAddress!.assumingMemoryBound(to: UInt8.self),
+				UInt32(buffer.count)
+			)
+		}
+
+		// Convert the UInt returned by crc32 to UInt32.
+		return UInt32(truncatingIfNeeded: crc)
 	}
 }
