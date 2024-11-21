@@ -9,14 +9,12 @@ import Foundation
 import zlib
 
 extension UUID {
-	public var uniqueID: UInt32 {
+	public var uniqueID: UInt {
 		withUnsafeBytes(of: uuid) { buffer in
-			UInt32(
-				truncatingIfNeeded: crc32(
-					0,
-					buffer.bindMemory(to: UInt8.self).baseAddress,
-					UInt32(buffer.count)
-				)
+			crc32(
+				0,
+				buffer.bindMemory(to: UInt8.self).baseAddress,
+				UInt32(buffer.count)
 			)
 		}
 	}
