@@ -9,9 +9,11 @@ import Foundation
 
 extension UUID {
 	public var uniqueID: UInt32 {
-		(UInt32(uuid.3) << (3 * UInt8.bitWidth)) |
-		(UInt32(uuid.2) << (2 * UInt8.bitWidth)) |
-		(UInt32(uuid.1) << (1 * UInt8.bitWidth)) |
-		(UInt32(uuid.0))
+		let size   = MemoryLayout<UInt32>.size
+		let data   = withUnsafeBytes(of: uuid) { Data($0) }
+		let prefix = data.prefix(size).withUnsafeBytes { $0.load(as: UInt32.self) }
+		let suffix = data.suffix(size).withUnsafeBytes { $0.load(as: UInt32.self) }
+		// XOR the prefix and the suffix for better entropy distribution.
+		return prefix ^ suffix
 	}
 }
