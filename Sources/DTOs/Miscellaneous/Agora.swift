@@ -9,12 +9,12 @@ import Foundation
 
 public struct AgoraRTCTokenRequest: Codable, Sendable {
 	public let channel:  String
-	public let uniqueID: UInt
+	public let uniqueID: UInt32
 	public let role:     Role
 
 	public init(
 		channel:  String,
-		uniqueID: UInt,
+		uniqueID: UInt32,
 		role:     Role
 	) {
 		self.channel  = channel

@@ -8,7 +8,10 @@
 import Foundation
 
 extension UUID {
-	public var uniqueID: UInt {
-		UInt(abs(hashValue))
+	public var uniqueID: UInt32 {
+		(UInt32(uuid.3) << (3 * UInt8.bitWidth)) |
+		(UInt32(uuid.2) << (2 * UInt8.bitWidth)) |
+		(UInt32(uuid.1) << (1 * UInt8.bitWidth)) |
+		(UInt32(uuid.0))
 	}
 }
