@@ -48,13 +48,16 @@ public struct ChannelDTO: Codable,  Sendable,
 
 	public struct User: Codable, Sendable,
 						Hashable {
+		public let id:      UUID
 		public let name:    String?
 		public let picture: String?
 
 		public init(
+			id:      UUID,
 			name:    String? = nil,
 			picture: String? = nil
 		) {
+			self.id      = id
 			self.name    = name
 			self.picture = picture
 		}
