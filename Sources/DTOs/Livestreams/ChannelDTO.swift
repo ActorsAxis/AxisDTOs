@@ -46,8 +46,8 @@ public struct ChannelDTO: Codable,  Sendable,
 
 	// MARK: -
 
-	public struct User: Codable, Sendable,
-						Hashable {
+	public struct User: Codable,  Sendable,
+						Hashable, Identifiable {
 		public let id:      UUID
 		public let name:    String?
 		public let picture: String?
