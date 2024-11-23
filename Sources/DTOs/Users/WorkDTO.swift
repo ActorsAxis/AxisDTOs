@@ -28,4 +28,12 @@ public struct WorkDTO: Codable,  Sendable,
 		self.startDate  = startDate
 		self.endDate    = endDate
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: WorkDTO, rhs: WorkDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

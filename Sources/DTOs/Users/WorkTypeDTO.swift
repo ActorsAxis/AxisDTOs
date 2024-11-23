@@ -19,4 +19,12 @@ public struct WorkTypeDTO: Codable,  Sendable,
 		self.id   = id
 		self.name = name
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: WorkTypeDTO, rhs: WorkTypeDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

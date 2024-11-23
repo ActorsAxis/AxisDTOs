@@ -19,4 +19,12 @@ public struct DeviceTypeDTO: Codable,  Sendable,
 		self.id   = id
 		self.name = name
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: DeviceTypeDTO, rhs: DeviceTypeDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

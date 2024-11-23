@@ -22,4 +22,12 @@ public struct UserLevelDTO: Codable,  Sendable,
 		self.title       = title
 		self.coinsNeeded = coinsNeeded
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: UserLevelDTO, rhs: UserLevelDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

@@ -31,4 +31,12 @@ public struct TVSeriesDTO: Codable,  Sendable,
 		self.season     = season
 		self.episode    = episode
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: TVSeriesDTO, rhs: TVSeriesDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

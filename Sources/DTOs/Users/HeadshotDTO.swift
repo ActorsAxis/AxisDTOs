@@ -46,4 +46,12 @@ public struct HeadshotDTO: Codable,  Sendable,
 		self.website     = website
 		self.weight      = weight
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: HeadshotDTO, rhs: HeadshotDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

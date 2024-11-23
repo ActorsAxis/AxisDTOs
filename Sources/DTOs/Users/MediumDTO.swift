@@ -31,4 +31,12 @@ public struct MediumDTO: Codable,  Sendable,
 		self.videoDurationInSeconds = videoDurationInSeconds
 		self.videoThumbnail         = videoThumbnail
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: MediumDTO, rhs: MediumDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }

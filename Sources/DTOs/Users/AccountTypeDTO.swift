@@ -19,4 +19,12 @@ public struct AccountTypeDTO: Codable,  Sendable,
 		self.id   = id
 		self.name = name
 	}
+
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+
+	public static func == (lhs: AccountTypeDTO, rhs: AccountTypeDTO) -> Bool {
+		lhs.id == rhs.id
+	}
 }
