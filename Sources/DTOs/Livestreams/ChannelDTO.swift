@@ -61,7 +61,7 @@ public struct ChannelDTO: Codable,  Sendable,
 		public let picture: String?
 
 		public init(
-			id:      UUID,
+			id:      UUID    = UUID(),
 			name:    String? = nil,
 			picture: String? = nil
 		) {
