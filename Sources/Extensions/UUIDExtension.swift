@@ -10,7 +10,7 @@ import zlib
 
 extension UUID {
 	public var uniqueID: UInt {
-#if true
+#if false
 		UInt(bitPattern: hashValue)
 #else
 		withUnsafeBytes(of: uuid) { buffer in
