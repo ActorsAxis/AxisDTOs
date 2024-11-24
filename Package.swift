@@ -5,10 +5,6 @@ import PackageDescription
 
 let package = Package(
 	name: "AxisDTOs",
-	platforms: [
-		.iOS  (.v15),
-		.macOS(.v13),
-	],
 	products: [
 		// Products define the executables and libraries a package produces, making them visible to other packages.
 		.library(
