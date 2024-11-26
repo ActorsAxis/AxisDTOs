@@ -69,7 +69,7 @@ public struct UserDTO: Codable,  Sendable,
 		hasher.combine(id)
 	}
 
-	public static func == (lhs: UserDTO, rhs: UserDTO) -> Bool {
+	public static func == (lhs: Self, rhs: Self) -> Bool {
 		lhs.id == rhs.id
 	}
 }

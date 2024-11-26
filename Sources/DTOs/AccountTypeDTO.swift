@@ -1,5 +1,5 @@
 //
-//  UserTypeDTO.swift
+//  AccountTypeDTO.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/15/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct UserTypeDTO: Codable,  Sendable,
-						   Hashable, Identifiable {
+public struct AccountTypeDTO: Codable,  Sendable,
+							  Hashable, Identifiable {
 	public let id:   UUID
 	public let name: String
 
@@ -24,7 +24,7 @@ public struct UserTypeDTO: Codable,  Sendable,
 		hasher.combine(id)
 	}
 
-	public static func == (lhs: UserTypeDTO, rhs: UserTypeDTO) -> Bool {
+	public static func == (lhs: Self, rhs: Self) -> Bool {
 		lhs.id == rhs.id
 	}
 }

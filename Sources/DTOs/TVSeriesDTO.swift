@@ -36,7 +36,7 @@ public struct TVSeriesDTO: Codable,  Sendable,
 		hasher.combine(id)
 	}
 
-	public static func == (lhs: TVSeriesDTO, rhs: TVSeriesDTO) -> Bool {
+	public static func == (lhs: Self, rhs: Self) -> Bool {
 		lhs.id == rhs.id
 	}
 }

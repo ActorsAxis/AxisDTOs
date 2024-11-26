@@ -33,7 +33,7 @@ public struct WorkDTO: Codable,  Sendable,
 		hasher.combine(id)
 	}
 
-	public static func == (lhs: WorkDTO, rhs: WorkDTO) -> Bool {
+	public static func == (lhs: Self, rhs: Self) -> Bool {
 		lhs.id == rhs.id
 	}
 }

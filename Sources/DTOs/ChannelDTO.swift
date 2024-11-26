@@ -48,7 +48,7 @@ public struct ChannelDTO: Codable,  Sendable,
 		hasher.combine(id)
 	}
 
-	public static func == (lhs: ChannelDTO, rhs: ChannelDTO) -> Bool {
+	public static func == (lhs: Self, rhs: Self) -> Bool {
 		lhs.id == rhs.id
 	}
 
@@ -74,7 +74,7 @@ public struct ChannelDTO: Codable,  Sendable,
 			hasher.combine(id)
 		}
 
-		public static func == (lhs: User, rhs: User) -> Bool {
+		public static func == (lhs: Self, rhs: Self) -> Bool {
 			lhs.id == rhs.id
 		}
 	}

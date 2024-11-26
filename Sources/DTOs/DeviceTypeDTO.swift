@@ -1,14 +1,14 @@
 //
-//  WorkTypeDTO.swift
+//  DeviceTypeDTO.swift
 //  AxisDTOs
 //
-//  Created by William J. C. Nesbitt on 10/15/24.
+//  Created by William J. C. Nesbitt on 10/29/24.
 //
 
 import Foundation
 
-public struct WorkTypeDTO: Codable,  Sendable,
-						   Hashable, Identifiable {
+public struct DeviceTypeDTO: Codable,  Sendable,
+							 Hashable, Identifiable {
 	public let id:   UUID
 	public let name: String
 
@@ -24,7 +24,7 @@ public struct WorkTypeDTO: Codable,  Sendable,
 		hasher.combine(id)
 	}
 
-	public static func == (lhs: WorkTypeDTO, rhs: WorkTypeDTO) -> Bool {
+	public static func == (lhs: Self, rhs: Self) -> Bool {
 		lhs.id == rhs.id
 	}
 }
