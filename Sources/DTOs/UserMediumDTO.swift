@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias MediumDTO = UserMediumDTO
+public typealias MediumDTO = UserMediumDTO
 
 public struct UserMediumDTO: Codable,  Sendable,
 							 Hashable, Identifiable {
