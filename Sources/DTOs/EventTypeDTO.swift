@@ -1,14 +1,14 @@
 //
-//  WorkTypeDTO.swift
+//  EventTypeDTO.swift
 //  AxisDTOs
 //
-//  Created by William J. C. Nesbitt on 10/15/24.
+//  Created by William J. C. Nesbitt on 11/26/24.
 //
 
 import Foundation
 
-public struct WorkTypeDTO: Codable,  Sendable,
-						   Hashable, Identifiable {
+public struct EventTypeDTO: Codable,  Sendable,
+							Hashable, Identifiable {
 	public let id:   UUID
 	public var name: String
 

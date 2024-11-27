@@ -10,7 +10,7 @@ import Foundation
 public struct AccountTypeDTO: Codable,  Sendable,
 							  Hashable, Identifiable {
 	public let id:   UUID
-	public let name: String
+	public var name: String
 
 	public init(
 		id:   UUID,
