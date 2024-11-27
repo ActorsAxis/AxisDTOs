@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias MediumDTO = UserMediumDTO
+
 public struct UserMediumDTO: Codable,  Sendable,
 							 Hashable, Identifiable {
 	public let id:                     UUID
