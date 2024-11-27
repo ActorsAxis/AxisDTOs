@@ -10,6 +10,7 @@ import Foundation
 public struct ChannelDTO: Codable,  Sendable,
 						  Hashable, Identifiable {
 	public let id:                 UUID
+	public let userID:             UUID
 	public var title:              String
 	public var description:        String?
 	public var beginBroadcasting:  Date?
@@ -22,6 +23,7 @@ public struct ChannelDTO: Codable,  Sendable,
 
 	public init(
 		id:                 UUID    = UUID(),
+		userID:             UUID,
 		title:              String,
 		description:        String? = nil,
 		beginBroadcasting:  Date?   = nil,
@@ -33,6 +35,7 @@ public struct ChannelDTO: Codable,  Sendable,
 		updatedAt:          Date?   = nil
 	) {
 		self.id                 = id
+		self.userID             = userID
 		self.title              = title
 		self.description        = description
 		self.beginBroadcasting  = beginBroadcasting
@@ -46,18 +49,14 @@ public struct ChannelDTO: Codable,  Sendable,
 
 	// MARK: -
 
-	public struct User: Codable,  Sendable,
-						Hashable, Identifiable {
-		public let id:      UUID
+	public struct User: Codable, Sendable {
 		public let name:    String?
 		public let picture: String?
 
 		public init(
-			id:      UUID    = UUID(),
 			name:    String? = nil,
 			picture: String? = nil
 		) {
-			self.id      = id
 			self.name    = name
 			self.picture = picture
 		}

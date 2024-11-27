@@ -10,6 +10,7 @@ import Foundation
 public struct UserMediumDTO: Codable,  Sendable,
 							 Hashable, Identifiable {
 	public let id:                     UUID
+	public let userID:                 UUID
 	public var medium:                 String?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
@@ -18,6 +19,7 @@ public struct UserMediumDTO: Codable,  Sendable,
 
 	public init(
 		id:                     UUID    = UUID(),
+		userID:                 UUID,
 		medium:                 String? = nil,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,
@@ -25,6 +27,7 @@ public struct UserMediumDTO: Codable,  Sendable,
 		videoThumbnail:         String? = nil
 	) {
 		self.id                     = id
+		self.userID                 = userID
 		self.medium                 = medium
 		self.imageWidth             = imageWidth
 		self.imageHeight            = imageHeight

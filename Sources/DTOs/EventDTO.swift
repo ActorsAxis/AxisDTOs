@@ -9,9 +9,8 @@ import Foundation
 
 public struct EventDTO: Codable,  Sendable,
 						Hashable, Identifiable {
-	public let id:          UUID
-	public var eventTypeID: UUID
-
+	public let id:           UUID
+	public let eventTypeID:  UUID
 	public var website:      String?
 	public var dateTime:     Date?
 	public var description:  String?
@@ -27,9 +26,8 @@ public struct EventDTO: Codable,  Sendable,
 	public var subtitle:     String?
 
 	public init(
-		id:          UUID = UUID(),
-		eventTypeID: UUID,
-
+		id:           UUID    = UUID(),
+		eventTypeID:  UUID,
 		website:      String? = nil,
 		dateTime:     Date?   = nil,
 		description:  String? = nil,
@@ -44,9 +42,8 @@ public struct EventDTO: Codable,  Sendable,
 		title:        String? = nil,
 		subtitle:     String? = nil
 	) {
-		self.id          = id
-		self.eventTypeID = eventTypeID
-
+		self.id           = id
+		self.eventTypeID  = eventTypeID
 		self.website      = website
 		self.dateTime     = dateTime
 		self.description  = description

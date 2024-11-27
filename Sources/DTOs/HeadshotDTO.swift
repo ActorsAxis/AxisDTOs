@@ -10,6 +10,7 @@ import Foundation
 public struct HeadshotDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:          UUID
+	public let userID:      UUID
 	public var eyeColor:    String?
 	public var hairColor:   String?
 	public var height:      String?
@@ -23,6 +24,7 @@ public struct HeadshotDTO: Codable,  Sendable,
 
 	public init(
 		id:          UUID    = UUID(),
+		userID:      UUID,
 		eyeColor:    String? = nil,
 		hairColor:   String? = nil,
 		height:      String? = nil,
@@ -35,6 +37,7 @@ public struct HeadshotDTO: Codable,  Sendable,
 		weight:      String? = nil
 	) {
 		self.id          = id
+		self.userID      = userID
 		self.eyeColor    = eyeColor
 		self.hairColor   = hairColor
 		self.height      = height
