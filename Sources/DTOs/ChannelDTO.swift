@@ -44,14 +44,6 @@ public struct ChannelDTO: Codable,  Sendable,
 		self.updatedAt          = updatedAt
 	}
 
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(id)
-	}
-
-	public static func == (lhs: Self, rhs: Self) -> Bool {
-		lhs.id == rhs.id
-	}
-
 	// MARK: -
 
 	public struct User: Codable,  Sendable,
@@ -68,14 +60,6 @@ public struct ChannelDTO: Codable,  Sendable,
 			self.id      = id
 			self.name    = name
 			self.picture = picture
-		}
-
-		public func hash(into hasher: inout Hasher) {
-			hasher.combine(id)
-		}
-
-		public static func == (lhs: Self, rhs: Self) -> Bool {
-			lhs.id == rhs.id
 		}
 	}
 }

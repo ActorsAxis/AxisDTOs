@@ -64,12 +64,4 @@ public struct UserDTO: Codable,  Sendable,
 		self.biography  = biography
 		self.resume     = resume
 	}
-
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(id)
-	}
-
-	public static func == (lhs: Self, rhs: Self) -> Bool {
-		lhs.id == rhs.id
-	}
 }

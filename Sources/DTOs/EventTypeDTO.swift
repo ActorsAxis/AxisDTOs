@@ -19,12 +19,4 @@ public struct EventTypeDTO: Codable,  Sendable,
 		self.id   = id
 		self.name = name
 	}
-
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(id)
-	}
-
-	public static func == (lhs: Self, rhs: Self) -> Bool {
-		lhs.id == rhs.id
-	}
 }

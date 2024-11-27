@@ -7,8 +7,6 @@
 
 import Foundation
 
-public typealias MediumDTO = UserMediumDTO
-
 public struct UserMediumDTO: Codable,  Sendable,
 							 Hashable, Identifiable {
 	public let id:                     UUID
@@ -32,13 +30,5 @@ public struct UserMediumDTO: Codable,  Sendable,
 		self.imageHeight            = imageHeight
 		self.videoDurationInSeconds = videoDurationInSeconds
 		self.videoThumbnail         = videoThumbnail
-	}
-
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(id)
-	}
-
-	public static func == (lhs: Self, rhs: Self) -> Bool {
-		lhs.id == rhs.id
 	}
 }
