@@ -10,7 +10,7 @@ import Foundation
 public struct HeadshotDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:          UUID
-	public let userID:      UUID
+	public var userID:      UUID
 	public var eyeColor:    String?
 	public var hairColor:   String?
 	public var height:      String?
@@ -24,7 +24,7 @@ public struct HeadshotDTO: Codable,  Sendable,
 
 	public init(
 		id:          UUID    = UUID(),
-		userID:      UUID,
+		userID:      UUID    = UUID(),
 		eyeColor:    String? = nil,
 		hairColor:   String? = nil,
 		height:      String? = nil,

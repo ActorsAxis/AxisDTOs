@@ -10,7 +10,7 @@ import Foundation
 public struct EventDTO: Codable,  Sendable,
 						Hashable, Identifiable {
 	public let id:           UUID
-	public let eventTypeID:  UUID
+	public var eventTypeID:  UUID
 	public var website:      String?
 	public var dateTime:     Date?
 	public var description:  String?
@@ -27,7 +27,7 @@ public struct EventDTO: Codable,  Sendable,
 
 	public init(
 		id:           UUID    = UUID(),
-		eventTypeID:  UUID,
+		eventTypeID:  UUID    = UUID(),
 		website:      String? = nil,
 		dateTime:     Date?   = nil,
 		description:  String? = nil,

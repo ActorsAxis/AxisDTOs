@@ -12,7 +12,7 @@ public typealias MediumDTO = UserMediumDTO
 public struct UserMediumDTO: Codable,  Sendable,
 							 Hashable, Identifiable {
 	public let id:                     UUID
-	public let userID:                 UUID
+	public var userID:                 UUID
 	public var medium:                 String?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
@@ -21,7 +21,7 @@ public struct UserMediumDTO: Codable,  Sendable,
 
 	public init(
 		id:                     UUID    = UUID(),
-		userID:                 UUID,
+		userID:                 UUID    = UUID(),
 		medium:                 String? = nil,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,

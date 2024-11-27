@@ -10,16 +10,16 @@ import Foundation
 public struct WorkDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id:         UUID
-	public let userID:     UUID
-	public let workTypeID: UUID
+	public var userID:     UUID
+	public var workTypeID: UUID
 	public var name:       String?
 	public var startDate:  Date?
 	public var endDate:    Date?
 
 	public init(
 		id:         UUID    = UUID(),
-		userID:     UUID,
-		workTypeID: UUID,
+		userID:     UUID    = UUID(),
+		workTypeID: UUID    = UUID(),
 		name:       String? = nil,
 		startDate:  Date?   = nil,
 		endDate:    Date?   = nil

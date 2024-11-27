@@ -10,7 +10,7 @@ import Foundation
 public struct ChannelDTO: Codable,  Sendable,
 						  Hashable, Identifiable {
 	public let id:                 UUID
-	public let userID:             UUID
+	public var userID:             UUID
 	public var title:              String
 	public var description:        String?
 	public var beginBroadcasting:  Date?
@@ -23,7 +23,7 @@ public struct ChannelDTO: Codable,  Sendable,
 
 	public init(
 		id:                 UUID    = UUID(),
-		userID:             UUID,
+		userID:             UUID    = UUID(),
 		title:              String,
 		description:        String? = nil,
 		beginBroadcasting:  Date?   = nil,
