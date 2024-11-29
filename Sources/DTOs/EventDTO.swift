@@ -24,6 +24,7 @@ public struct EventDTO: Codable,  Sendable,
 	public var refundPolicy: String?
 	public var title:        String?
 	public var subtitle:     String?
+	public var venue:        String?
 
 	public init(
 		id:           UUID    = UUID(),
@@ -40,7 +41,8 @@ public struct EventDTO: Codable,  Sendable,
 		price:        Double? = nil,
 		refundPolicy: String? = nil,
 		title:        String? = nil,
-		subtitle:     String? = nil
+		subtitle:     String? = nil,
+		venue:        String? = nil
 	) {
 		self.id           = id
 		self.eventTypeID  = eventTypeID
@@ -57,5 +59,6 @@ public struct EventDTO: Codable,  Sendable,
 		self.refundPolicy = refundPolicy
 		self.title        = title
 		self.subtitle     = subtitle
+		self.venue        = venue
 	}
 }
