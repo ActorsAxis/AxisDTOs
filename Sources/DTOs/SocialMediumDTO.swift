@@ -13,19 +13,19 @@ public struct SocialMediumDTO: Codable,  Sendable,
 	public var eventID:            UUID?
 	public var userID:             UUID?
 	public var socialMediumTypeID: UUID
-	public var path:               String
+	public var url:                String
 
 	public init(
 		id:                 UUID? = nil,
 		eventID:            UUID? = nil,
 		userID:             UUID? = nil,
 		socialMediumTypeID: UUID  = UUID(),
-		path:               String
+		url:                String
 	) {
 		self.id                 = id
 		self.eventID            = eventID
 		self.userID             = userID
 		self.socialMediumTypeID = socialMediumTypeID
-		self.path               = path
+		self.url                = url
 	}
 }
