@@ -1,5 +1,5 @@
 //
-//  UserMediumDTO.swift
+//  MediumDTO.swift
 //  AxisDTOs
 //
 //  Created by William J. C. Nesbitt on 10/9/24.
@@ -7,12 +7,15 @@
 
 import Foundation
 
-public typealias MediumDTO = UserMediumDTO
+public typealias EventMediumDTO = MediumDTO
+public typealias  UserMediumDTO = MediumDTO
 
-public struct UserMediumDTO: Codable,  Sendable,
-							 Hashable, Identifiable {
+public struct MediumDTO: Codable,  Sendable,
+						 Hashable, Identifiable {
 	public let id:                     UUID
-	public var userID:                 UUID
+	public let eventID:                UUID?
+	public let postID:                 UUID?
+	public var userID:                 UUID?
 	public var medium:                 String?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
@@ -21,7 +24,9 @@ public struct UserMediumDTO: Codable,  Sendable,
 
 	public init(
 		id:                     UUID    = UUID(),
-		userID:                 UUID    = UUID(),
+		eventID:                UUID?   = nil,
+		postID:                 UUID?   = nil,
+		userID:                 UUID?   = nil,
 		medium:                 String? = nil,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,
@@ -29,6 +34,8 @@ public struct UserMediumDTO: Codable,  Sendable,
 		videoThumbnail:         String? = nil
 	) {
 		self.id                     = id
+		self.eventID                = eventID
+		self.postID                 = postID
 		self.userID                 = userID
 		self.medium                 = medium
 		self.imageWidth             = imageWidth
