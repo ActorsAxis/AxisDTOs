@@ -11,7 +11,7 @@ public struct TVSeriesDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:         UUID
 	public var workID:     UUID
-	public var name:       String?
+	public var name:       String
 	public var airDate:    Date?
 	public var creditedAs: String?
 	public var season:     Int?
@@ -20,7 +20,7 @@ public struct TVSeriesDTO: Codable,  Sendable,
 	public init(
 		id:         UUID    = UUID(),
 		workID:     UUID    = UUID(),
-		name:       String? = nil,
+		name:       String,
 		airDate:    Date?   = nil,
 		creditedAs: String? = nil,
 		season:     Int?    = nil,

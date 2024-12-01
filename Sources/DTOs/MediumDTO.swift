@@ -16,7 +16,7 @@ public struct MediumDTO: Codable,  Sendable,
 	public var eventID:                UUID?
 	public var postID:                 UUID?
 	public var userID:                 UUID?
-	public var medium:                 String?
+	public var medium:                 String
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
 	public var videoDurationInSeconds: Int?
@@ -27,7 +27,7 @@ public struct MediumDTO: Codable,  Sendable,
 		eventID:                UUID?   = nil,
 		postID:                 UUID?   = nil,
 		userID:                 UUID?   = nil,
-		medium:                 String? = nil,
+		medium:                 String,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,
 		videoDurationInSeconds: Int?    = nil,
