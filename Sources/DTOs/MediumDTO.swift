@@ -13,8 +13,8 @@ public typealias  UserMediumDTO = MediumDTO
 public struct MediumDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:                     UUID
-	public let eventID:                UUID?
-	public let postID:                 UUID?
+	public var eventID:                UUID?
+	public var postID:                 UUID?
 	public var userID:                 UUID?
 	public var medium:                 String?
 	public var imageWidth:             Int?
