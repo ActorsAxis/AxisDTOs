@@ -16,8 +16,7 @@ public struct EventDTO: Codable,  Sendable,
 	public var description:  String?
 	public var email:        String?
 	public var coverImage:   String?
-	public var latitude:     Double?
-	public var longitude:    Double?
+	public var coordinates:  Coordinates?
 	public var address:      String?
 	public var phoneNumber:  String?
 	public var price:        Double?
@@ -27,22 +26,21 @@ public struct EventDTO: Codable,  Sendable,
 	public var venue:        String?
 
 	public init(
-		id:           UUID    = UUID(),
-		eventTypeID:  UUID    = UUID(),
-		website:      String? = nil,
-		dateTime:     Date?   = nil,
-		description:  String? = nil,
-		email:        String? = nil,
-		coverImage:   String? = nil,
-		latitude:     Double? = nil,
-		longitude:    Double? = nil,
-		address:      String? = nil,
-		phoneNumber:  String? = nil,
-		price:        Double? = nil,
-		refundPolicy: String? = nil,
-		title:        String? = nil,
-		subtitle:     String? = nil,
-		venue:        String? = nil
+		id:           UUID         = UUID(),
+		eventTypeID:  UUID         = UUID(),
+		website:      String?      = nil,
+		dateTime:     Date?        = nil,
+		description:  String?      = nil,
+		email:        String?      = nil,
+		coverImage:   String?      = nil,
+		coordinates:  Coordinates? = nil,
+		address:      String?      = nil,
+		phoneNumber:  String?      = nil,
+		price:        Double?      = nil,
+		refundPolicy: String?      = nil,
+		title:        String?      = nil,
+		subtitle:     String?      = nil,
+		venue:        String?      = nil
 	) {
 		self.id           = id
 		self.eventTypeID  = eventTypeID
@@ -51,8 +49,7 @@ public struct EventDTO: Codable,  Sendable,
 		self.description  = description
 		self.email        = email
 		self.coverImage   = coverImage
-		self.latitude     = latitude
-		self.longitude    = longitude
+		self.coordinates  = coordinates
 		self.address      = address
 		self.phoneNumber  = phoneNumber
 		self.price        = price

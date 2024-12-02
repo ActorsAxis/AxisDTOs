@@ -14,7 +14,6 @@ public struct MediumDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:                     UUID
 	public var eventID:                UUID?
-	public var postID:                 UUID?
 	public var userID:                 UUID?
 	public var medium:                 String
 	public var imageWidth:             Int?
@@ -25,7 +24,6 @@ public struct MediumDTO: Codable,  Sendable,
 	public init(
 		id:                     UUID    = UUID(),
 		eventID:                UUID?   = nil,
-		postID:                 UUID?   = nil,
 		userID:                 UUID?   = nil,
 		medium:                 String,
 		imageWidth:             Int?    = nil,
@@ -35,7 +33,6 @@ public struct MediumDTO: Codable,  Sendable,
 	) {
 		self.id                     = id
 		self.eventID                = eventID
-		self.postID                 = postID
 		self.userID                 = userID
 		self.medium                 = medium
 		self.imageWidth             = imageWidth
