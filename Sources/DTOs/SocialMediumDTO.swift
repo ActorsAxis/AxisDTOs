@@ -18,13 +18,13 @@ public struct SocialMediumDTO: Codable,  Sendable,
 	public let updated:            Date?
 
 	public init(
-		id:                 UUID? = nil,
-		eventID:            UUID? = nil,
-		userID:             UUID? = nil,
-		socialMediumTypeID: UUID  = UUID(),
-		url:                String,
-		created:            Date? = nil,
-		updated:            Date? = nil
+		id:                 UUID?  = nil,
+		eventID:            UUID?  = nil,
+		userID:             UUID?  = nil,
+		socialMediumTypeID: UUID   = UUID(),
+		url:                String = "",
+		created:            Date?  = nil,
+		updated:            Date?  = nil
 	) {
 		self.id                 = id
 		self.eventID            = eventID

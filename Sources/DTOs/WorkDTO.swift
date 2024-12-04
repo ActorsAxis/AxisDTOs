@@ -19,14 +19,14 @@ public struct WorkDTO: Codable,  Sendable,
 	public let updated:    Date?
 
 	public init(
-		id:         UUID  = UUID(),
-		userID:     UUID  = UUID(),
-		workTypeID: UUID  = UUID(),
-		name:       String,
-		startDate:  Date? = nil,
-		endDate:    Date? = nil,
-		created:    Date? = nil,
-		updated:    Date? = nil
+		id:         UUID   = UUID(),
+		userID:     UUID   = UUID(),
+		workTypeID: UUID   = UUID(),
+		name:       String = "",
+		startDate:  Date?  = nil,
+		endDate:    Date?  = nil,
+		created:    Date?  = nil,
+		updated:    Date?  = nil
 	) {
 		self.id         = id
 		self.userID     = userID

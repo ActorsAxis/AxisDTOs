@@ -22,7 +22,7 @@ public struct TVSeriesDTO: Codable,  Sendable,
 	public init(
 		id:         UUID    = UUID(),
 		workID:     UUID    = UUID(),
-		name:       String,
+		name:       String  = "",
 		airDate:    Date?   = nil,
 		creditedAs: String? = nil,
 		season:     Int?    = nil,

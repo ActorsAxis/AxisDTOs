@@ -24,7 +24,7 @@ public struct ChannelDTO: Codable,  Sendable,
 	public init(
 		id:                 UUID     = UUID(),
 		userID:             UUID     = UUID(),
-		title:              String,
+		title:              String   = "",
 		description:        String?  = nil,
 		beginBroadcasting:  Date?    = nil,
 		endBroadcasting:    Date?    = nil,
