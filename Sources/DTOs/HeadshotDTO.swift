@@ -19,6 +19,8 @@ public struct HeadshotDTO: Codable,  Sendable,
 	public var picture:   String?
 	public var website:   String?
 	public var weight:    String?
+	public let created:   Date?
+	public let updated:   Date?
 
 	public init(
 		id:        UUID    = UUID(),
@@ -30,7 +32,9 @@ public struct HeadshotDTO: Codable,  Sendable,
 		phone:     String? = nil,
 		picture:   String? = nil,
 		website:   String? = nil,
-		weight:    String? = nil
+		weight:    String? = nil,
+		created:   Date?   = nil,
+		updated:   Date?   = nil
 	) {
 		self.id        = id
 		self.userID    = userID
@@ -42,5 +46,7 @@ public struct HeadshotDTO: Codable,  Sendable,
 		self.picture   = picture
 		self.website   = website
 		self.weight    = weight
+		self.created   = created
+		self.updated   = updated
 	}
 }

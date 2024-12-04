@@ -27,6 +27,8 @@ public struct UserDTO: Codable,  Sendable,
 	public var picture:    String?
 	public var biography:  String?
 	public var resume:     String?
+	public let created:    Date?
+	public let updated:    Date?
 
 	public init(
 		id: UUID = UUID(),
@@ -46,7 +48,9 @@ public struct UserDTO: Codable,  Sendable,
 		username:   String? = nil,
 		picture:    String? = nil,
 		biography:  String? = nil,
-		resume:     String? = nil
+		resume:     String? = nil,
+		created:    Date?   = nil,
+		updated:    Date?   = nil
 	) {
 		self.id = id
 
@@ -66,5 +70,7 @@ public struct UserDTO: Codable,  Sendable,
 		self.picture    = picture
 		self.biography  = biography
 		self.resume     = resume
+		self.created    = created
+		self.updated    = updated
 	}
 }

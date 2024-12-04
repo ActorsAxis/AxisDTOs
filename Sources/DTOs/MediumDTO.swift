@@ -19,6 +19,8 @@ public struct MediumDTO: Codable,  Sendable,
 	public var imageHeight:            Int?
 	public var videoThumbnail:         String?
 	public var videoDurationInSeconds: Int?
+	public let created:                Date?
+	public let updated:                Date?
 
 	public init(
 		id:                     UUID    = UUID(),
@@ -30,7 +32,9 @@ public struct MediumDTO: Codable,  Sendable,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,
 		videoThumbnail:         String? = nil,
-		videoDurationInSeconds: Int?    = nil
+		videoDurationInSeconds: Int?    = nil,
+		created:                Date?   = nil,
+		updated:                Date?   = nil
 	) {
 		self.id                     = id
 		self.eventID                = eventID
@@ -42,5 +46,7 @@ public struct MediumDTO: Codable,  Sendable,
 		self.imageHeight            = imageHeight
 		self.videoThumbnail         = videoThumbnail
 		self.videoDurationInSeconds = videoDurationInSeconds
+		self.created                = created
+		self.updated                = updated
 	}
 }

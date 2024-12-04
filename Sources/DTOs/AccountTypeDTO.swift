@@ -9,14 +9,20 @@ import Foundation
 
 public struct AccountTypeDTO: Codable,  Sendable,
 							  Hashable, Identifiable {
-	public let id:   UUID
-	public var name: String
+	public let id:      UUID
+	public var name:    String
+	public let created: Date?
+	public let updated: Date?
 
 	public init(
-		id:   UUID,
-		name: String
+		id:      UUID,
+		name:    String,
+		created: Date? = nil,
+		updated: Date? = nil
 	) {
-		self.id   = id
-		self.name = name
+		self.id      = id
+		self.name    = name
+		self.created = created
+		self.updated = updated
 	}
 }

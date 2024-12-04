@@ -12,14 +12,20 @@ public struct UserLevelDTO: Codable,  Sendable,
 	public let id:          UUID
 	public var title:       String
 	public var coinsNeeded: Int
+	public let created:     Date?
+	public let updated:     Date?
 
 	public init(
 		id:          UUID,
 		title:       String,
-		coinsNeeded: Int
+		coinsNeeded: Int,
+		created:     Date? = nil,
+		updated:     Date? = nil
 	) {
 		self.id          = id
 		self.title       = title
 		self.coinsNeeded = coinsNeeded
+		self.created     = created
+		self.updated     = updated
 	}
 }

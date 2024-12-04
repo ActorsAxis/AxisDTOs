@@ -16,6 +16,8 @@ public struct PostDTO: Codable,  Sendable,
 	public var description: String?
 	public var url:         String?
 	public var media:      [MediumDTO]?
+	public let created:     Date?
+	public let updated:     Date?
 
 	public init(
 		id:          UUID,
@@ -24,7 +26,9 @@ public struct PostDTO: Codable,  Sendable,
 		name:        String,
 		description: String?      = nil,
 		url:         String?      = nil,
-		media:      [MediumDTO]?  = nil
+		media:      [MediumDTO]?  = nil,
+		created:     Date?        = nil,
+		updated:     Date?        = nil
 	) {
 		self.id          = id
 		self.userID      = userID
@@ -33,5 +37,7 @@ public struct PostDTO: Codable,  Sendable,
 		self.description = description
 		self.url         = url
 		self.media       = media
+		self.created     = created
+		self.updated     = updated
 	}
 }

@@ -24,6 +24,8 @@ public struct EventDTO: Codable,  Sendable,
 	public var title:        String?
 	public var subtitle:     String?
 	public var venue:        String?
+	public let created:      Date?
+	public let updated:      Date?
 
 	public init(
 		id:           UUID         = UUID(),
@@ -40,7 +42,9 @@ public struct EventDTO: Codable,  Sendable,
 		refundPolicy: String?      = nil,
 		title:        String?      = nil,
 		subtitle:     String?      = nil,
-		venue:        String?      = nil
+		venue:        String?      = nil,
+		created:      Date?        = nil,
+		updated:      Date?        = nil
 	) {
 		self.id           = id
 		self.eventTypeID  = eventTypeID
@@ -57,5 +61,7 @@ public struct EventDTO: Codable,  Sendable,
 		self.title        = title
 		self.subtitle     = subtitle
 		self.venue        = venue
+		self.created      = created
+		self.updated      = updated
 	}
 }

@@ -25,6 +25,8 @@ public struct DeviceDTO: Codable,  Sendable,
 	public var screenResolution: String?
 	public var timezone:         String?
 	public var wifi:             String?
+	public let created:          Date?
+	public let updated:          Date?
 
 	public init(
 		id:               UUID    = UUID(),
@@ -42,7 +44,9 @@ public struct DeviceDTO: Codable,  Sendable,
 		screenDensity:    String? = nil,
 		screenResolution: String? = nil,
 		timezone:         String? = nil,
-		wifi:             String? = nil
+		wifi:             String? = nil,
+		created:          Date?   = nil,
+		updated:          Date?   = nil
 	) {
 		self.id               = id
 		self.userID           = userID
@@ -60,5 +64,7 @@ public struct DeviceDTO: Codable,  Sendable,
 		self.screenResolution = screenResolution
 		self.timezone         = timezone
 		self.wifi             = wifi
+		self.created          = created
+		self.updated          = updated
 	}
 }

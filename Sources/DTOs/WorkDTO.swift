@@ -15,6 +15,8 @@ public struct WorkDTO: Codable,  Sendable,
 	public var name:       String
 	public var startDate:  Date?
 	public var endDate:    Date?
+	public let created:    Date?
+	public let updated:    Date?
 
 	public init(
 		id:         UUID  = UUID(),
@@ -22,7 +24,9 @@ public struct WorkDTO: Codable,  Sendable,
 		workTypeID: UUID  = UUID(),
 		name:       String,
 		startDate:  Date? = nil,
-		endDate:    Date? = nil
+		endDate:    Date? = nil,
+		created:    Date? = nil,
+		updated:    Date? = nil
 	) {
 		self.id         = id
 		self.userID     = userID
@@ -30,5 +34,7 @@ public struct WorkDTO: Codable,  Sendable,
 		self.name       = name
 		self.startDate  = startDate
 		self.endDate    = endDate
+		self.created    = created
+		self.updated    = updated
 	}
 }

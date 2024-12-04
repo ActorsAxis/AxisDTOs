@@ -16,6 +16,8 @@ public struct TVSeriesDTO: Codable,  Sendable,
 	public var creditedAs: String?
 	public var season:     Int?
 	public var episode:    Int?
+	public let created:    Date?
+	public let updated:    Date?
 
 	public init(
 		id:         UUID    = UUID(),
@@ -24,7 +26,9 @@ public struct TVSeriesDTO: Codable,  Sendable,
 		airDate:    Date?   = nil,
 		creditedAs: String? = nil,
 		season:     Int?    = nil,
-		episode:    Int?    = nil
+		episode:    Int?    = nil,
+		created:    Date?   = nil,
+		updated:    Date?   = nil
 	) {
 		self.id         = id
 		self.workID     = workID
@@ -33,5 +37,7 @@ public struct TVSeriesDTO: Codable,  Sendable,
 		self.creditedAs = creditedAs
 		self.season     = season
 		self.episode    = episode
+		self.created    = created
+		self.updated    = updated
 	}
 }
