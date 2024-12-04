@@ -17,22 +17,22 @@ public struct ChannelDTO: Codable,  Sendable,
 	public var endBroadcasting:    Date?
 	public var scheduledBroadcast: Date?
 	public var broadcasting:       Date?
-	public var user:               User?
+	public var user:               UserDTO?
 	public let created:            Date?
 	public let updated:            Date?
 
 	public init(
-		id:                 UUID    = UUID(),
-		userID:             UUID    = UUID(),
+		id:                 UUID     = UUID(),
+		userID:             UUID     = UUID(),
 		title:              String,
-		description:        String? = nil,
-		beginBroadcasting:  Date?   = nil,
-		endBroadcasting:    Date?   = nil,
-		scheduledBroadcast: Date?   = nil,
-		broadcasting:       Date?   = nil,
-		user:               User?   = nil,
-		created:            Date?   = nil,
-		updated:            Date?   = nil
+		description:        String?  = nil,
+		beginBroadcasting:  Date?    = nil,
+		endBroadcasting:    Date?    = nil,
+		scheduledBroadcast: Date?    = nil,
+		broadcasting:       Date?    = nil,
+		user:               UserDTO? = nil,
+		created:            Date?    = nil,
+		updated:            Date?    = nil
 	) {
 		self.id                 = id
 		self.userID             = userID
@@ -45,20 +45,5 @@ public struct ChannelDTO: Codable,  Sendable,
 		self.user               = user
 		self.created            = created
 		self.updated            = updated
-	}
-
-	// MARK: -
-
-	public struct User: Codable, Sendable {
-		public let name:    String?
-		public let picture: String?
-
-		public init(
-			name:    String? = nil,
-			picture: String? = nil
-		) {
-			self.name    = name
-			self.picture = picture
-		}
 	}
 }
