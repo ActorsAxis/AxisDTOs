@@ -17,7 +17,7 @@ public struct SocialMediumTypeDTO: Codable,  Sendable,
 
 	public init(
 		id:      UUID,
-		name:    String  = "",
+		name:    String,
 		logo:    String? = nil,
 		created: Date?   = nil,
 		updated: Date?   = nil

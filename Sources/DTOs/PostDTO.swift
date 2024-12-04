@@ -20,7 +20,7 @@ public struct PostDTO: Codable,  Sendable,
 	public let updated:     Date?
 
 	public init(
-		id:          UUID,
+		id:          UUID         = UUID(),
 		userID:      UUID         = UUID(),
 		coordinates: Coordinates? = nil,
 		name:        String       = "",
