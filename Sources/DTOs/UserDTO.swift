@@ -16,6 +16,11 @@ public struct UserDTO: Codable,  Sendable,
 	public var userLevelID:   UUID?
 	public var userTypeID:    UUID?
 
+	public var accountType: AccountTypeDTO?
+	public var unionType:   UnionTypeDTO?
+	public var userLevel:   UserLevelDTO?
+	public var userType:    UserTypeDTO?
+
 	public var email:      String?
 	public var password:   String?
 	public var issuer:     String?

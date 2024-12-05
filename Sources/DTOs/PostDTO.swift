@@ -11,35 +11,35 @@ public struct PostDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id:          UUID
 	public var userID:      UUID
+	public var user:        UserDTO?
 	public var coordinates: Coordinates?
 	public var name:        String
 	public var description: String?
 	public var url:         String?
 	public var media:      [MediumDTO]?
-	public var user:        UserDTO?
 	public let created:     Date?
 	public let updated:     Date?
 
 	public init(
 		id:          UUID         = UUID(),
 		userID:      UUID         = UUID(),
+		user:        UserDTO?     = nil,
 		coordinates: Coordinates? = nil,
 		name:        String       = "",
 		description: String?      = nil,
 		url:         String?      = nil,
 		media:      [MediumDTO]?  = nil,
-		user:        UserDTO?     = nil,
 		created:     Date?        = nil,
 		updated:     Date?        = nil
 	) {
 		self.id          = id
 		self.userID      = userID
+		self.user        = user
 		self.coordinates = coordinates
 		self.name        = name
 		self.description = description
 		self.url         = url
 		self.media       = media
-		self.user        = user
 		self.created     = created
 		self.updated     = updated
 	}
