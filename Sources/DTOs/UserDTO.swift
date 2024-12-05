@@ -43,6 +43,11 @@ public struct UserDTO: Codable,  Sendable,
 		userLevelID:   UUID? = nil,
 		userTypeID:    UUID? = nil,
 
+		accountType: AccountTypeDTO? = nil,
+		unionType:   UnionTypeDTO?   = nil,
+		userLevel:   UserLevelDTO?   = nil,
+		userType:    UserTypeDTO?    = nil,
+
 		email:      String? = nil,
 		password:   String? = nil,
 		issuer:     String? = nil,
@@ -63,6 +68,11 @@ public struct UserDTO: Codable,  Sendable,
 		self.unionTypeID   = unionTypeID
 		self.userLevelID   = userLevelID
 		self.userTypeID    = userTypeID
+
+		self.accountType = accountType
+		self.unionType   = unionType
+		self.userLevel   = userLevel
+		self.userType    = userType
 
 		self.email      = email
 		self.password   = password
