@@ -11,9 +11,10 @@ public struct UserDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id: UUID
 
-	public var accountType: UUID?
-	public var userLevel:   UUID?
-	public var userType:    UUID?
+	public var accountTypeID: UUID?
+	public var unionTypeID:   UUID?
+	public var userLevelID:   UUID?
+	public var userTypeID:    UUID?
 
 	public var email:      String?
 	public var password:   String?
@@ -26,13 +27,16 @@ public struct UserDTO: Codable,  Sendable,
 	public var picture:    String?
 	public var biography:  String?
 	public var resume:     String?
+	public let created:    Date?
+	public let updated:    Date?
 
 	public init(
 		id: UUID = UUID(),
 
-		accountType: UUID? = nil,
-		userLevel:   UUID? = nil,
-		userType:    UUID? = nil,
+		accountTypeID: UUID? = nil,
+		unionTypeID:   UUID? = nil,
+		userLevelID:   UUID? = nil,
+		userTypeID:    UUID? = nil,
 
 		email:      String? = nil,
 		password:   String? = nil,
@@ -44,13 +48,16 @@ public struct UserDTO: Codable,  Sendable,
 		username:   String? = nil,
 		picture:    String? = nil,
 		biography:  String? = nil,
-		resume:     String? = nil
+		resume:     String? = nil,
+		created:    Date?   = nil,
+		updated:    Date?   = nil
 	) {
 		self.id = id
 
-		self.accountType = accountType
-		self.userLevel   = userLevel
-		self.userType    = userType
+		self.accountTypeID = accountTypeID
+		self.unionTypeID   = unionTypeID
+		self.userLevelID   = userLevelID
+		self.userTypeID    = userTypeID
 
 		self.email      = email
 		self.password   = password
@@ -63,5 +70,7 @@ public struct UserDTO: Codable,  Sendable,
 		self.picture    = picture
 		self.biography  = biography
 		self.resume     = resume
+		self.created    = created
+		self.updated    = updated
 	}
 }

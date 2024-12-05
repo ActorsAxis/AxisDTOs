@@ -43,6 +43,14 @@ public struct AgoraRTMRegisterRequest: Codable, Sendable {
 	}
 }
 
+public struct AgoraRTMRegisterResponse: Codable, Sendable {
+	public let username: String
+
+	public init(username: String) {
+		self.username = username
+	}
+}
+
 // MARK: -
 
 public struct AgoraRTMTokenRequest: Codable, Sendable {
@@ -79,7 +87,6 @@ public struct AgoraUserResponse: Codable, Sendable {
 	public let action:          String
 	public let application:     String
 	public let applicationName: String
-	public let count:           Int?
 	public let data:           [Data]
 	public let duration:        Int
 	public let entities:       [Entity]
@@ -92,7 +99,6 @@ public struct AgoraUserResponse: Codable, Sendable {
 		action:          String,
 		application:     String,
 		applicationName: String,
-		count:           Int? = nil,
 		data:           [Data],
 		duration:        Int,
 		entities:       [Entity],
@@ -104,7 +110,6 @@ public struct AgoraUserResponse: Codable, Sendable {
 		self.action          = action
 		self.application     = application
 		self.applicationName = applicationName
-		self.count           = count
 		self.data            = data
 		self.duration        = duration
 		self.entities        = entities
