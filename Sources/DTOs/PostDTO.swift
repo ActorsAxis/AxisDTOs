@@ -16,6 +16,7 @@ public struct PostDTO: Codable,  Sendable,
 	public var name:        String
 	public var description: String?
 	public var url:         String?
+	public var favorited:   Bool?
 	public var media:      [MediumDTO]?
 	public let created:     Date?
 	public let updated:     Date?
@@ -28,6 +29,7 @@ public struct PostDTO: Codable,  Sendable,
 		name:        String       = "",
 		description: String?      = nil,
 		url:         String?      = nil,
+		favorited:   Bool?        = nil,
 		media:      [MediumDTO]?  = nil,
 		created:     Date?        = nil,
 		updated:     Date?        = nil
@@ -39,6 +41,7 @@ public struct PostDTO: Codable,  Sendable,
 		self.name        = name
 		self.description = description
 		self.url         = url
+		self.favorited   = favorited
 		self.media       = media
 		self.created     = created
 		self.updated     = updated
