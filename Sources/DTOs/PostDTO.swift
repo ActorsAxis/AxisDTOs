@@ -13,7 +13,7 @@ public struct PostDTO: Codable,  Sendable,
 	public var userID:      UUID
 	public var user:        UserDTO?
 	public var coordinates: Coordinates?
-	public var name:        String
+	public var name:        String?
 	public var description: String?
 	public var url:         String?
 	public var favorited:   Bool?
@@ -26,7 +26,7 @@ public struct PostDTO: Codable,  Sendable,
 		userID:      UUID         = UUID(),
 		user:        UserDTO?     = nil,
 		coordinates: Coordinates? = nil,
-		name:        String       = "",
+		name:        String?      = nil,
 		description: String?      = nil,
 		url:         String?      = nil,
 		favorited:   Bool?        = nil,
