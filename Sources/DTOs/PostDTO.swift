@@ -10,6 +10,8 @@ import Foundation
 public struct PostDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id:          UUID
+	public let postTypeID:  UUID
+	public var postType:    PostTypeDTO?
 	public var userID:      UUID
 	public var user:        UserDTO?
 	public var coordinates: Coordinates?
@@ -23,6 +25,8 @@ public struct PostDTO: Codable,  Sendable,
 
 	public init(
 		id:          UUID         = UUID(),
+		postTypeID:  UUID         = UUID(),
+		postType:    PostTypeDTO? = nil,
 		userID:      UUID         = UUID(),
 		user:        UserDTO?     = nil,
 		coordinates: Coordinates? = nil,
@@ -35,6 +39,8 @@ public struct PostDTO: Codable,  Sendable,
 		updated:     Date?        = nil
 	) {
 		self.id          = id
+		self.postTypeID  = postTypeID
+		self.postType    = postType
 		self.userID      = userID
 		self.user        = user
 		self.coordinates = coordinates
