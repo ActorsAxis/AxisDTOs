@@ -11,7 +11,7 @@ public struct DeviceDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:               UUID
 	public var userID:           UUID
-	public var deviceTypeID:     UUID
+	public var deviceTypeID:     UUID?
 	public var carrier:          String?
 	public var identifier:       String?
 	public var locale:           String?
@@ -31,7 +31,7 @@ public struct DeviceDTO: Codable,  Sendable,
 	public init(
 		id:               UUID    = UUID(),
 		userID:           UUID    = UUID(),
-		deviceTypeID:     UUID    = UUID(),
+		deviceTypeID:     UUID?   = nil,
 		carrier:          String? = nil,
 		identifier:       String? = nil,
 		locale:           String? = nil,

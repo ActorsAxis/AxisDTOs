@@ -10,7 +10,7 @@ import Foundation
 public struct PostDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id:          UUID
-	public let postTypeID:  UUID
+	public let postTypeID:  UUID?
 	public var postType:    PostTypeDTO?
 	public var userID:      UUID
 	public var user:        UserDTO?
@@ -25,7 +25,7 @@ public struct PostDTO: Codable,  Sendable,
 
 	public init(
 		id:          UUID         = UUID(),
-		postTypeID:  UUID         = UUID(),
+		postTypeID:  UUID?        = nil,
 		postType:    PostTypeDTO? = nil,
 		userID:      UUID         = UUID(),
 		user:        UserDTO?     = nil,
