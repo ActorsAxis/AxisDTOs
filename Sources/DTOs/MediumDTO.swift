@@ -54,7 +54,11 @@ public struct MediumDTO: Codable,  Sendable,
 	}
 
 	public struct UserInterface: Codable, Sendable {
-		public var pickerData:    Data?
+		public var pickerData: Data?
 		public var thumbnailData: Data?
-	}
-}
+		
+		public init(pickerData: Data? = nil, thumbnailData: Data? = nil) {
+			self.pickerData = pickerData
+			self.thumbnailData = thumbnailData
+		}
+	}}
