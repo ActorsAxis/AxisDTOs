@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "axis-dtos",
+	name: "AxisDTOs",
 	platforms: [
 		.iOS        (.v13),
 		.macOS      (.v10_15),
