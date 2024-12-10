@@ -15,7 +15,7 @@ public struct MediumDTO: Codable,  Sendable,
 	public var userID:                 UUID?
 	public var url:                    String?
 	public var order:                  Int?
-	public var thumbnail:              Data?
+	public var thumbnail:              String?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
 	public var videoDurationInSeconds: Int?
@@ -30,7 +30,7 @@ public struct MediumDTO: Codable,  Sendable,
 		userID:                 UUID?   = nil,
 		url:                    String? = nil,
 		order:                  Int?    = nil,
-		thumbnail:              Data?   = nil,
+		thumbnail:              String? = nil,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,
 		videoDurationInSeconds: Int?    = nil,
