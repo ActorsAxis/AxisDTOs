@@ -15,9 +15,9 @@ public struct MediumDTO: Codable,  Sendable,
 	public var userID:                 UUID?
 	public var url:                    String?
 	public var order:                  Int?
-	public var thumbnail:              String?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
+	public var thumbnailURL:           String?
 	public var videoDurationInSeconds: Int?
 	public var pickerData:             Data?
 	public let created:                Date?
@@ -30,9 +30,9 @@ public struct MediumDTO: Codable,  Sendable,
 		userID:                 UUID?   = nil,
 		url:                    String? = nil,
 		order:                  Int?    = nil,
-		thumbnail:              String? = nil,
 		imageWidth:             Int?    = nil,
 		imageHeight:            Int?    = nil,
+		thumbnailURL:           String? = nil,
 		videoDurationInSeconds: Int?    = nil,
 		pickerData:             Data?   = nil,
 		created:                Date?   = nil,
@@ -44,9 +44,9 @@ public struct MediumDTO: Codable,  Sendable,
 		self.userID                 = userID
 		self.url                    = url
 		self.order                  = order
-		self.thumbnail              = thumbnail
 		self.imageWidth             = imageWidth
 		self.imageHeight            = imageHeight
+		self.thumbnailURL           = thumbnailURL
 		self.videoDurationInSeconds = videoDurationInSeconds
 		self.pickerData             = pickerData
 		self.created                = created
