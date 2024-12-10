@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "AxisDTOs",
+	name: "axis-dtos",
 	platforms: [
 		.iOS        (.v13),
 		.macOS      (.v10_15),
@@ -32,7 +32,7 @@ let package = Package(
 				.product(name: "Collections", package: "swift-collections"),
 			],
 			swiftSettings: [
-				.enableExperimentalFeature("StrictConcurrency"),
+				.enableExperimentalFeature("StrictConcurrency=complete"),
 				.swiftLanguageMode(.v6),
 			]
 		),
