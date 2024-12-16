@@ -13,6 +13,7 @@ public struct DeviceDTO: Codable,  Sendable,
 	public var userID:           UUID
 	public var deviceTypeID:     UUID?
 	public var carrier:          String?
+	public var fcmToken:         String?
 	public var identifier:       String?
 	public var locale:           String?
 	public var memory:           String?
@@ -33,6 +34,7 @@ public struct DeviceDTO: Codable,  Sendable,
 		userID:           UUID    = UUID(),
 		deviceTypeID:     UUID?   = nil,
 		carrier:          String? = nil,
+		fcmToken:         String? = nil,
 		identifier:       String? = nil,
 		locale:           String? = nil,
 		memory:           String? = nil,
@@ -52,6 +54,7 @@ public struct DeviceDTO: Codable,  Sendable,
 		self.userID           = userID
 		self.deviceTypeID     = deviceTypeID
 		self.carrier          = carrier
+		self.fcmToken         = fcmToken
 		self.identifier       = identifier
 		self.locale           = locale
 		self.memory           = memory
