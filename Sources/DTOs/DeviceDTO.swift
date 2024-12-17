@@ -11,8 +11,6 @@ public struct DeviceDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:               UUID
 	public var userID:           UUID
-	public var deviceTypeID:     UUID?
-	public var carrier:          String?
 	public var fcmToken:         String?
 	public var identifier:       String?
 	public var locale:           String?
@@ -32,8 +30,6 @@ public struct DeviceDTO: Codable,  Sendable,
 	public init(
 		id:               UUID    = UUID(),
 		userID:           UUID    = UUID(),
-		deviceTypeID:     UUID?   = nil,
-		carrier:          String? = nil,
 		fcmToken:         String? = nil,
 		identifier:       String? = nil,
 		locale:           String? = nil,
@@ -52,8 +48,6 @@ public struct DeviceDTO: Codable,  Sendable,
 	) {
 		self.id               = id
 		self.userID           = userID
-		self.deviceTypeID     = deviceTypeID
-		self.carrier          = carrier
 		self.fcmToken         = fcmToken
 		self.identifier       = identifier
 		self.locale           = locale
