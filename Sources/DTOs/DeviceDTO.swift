@@ -11,9 +11,8 @@ public struct DeviceDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:               UUID
 	public var userID:           UUID
-	public var deviceTypeID:     UUID
-	public var carrier:          String?
-	public var identifier:       String?
+	public var fcmToken:         String?
+	public var identifier:       String
 	public var locale:           String?
 	public var memory:           String?
 	public var model:            String?
@@ -24,16 +23,14 @@ public struct DeviceDTO: Codable,  Sendable,
 	public var screenDensity:    String?
 	public var screenResolution: String?
 	public var timezone:         String?
-	public var wifi:             String?
 	public let created:          Date?
 	public let updated:          Date?
 
 	public init(
 		id:               UUID    = UUID(),
 		userID:           UUID    = UUID(),
-		deviceTypeID:     UUID    = UUID(),
-		carrier:          String? = nil,
-		identifier:       String? = nil,
+		fcmToken:         String? = nil,
+		identifier:       String  = "",
 		locale:           String? = nil,
 		memory:           String? = nil,
 		model:            String? = nil,
@@ -44,14 +41,12 @@ public struct DeviceDTO: Codable,  Sendable,
 		screenDensity:    String? = nil,
 		screenResolution: String? = nil,
 		timezone:         String? = nil,
-		wifi:             String? = nil,
 		created:          Date?   = nil,
 		updated:          Date?   = nil
 	) {
 		self.id               = id
 		self.userID           = userID
-		self.deviceTypeID     = deviceTypeID
-		self.carrier          = carrier
+		self.fcmToken         = fcmToken
 		self.identifier       = identifier
 		self.locale           = locale
 		self.memory           = memory
@@ -63,7 +58,6 @@ public struct DeviceDTO: Codable,  Sendable,
 		self.screenDensity    = screenDensity
 		self.screenResolution = screenResolution
 		self.timezone         = timezone
-		self.wifi             = wifi
 		self.created          = created
 		self.updated          = updated
 	}

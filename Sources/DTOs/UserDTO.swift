@@ -16,6 +16,14 @@ public struct UserDTO: Codable,  Sendable,
 	public var userLevelID:   UUID?
 	public var userTypeID:    UUID?
 
+	public var accountType: AccountTypeDTO?
+	public var unionType:   UnionTypeDTO?
+	public var userLevel:   UserLevelDTO?
+	public var userType:    UserTypeDTO?
+
+	public var devices:     [DeviceDTO]?
+	public var socialMedia: [SocialMediumDTO]?
+
 	public var email:      String?
 	public var password:   String?
 	public var issuer:     String?
@@ -27,6 +35,8 @@ public struct UserDTO: Codable,  Sendable,
 	public var picture:    String?
 	public var biography:  String?
 	public var resume:     String?
+	public var followers:  Int?
+	public var following:  Int?
 	public let created:    Date?
 	public let updated:    Date?
 
@@ -37,6 +47,14 @@ public struct UserDTO: Codable,  Sendable,
 		unionTypeID:   UUID? = nil,
 		userLevelID:   UUID? = nil,
 		userTypeID:    UUID? = nil,
+
+		accountType: AccountTypeDTO? = nil,
+		unionType:   UnionTypeDTO?   = nil,
+		userLevel:   UserLevelDTO?   = nil,
+		userType:    UserTypeDTO?    = nil,
+
+		devices:     [DeviceDTO]?       = nil,
+		socialMedia: [SocialMediumDTO]? = nil,
 
 		email:      String? = nil,
 		password:   String? = nil,
@@ -49,6 +67,8 @@ public struct UserDTO: Codable,  Sendable,
 		picture:    String? = nil,
 		biography:  String? = nil,
 		resume:     String? = nil,
+		followers:  Int?    = nil,
+		following:  Int?    = nil,
 		created:    Date?   = nil,
 		updated:    Date?   = nil
 	) {
@@ -58,6 +78,14 @@ public struct UserDTO: Codable,  Sendable,
 		self.unionTypeID   = unionTypeID
 		self.userLevelID   = userLevelID
 		self.userTypeID    = userTypeID
+
+		self.accountType = accountType
+		self.unionType   = unionType
+		self.userLevel   = userLevel
+		self.userType    = userType
+
+		self.devices     = devices
+		self.socialMedia = socialMedia
 
 		self.email      = email
 		self.password   = password
@@ -70,6 +98,8 @@ public struct UserDTO: Codable,  Sendable,
 		self.picture    = picture
 		self.biography  = biography
 		self.resume     = resume
+		self.followers  = followers
+		self.following  = following
 		self.created    = created
 		self.updated    = updated
 	}

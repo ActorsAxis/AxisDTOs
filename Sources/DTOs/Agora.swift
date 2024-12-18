@@ -22,9 +22,12 @@ public struct AgoraRTCTokenRequest: Codable, Sendable {
 		self.role     = role
 	}
 
-	public enum Role: Int, Codable, Sendable {
+	public enum Role: Int,     CustomStringConvertible,
+					  Codable, Sendable {
 		case broadcaster = 1
 		case audience    = 2
+
+		public var description: String { String(rawValue) }
 	}
 }
 
