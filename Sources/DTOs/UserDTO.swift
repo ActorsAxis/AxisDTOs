@@ -35,8 +35,8 @@ public struct UserDTO: Codable,  Sendable,
 	public var picture:    String?
 	public var biography:  String?
 	public var resume:     String?
-	public var followed:   Int?
 	public var followers:  Int?
+	public var following:  Int?
 	public let created:    Date?
 	public let updated:    Date?
 
@@ -67,8 +67,8 @@ public struct UserDTO: Codable,  Sendable,
 		picture:    String? = nil,
 		biography:  String? = nil,
 		resume:     String? = nil,
-		followed:   Int?    = nil,
 		followers:  Int?    = nil,
+		following:  Int?    = nil,
 		created:    Date?   = nil,
 		updated:    Date?   = nil
 	) {
@@ -98,8 +98,8 @@ public struct UserDTO: Codable,  Sendable,
 		self.picture    = picture
 		self.biography  = biography
 		self.resume     = resume
-		self.followed   = followed
 		self.followers  = followers
+		self.following  = following
 		self.created    = created
 		self.updated    = updated
 	}
