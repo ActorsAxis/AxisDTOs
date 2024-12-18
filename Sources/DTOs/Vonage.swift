@@ -56,7 +56,7 @@ public enum VonageRequest {
 				contentID: String? = nil,
 				appHash:   String? = nil
 			) {
-				self.channel   = channel.rawValue
+				self.channel   = channel.description
 				self.to        = to
 				self.from      = from
 				self.entityID  = entityID
@@ -66,12 +66,22 @@ public enum VonageRequest {
 
 			// MARK: -
 
-			public enum Channel: String {
+			public enum Channel: CustomStringConvertible {
 				case email
-				case silentAuth = "silent_auth"
+				case silentAuth
 				case sms
 				case voice
-				case whatsApp   = "whatsapp"
+				case whatsApp
+
+				public var description: String {
+					switch self {
+						case .email:      "email"
+						case .silentAuth: "silent_auth"
+						case .sms:        "sms"
+						case .voice:      "voice"
+						case .whatsApp:   "whatsapp"
+					}
+				}
 			}
 		}
 	}

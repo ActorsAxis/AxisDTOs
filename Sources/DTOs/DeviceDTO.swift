@@ -23,7 +23,6 @@ public struct DeviceDTO: Codable,  Sendable,
 	public var screenDensity:    String?
 	public var screenResolution: String?
 	public var timezone:         String?
-	public var wifi:             String?
 	public let created:          Date?
 	public let updated:          Date?
 
@@ -42,7 +41,6 @@ public struct DeviceDTO: Codable,  Sendable,
 		screenDensity:    String? = nil,
 		screenResolution: String? = nil,
 		timezone:         String? = nil,
-		wifi:             String? = nil,
 		created:          Date?   = nil,
 		updated:          Date?   = nil
 	) {
@@ -60,7 +58,6 @@ public struct DeviceDTO: Codable,  Sendable,
 		self.screenDensity    = screenDensity
 		self.screenResolution = screenResolution
 		self.timezone         = timezone
-		self.wifi             = wifi
 		self.created          = created
 		self.updated          = updated
 	}
