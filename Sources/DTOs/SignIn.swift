@@ -9,13 +9,13 @@ import Foundation
 
 public struct SignUpWithEmailRequest: Codable, Sendable {
 	public let code:      String
-	public let requestID: String
+	public let requestID: UUID
 	public var email:     String
 	public let password:  String
 
 	public init(
 		code:      String,
-		requestID: String,
+		requestID: UUID,
 		email:     String,
 		password:  String
 	) {
