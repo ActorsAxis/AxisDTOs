@@ -11,10 +11,11 @@ public struct UserDTO: Codable,  Sendable,
 					   Hashable, Identifiable {
 	public let id: UUID
 
-	public var accountTypeID: UUID?
-	public var unionTypeID:   UUID?
-	public var userLevelID:   UUID?
-	public var userTypeID:    UUID?
+	public var accountTypeID:  UUID?
+	public var blockingUserID: UUID?
+	public var unionTypeID:    UUID?
+	public var userLevelID:    UUID?
+	public var userTypeID:     UUID?
 
 	public var accountType: AccountTypeDTO?
 	public var unionType:   UnionTypeDTO?
@@ -44,10 +45,11 @@ public struct UserDTO: Codable,  Sendable,
 	public init(
 		id: UUID = UUID(),
 
-		accountTypeID: UUID? = nil,
-		unionTypeID:   UUID? = nil,
-		userLevelID:   UUID? = nil,
-		userTypeID:    UUID? = nil,
+		accountTypeID:  UUID? = nil,
+		blockingUserID: UUID? = nil,
+		unionTypeID:    UUID? = nil,
+		userLevelID:    UUID? = nil,
+		userTypeID:     UUID? = nil,
 
 		accountType: AccountTypeDTO? = nil,
 		unionType:   UnionTypeDTO?   = nil,
@@ -76,10 +78,11 @@ public struct UserDTO: Codable,  Sendable,
 	) {
 		self.id = id
 
-		self.accountTypeID = accountTypeID
-		self.unionTypeID   = unionTypeID
-		self.userLevelID   = userLevelID
-		self.userTypeID    = userTypeID
+		self.accountTypeID  = accountTypeID
+		self.blockingUserID = blockingUserID
+		self.unionTypeID    = unionTypeID
+		self.userLevelID    = userLevelID
+		self.userTypeID     = userTypeID
 
 		self.accountType = accountType
 		self.unionType   = unionType
