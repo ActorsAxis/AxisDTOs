@@ -17,6 +17,7 @@ public struct MediumDTO: Codable,  Sendable,
 	public var order:                  Int?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
+	public var contentType:            String?
 	public var thumbnailURL:           String?
 	public var videoDurationInSeconds: Int?
 	public var ui:                     UserInterface?
@@ -32,6 +33,7 @@ public struct MediumDTO: Codable,  Sendable,
 		order:                  Int?           = nil,
 		imageWidth:             Int?           = nil,
 		imageHeight:            Int?           = nil,
+		contentType:            String?        = nil,
 		thumbnailURL:           String?        = nil,
 		videoDurationInSeconds: Int?           = nil,
 		ui:                     UserInterface? = nil,
@@ -46,6 +48,7 @@ public struct MediumDTO: Codable,  Sendable,
 		self.order                  = order
 		self.imageWidth             = imageWidth
 		self.imageHeight            = imageHeight
+		self.contentType            = contentType
 		self.thumbnailURL           = thumbnailURL
 		self.videoDurationInSeconds = videoDurationInSeconds
 		self.ui                     = ui

@@ -21,8 +21,9 @@ public struct UserDTO: Codable,  Sendable,
 	public var userLevel:   UserLevelDTO?
 	public var userType:    UserTypeDTO?
 
-	public var devices:     [DeviceDTO]?
-	public var socialMedia: [SocialMediumDTO]?
+	public var blockedUsers: [UserDTO]?
+	public var devices:      [DeviceDTO]?
+	public var socialMedia:  [SocialMediumDTO]?
 
 	public var email:      String?
 	public var password:   String?
@@ -53,8 +54,9 @@ public struct UserDTO: Codable,  Sendable,
 		userLevel:   UserLevelDTO?   = nil,
 		userType:    UserTypeDTO?    = nil,
 
-		devices:     [DeviceDTO]?       = nil,
-		socialMedia: [SocialMediumDTO]? = nil,
+		blockedUsers: [UserDTO]?         = nil,
+		devices:      [DeviceDTO]?       = nil,
+		socialMedia:  [SocialMediumDTO]? = nil,
 
 		email:      String? = nil,
 		password:   String? = nil,
@@ -84,8 +86,9 @@ public struct UserDTO: Codable,  Sendable,
 		self.userLevel   = userLevel
 		self.userType    = userType
 
-		self.devices     = devices
-		self.socialMedia = socialMedia
+		self.blockedUsers = blockedUsers
+		self.devices      = devices
+		self.socialMedia  = socialMedia
 
 		self.email      = email
 		self.password   = password
