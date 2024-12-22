@@ -15,7 +15,6 @@ public struct PostDTO: Codable,  Sendable,
 	public var userID:      UUID
 	public var user:        UserDTO?
 	public var coordinates: Coordinates?
-	public var color:       UInt32?
 	public var name:        String?
 	public var description: String?
 	public var url:         String?
@@ -32,7 +31,6 @@ public struct PostDTO: Codable,  Sendable,
 		userID:      UUID         = UUID(),
 		user:        UserDTO?     = nil,
 		coordinates: Coordinates? = nil,
-		color:       UInt32?      = nil,
 		name:        String?      = nil,
 		description: String?      = nil,
 		url:         String?      = nil,
@@ -48,7 +46,6 @@ public struct PostDTO: Codable,  Sendable,
 		self.userID      = userID
 		self.user        = user
 		self.coordinates = coordinates
-		self.color       = color
 		self.name        = name
 		self.description = description
 		self.url         = url
