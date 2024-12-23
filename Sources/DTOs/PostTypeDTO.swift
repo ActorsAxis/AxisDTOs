@@ -11,14 +11,14 @@ public struct PostTypeDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:      UUID
 	public var name:    String
-	public var color:   UInt32?
+	public var color:   String?
 	public let created: Date?
 	public let updated: Date?
 
 	public init(
 		id:      UUID,
 		name:    String,
-		color:   UInt32? = nil,
+		color:   String? = nil,
 		created: Date?   = nil,
 		updated: Date?   = nil
 	) {
