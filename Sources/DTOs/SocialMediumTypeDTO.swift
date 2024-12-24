@@ -10,14 +10,14 @@ import Foundation
 public struct SocialMediumTypeDTO: Codable,  Sendable,
 								   Hashable, Identifiable {
 	public let id:      UUID
-	public let name:    String
+	public let name:    String?
 	public let logo:    String?
 	public let created: Date?
 	public let updated: Date?
 
 	public init(
 		id:      UUID,
-		name:    String,
+		name:    String? = nil,
 		logo:    String? = nil,
 		created: Date?   = nil,
 		updated: Date?   = nil

@@ -10,7 +10,7 @@ import Foundation
 public struct DeviceDTO: Codable,  Sendable,
 						 Hashable, Identifiable {
 	public let id:               UUID
-	public var userID:           UUID
+	public var userID:           UUID?
 	public var fcmToken:         String?
 	public var identifier:       String
 	public var locale:           String?
@@ -28,7 +28,7 @@ public struct DeviceDTO: Codable,  Sendable,
 
 	public init(
 		id:               UUID    = UUID(),
-		userID:           UUID    = UUID(),
+		userID:           UUID?   = nil,
 		fcmToken:         String? = nil,
 		identifier:       String  = "",
 		locale:           String? = nil,

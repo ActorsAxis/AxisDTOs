@@ -12,7 +12,7 @@ public struct PostDTO: Codable,  Sendable,
 	public let id:          UUID
 	public let postTypeID:  UUID?
 	public var postType:    PostTypeDTO?
-	public var userID:      UUID
+	public var userID:      UUID?
 	public var user:        UserDTO?
 	public var coordinates: Coordinates?
 	public var name:        String?
@@ -28,7 +28,7 @@ public struct PostDTO: Codable,  Sendable,
 		id:          UUID         = UUID(),
 		postTypeID:  UUID?        = nil,
 		postType:    PostTypeDTO? = nil,
-		userID:      UUID         = UUID(),
+		userID:      UUID?        = nil,
 		user:        UserDTO?     = nil,
 		coordinates: Coordinates? = nil,
 		name:        String?      = nil,

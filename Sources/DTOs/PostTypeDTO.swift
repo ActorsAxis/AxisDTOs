@@ -10,14 +10,14 @@ import Foundation
 public struct PostTypeDTO: Codable,  Sendable,
 						   Hashable, Identifiable {
 	public let id:      UUID
-	public var name:    String
+	public var name:    String?
 	public var color:   String?
 	public let created: Date?
 	public let updated: Date?
 
 	public init(
 		id:      UUID,
-		name:    String,
+		name:    String? = nil,
 		color:   String? = nil,
 		created: Date?   = nil,
 		updated: Date?   = nil
