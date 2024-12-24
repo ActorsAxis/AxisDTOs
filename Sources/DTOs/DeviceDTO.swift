@@ -12,7 +12,7 @@ public struct DeviceDTO: Codable,  Sendable,
 	public let id:               UUID
 	public var userID:           UUID?
 	public var fcmToken:         String?
-	public var identifier:       String
+	public var identifier:       String?
 	public var locale:           String?
 	public var memory:           String?
 	public var model:            String?
@@ -30,7 +30,7 @@ public struct DeviceDTO: Codable,  Sendable,
 		id:               UUID    = UUID(),
 		userID:           UUID?   = nil,
 		fcmToken:         String? = nil,
-		identifier:       String  = "",
+		identifier:       String? = nil,
 		locale:           String? = nil,
 		memory:           String? = nil,
 		model:            String? = nil,
