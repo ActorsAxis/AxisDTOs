@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct MediumDTO: Codable,  Sendable,
-						 Hashable, Identifiable {
+public struct MediumDTO: Codable, Hashable, Sendable,
+						 Identifiable {
 	public let id:                     UUID
 	public var eventID:                UUID?
 	public var postID:                 UUID?
@@ -56,7 +56,7 @@ public struct MediumDTO: Codable,  Sendable,
 		self.updated                = updated
 	}
 
-	public struct UserInterface: Codable, Sendable {
+	public struct UserInterface: Codable, Hashable, Sendable {
 		public var pickerData:    Data?
 		public var thumbnailData: Data?
 

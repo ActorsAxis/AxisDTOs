@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct DeviceDTO: Codable,  Sendable,
-						 Hashable, Identifiable {
+public struct DeviceDTO: Codable, Hashable, Sendable,
+						 Identifiable {
 	public let id:               UUID
 	public var userID:           UUID?
 	public var fcmToken:         String?
