@@ -17,7 +17,7 @@ public struct EventDTO: Codable,  Sendable,
 	public var email:        String?
 	public var coverImage:   String?
 	public var coordinates:  Coordinates?
-	public var address:      String?
+	public var address:      Address?
 	public var phoneNumber:  String?
 	public var price:        Double?
 	public var refundPolicy: String?
@@ -36,7 +36,7 @@ public struct EventDTO: Codable,  Sendable,
 		email:        String?      = nil,
 		coverImage:   String?      = nil,
 		coordinates:  Coordinates? = nil,
-		address:      String?      = nil,
+		address:      Address?     = nil,
 		phoneNumber:  String?      = nil,
 		price:        Double?      = nil,
 		refundPolicy: String?      = nil,

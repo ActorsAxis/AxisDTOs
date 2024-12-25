@@ -15,7 +15,7 @@ public struct EventTypeDTO: Codable,  Sendable,
 	public let updated: Date?
 
 	public init(
-		id:      UUID,
+		id:      UUID    = UUID(),
 		name:    String? = nil,
 		created: Date?   = nil,
 		updated: Date?   = nil

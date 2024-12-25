@@ -16,7 +16,7 @@ public struct SocialMediumTypeDTO: Codable,  Sendable,
 	public let updated: Date?
 
 	public init(
-		id:      UUID,
+		id:      UUID    = UUID(),
 		name:    String? = nil,
 		logo:    String? = nil,
 		created: Date?   = nil,
