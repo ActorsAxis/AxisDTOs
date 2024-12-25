@@ -16,6 +16,8 @@ public struct LocationDTO: Codable,  Sendable,
 	public var phone:       String?
 	public var mediaURL:    String?
 	public var address:     Address?
+	public var created:     Date?
+	public var updated:     Date?
 
 	public init(
 		id:          UUID         = UUID(),
@@ -24,7 +26,9 @@ public struct LocationDTO: Codable,  Sendable,
 		name:        String?      = nil,
 		phone:       String?      = nil,
 		mediaURL:    String?      = nil,
-		address:     Address?     = nil
+		address:     Address?     = nil,
+		created:     Date?        = nil,
+		updated:     Date?        = nil
 	) {
 		self.id          = id
 		self.url         = url
@@ -33,5 +37,7 @@ public struct LocationDTO: Codable,  Sendable,
 		self.phone       = phone
 		self.mediaURL    = mediaURL
 		self.address     = address
+		self.created     = created
+		self.updated     = updated
 	}
 }
