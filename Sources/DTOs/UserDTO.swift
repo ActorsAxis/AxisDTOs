@@ -5,7 +5,6 @@
 //  Created by William J. C. Nesbitt on 10/8/24.
 //
 
-import Collections
 import Foundation
 
 public struct UserDTO: Codable, Hashable, Sendable,
@@ -22,9 +21,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var userLevel:   UserLevelDTO?
 	public var userType:    UserTypeDTO?
 
-	public var blocking:    OrderedSet<UserDTO>?
-	public var devices:     OrderedSet<DeviceDTO>?
-	public var socialMedia: OrderedSet<SocialMediumDTO>?
+	public var blocking:    [UserDTO]?
+	public var devices:     [DeviceDTO]?
+	public var socialMedia: [SocialMediumDTO]?
 
 	public var email:      String?
 	public var password:   String?
@@ -55,9 +54,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		userLevel:   UserLevelDTO?   = nil,
 		userType:    UserTypeDTO?    = nil,
 
-		blocking:     [UserDTO]?         = nil,
-		devices:      [DeviceDTO]?       = nil,
-		socialMedia:  [SocialMediumDTO]? = nil,
+		blocking:    [UserDTO]?         = nil,
+		devices:     [DeviceDTO]?       = nil,
+		socialMedia: [SocialMediumDTO]? = nil,
 
 		email:      String? = nil,
 		password:   String? = nil,
@@ -87,9 +86,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.userLevel   = userLevel
 		self.userType    = userType
 
-		self.blocking    = blocking   .map(OrderedSet.init)
-		self.devices     = devices    .map(OrderedSet.init)
-		self.socialMedia = socialMedia.map(OrderedSet.init)
+		self.blocking    = blocking
+		self.devices     = devices
+		self.socialMedia = socialMedia
 
 		self.email      = email
 		self.password   = password
