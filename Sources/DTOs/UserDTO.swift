@@ -5,6 +5,7 @@
 //  Created by William J. C. Nesbitt on 10/8/24.
 //
 
+import Collections
 import Foundation
 
 public struct UserDTO: Codable, Hashable, Sendable,
@@ -21,9 +22,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var userLevel:   UserLevelDTO?
 	public var userType:    UserTypeDTO?
 
-	public var blockedUsers: [UserDTO]?
-	public var devices:      [DeviceDTO]?
-	public var socialMedia:  [SocialMediumDTO]?
+	public var blocking:    OrderedSet<UserDTO>?
+	public var devices:     OrderedSet<DeviceDTO>?
+	public var socialMedia: OrderedSet<SocialMediumDTO>?
 
 	public var email:      String?
 	public var password:   String?
@@ -32,10 +33,10 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var givenName:  String?
 	public var familyName: String?
 	public var name:       String?
-	public var username:   String?
 	public var picture:    String?
 	public var biography:  String?
 	public var resume:     String?
+	public var chat:       Chat?
 	public var followers:  Int?
 	public var following:  Int?
 	public let created:    Date?
@@ -54,7 +55,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		userLevel:   UserLevelDTO?   = nil,
 		userType:    UserTypeDTO?    = nil,
 
-		blockedUsers: [UserDTO]?         = nil,
+		blocking:     [UserDTO]?         = nil,
 		devices:      [DeviceDTO]?       = nil,
 		socialMedia:  [SocialMediumDTO]? = nil,
 
@@ -65,10 +66,10 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		givenName:  String? = nil,
 		familyName: String? = nil,
 		name:       String? = nil,
-		username:   String? = nil,
 		picture:    String? = nil,
 		biography:  String? = nil,
 		resume:     String? = nil,
+		chat:       Chat?   = nil,
 		followers:  Int?    = nil,
 		following:  Int?    = nil,
 		created:    Date?   = nil,
@@ -86,9 +87,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.userLevel   = userLevel
 		self.userType    = userType
 
-		self.blockedUsers = blockedUsers
-		self.devices      = devices
-		self.socialMedia  = socialMedia
+		self.blocking    = blocking   .map(OrderedSet.init)
+		self.devices     = devices    .map(OrderedSet.init)
+		self.socialMedia = socialMedia.map(OrderedSet.init)
 
 		self.email      = email
 		self.password   = password
@@ -97,13 +98,26 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.givenName  = givenName
 		self.familyName = familyName
 		self.name       = name
-		self.username   = username
 		self.picture    = picture
 		self.biography  = biography
 		self.resume     = resume
+		self.chat       = chat
 		self.followers  = followers
 		self.following  = following
 		self.created    = created
 		self.updated    = updated
+	}
+
+	public struct Chat: Codable, Hashable, Sendable {
+		public var username: String?
+		public var token:    String?
+
+		public init(
+			username: String? = nil,
+			token:    String? = nil
+		) {
+			self.username = username
+			self.token    = token
+		}
 	}
 }

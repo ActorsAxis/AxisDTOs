@@ -5,6 +5,7 @@
 //  Created by William J. C. Nesbitt on 12/1/24.
 //
 
+import Collections
 import Foundation
 
 public struct PostDTO: Codable, Hashable, Sendable,
@@ -18,7 +19,7 @@ public struct PostDTO: Codable, Hashable, Sendable,
 	public var name:        String?
 	public var description: String?
 	public var url:         String?
-	public var media:      [MediumDTO]?
+	public var media:       OrderedSet<MediumDTO>?
 	public var comments:    Int?
 	public var likes:       Int?
 	public let created:     Date?
@@ -49,7 +50,7 @@ public struct PostDTO: Codable, Hashable, Sendable,
 		self.name        = name
 		self.description = description
 		self.url         = url
-		self.media       = media
+		self.media       = media.map(OrderedSet.init)
 		self.comments    = comments
 		self.likes       = likes
 		self.created     = created
