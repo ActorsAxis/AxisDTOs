@@ -107,17 +107,19 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.created    = created
 		self.updated    = updated
 	}
+}
 
-	public struct Chat: Codable, Hashable, Sendable {
-		public var username: String?
-		public var token:    String?
+// MARK: -
 
-		public init(
-			username: String? = nil,
-			token:    String? = nil
-		) {
-			self.username = username
-			self.token    = token
-		}
+public struct Chat: Codable, Hashable, Sendable {
+	public var username: String?
+	public var token:    String?
+
+	public init(
+		username: String? = nil,
+		token:    String? = nil
+	) {
+		self.username = username
+		self.token    = token
 	}
 }
