@@ -10,17 +10,17 @@ import Foundation
 public struct UserLevelDTO: Codable, Hashable, Sendable,
 							Identifiable {
 	public let id:          UUID
-	public var title:       String?
-	public var coinsNeeded: Int?
+	public var title:       String
+	public var coinsNeeded: Int
 	public let created:     Date?
 	public let updated:     Date?
 
 	public init(
-		id:          UUID    = UUID(),
-		title:       String? = nil,
-		coinsNeeded: Int?    = nil,
-		created:     Date?   = nil,
-		updated:     Date?   = nil
+		id:          UUID   = UUID(),
+		title:       String = "",
+		coinsNeeded: Int    = 0,
+		created:     Date?  = nil,
+		updated:     Date?  = nil
 	) {
 		self.id          = id
 		self.title       = title
