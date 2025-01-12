@@ -21,7 +21,7 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(url: "https://github.com/apple/swift-collections", from: "1.0.0"),
+		.package(url: "https://github.com/apple/swift-collections", from: "1.1.4"),
 	],
 	targets: [
 		// Targets are the basic building blocks of a package, defining a module or a test suite.
