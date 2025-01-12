@@ -15,8 +15,8 @@ public struct NotificationDTO: Codable, Hashable, Sendable,
 	public var subtitle: String?
 	public var body:     String?
 	public var read:     Bool?
-	public var request:  Data?
-	public var response: Data?
+	public let request:  Data?
+	public let response: Data?
 	public let created:  Date?
 	public let updated:  Date?
 
