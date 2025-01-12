@@ -15,22 +15,20 @@ public struct NotificationDTO: Codable, Hashable, Sendable,
 	public var subtitle: String?
 	public var body:     String?
 	public var read:     Bool?
-	public let request:  Data?
-	public let response: Data?
+	public var data:    [String: String]?
 	public let created:  Date?
 	public let updated:  Date?
 
 	public init(
-		id:       UUID    = UUID(),
-		userID:   UUID?   = nil,
-		title:    String? = nil,
-		subtitle: String? = nil,
-		body:     String? = nil,
-		read:     Bool?   = nil,
-		request:  Data?   = nil,
-		response: Data?   = nil,
-		created:  Date?   = nil,
-		updated:  Date?   = nil
+		id:       UUID             = UUID(),
+		userID:   UUID?            = nil,
+		title:    String?          = nil,
+		subtitle: String?          = nil,
+		body:     String?          = nil,
+		read:     Bool?            = nil,
+		data:    [String: String]? = nil,
+		created:  Date?            = nil,
+		updated:  Date?            = nil
 	) {
 		self.id       = id
 		self.userID   = userID
@@ -38,8 +36,7 @@ public struct NotificationDTO: Codable, Hashable, Sendable,
 		self.subtitle = subtitle
 		self.body     = body
 		self.read     = read
-		self.request  = request
-		self.response = response
+		self.data     = data
 		self.created  = created
 		self.updated  = updated
 	}
