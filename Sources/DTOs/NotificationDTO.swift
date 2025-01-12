@@ -14,8 +14,8 @@ public struct NotificationDTO: Codable, Hashable, Sendable,
 	public var title:    String?
 	public var subtitle: String?
 	public var body:     String?
-	public var read:     Bool?
 	public var data:    [String: String]?
+	public var read:     Bool?
 	public let created:  Date?
 	public let updated:  Date?
 
@@ -25,8 +25,8 @@ public struct NotificationDTO: Codable, Hashable, Sendable,
 		title:    String?          = nil,
 		subtitle: String?          = nil,
 		body:     String?          = nil,
-		read:     Bool?            = nil,
 		data:    [String: String]? = nil,
+		read:     Bool?            = nil,
 		created:  Date?            = nil,
 		updated:  Date?            = nil
 	) {
@@ -35,8 +35,8 @@ public struct NotificationDTO: Codable, Hashable, Sendable,
 		self.title    = title
 		self.subtitle = subtitle
 		self.body     = body
-		self.read     = read
 		self.data     = data
+		self.read     = read
 		self.created  = created
 		self.updated  = updated
 	}
