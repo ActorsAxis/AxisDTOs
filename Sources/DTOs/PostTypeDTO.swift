@@ -16,8 +16,8 @@ public struct PostTypeDTO: Codable, Hashable, Sendable,
 	public let updated: Date?
 
 	public init(
-		id:      UUID    = UUID(),
-		name:    String  = "",
+		id:      UUID,
+		name:    String,
 		color:   String? = nil,
 		created: Date?   = nil,
 		updated: Date?   = nil

@@ -16,11 +16,11 @@ public struct UserLevelDTO: Codable, Hashable, Sendable,
 	public let updated:     Date?
 
 	public init(
-		id:          UUID   = UUID(),
-		title:       String = "",
-		coinsNeeded: Int    = 0,
-		created:     Date?  = nil,
-		updated:     Date?  = nil
+		id:          UUID,
+		title:       String,
+		coinsNeeded: Int,
+		created:     Date? = nil,
+		updated:     Date? = nil
 	) {
 		self.id          = id
 		self.title       = title

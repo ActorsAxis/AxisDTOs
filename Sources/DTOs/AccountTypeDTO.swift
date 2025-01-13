@@ -15,10 +15,10 @@ public struct AccountTypeDTO: Codable, Hashable, Sendable,
 	public let updated: Date?
 
 	public init(
-		id:      UUID   = UUID(),
-		name:    String = "",
-		created: Date?  = nil,
-		updated: Date?  = nil
+		id:      UUID,
+		name:    String,
+		created: Date? = nil,
+		updated: Date? = nil
 	) {
 		self.id      = id
 		self.name    = name
