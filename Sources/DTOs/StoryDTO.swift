@@ -13,18 +13,18 @@ public struct StoryDTO: Codable, Hashable, Sendable,
 	public var userID:  UUID?
 	public var user:    UserDTO?
 	public var media:  [MediumDTO]?
-	public var ui:      UserInterface?
+	public var ui:      UserInterface
 	public let created: Date?
 	public let updated: Date?
 
 	public init(
-		id:      UUID           = UUID(),
-		userID:  UUID?          = nil,
-		user:    UserDTO?       = nil,
-		media:  [MediumDTO]?    = nil,
-		ui:      UserInterface? = nil,
-		created: Date?          = nil,
-		updated: Date?          = nil
+		id:      UUID          = UUID(),
+		userID:  UUID?         = nil,
+		user:    UserDTO?      = nil,
+		media:  [MediumDTO]?   = nil,
+		ui:      UserInterface = UserInterface(),
+		created: Date?         = nil,
+		updated: Date?         = nil
 	) {
 		self.id      = id
 		self.userID  = userID
@@ -38,9 +38,7 @@ public struct StoryDTO: Codable, Hashable, Sendable,
 	public struct UserInterface: Codable, Hashable, Sendable {
 		public var seen: Bool
 
-		public init(
-			seen: Bool = false
-		) {
+		public init(seen: Bool = false) {
 			self.seen = seen
 		}
 	}
