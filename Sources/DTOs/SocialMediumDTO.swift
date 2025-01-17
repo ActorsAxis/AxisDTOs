@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct SocialMediumDTO: Codable,  Sendable,
-							   Hashable, Identifiable {
+public struct SocialMediumDTO: Codable, Hashable, Sendable,
+							   Identifiable {
 	public let id:                 UUID
-	public var eventID:            UUID?
 	public var userID:             UUID?
+	public var eventID:            UUID?
 	public var socialMediumTypeID: UUID?
 	public var url:                String?
 	public let created:            Date?
@@ -19,16 +19,16 @@ public struct SocialMediumDTO: Codable,  Sendable,
 
 	public init(
 		id:                 UUID    = UUID(),
-		eventID:            UUID?   = nil,
 		userID:             UUID?   = nil,
+		eventID:            UUID?   = nil,
 		socialMediumTypeID: UUID?   = nil,
 		url:                String? = nil,
 		created:            Date?   = nil,
 		updated:            Date?   = nil
 	) {
 		self.id                 = id
-		self.eventID            = eventID
 		self.userID             = userID
+		self.eventID            = eventID
 		self.socialMediumTypeID = socialMediumTypeID
 		self.url                = url
 		self.created            = created

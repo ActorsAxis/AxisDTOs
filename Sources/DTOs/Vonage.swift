@@ -89,11 +89,11 @@ public enum VonageRequest {
 	// MARK: -
 
 	public struct Response: Codable, Sendable {
-		public let requestID: String
+		public let requestID: UUID
 		public let checkURL:  URL?
 
 		public init(
-			requestID: String,
+			requestID: UUID,
 			checkURL:  URL? = nil
 		) {
 			self.requestID = requestID
@@ -116,11 +116,11 @@ public enum VonageVerify {
 	// MARK: -
 
 	public struct Response: Codable, Sendable {
-		public let requestID: String
+		public let requestID: UUID
 		public let status:    String
 
 		public init(
-			requestID: String,
+			requestID: UUID,
 			status:    String
 		) {
 			self.requestID = requestID

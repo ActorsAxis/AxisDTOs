@@ -7,19 +7,20 @@
 
 import Foundation
 
-public struct PostDTO: Codable,  Sendable,
-					   Hashable, Identifiable {
+public struct PostDTO: Codable, Hashable, Sendable,
+					   Identifiable {
 	public let id:          UUID
 	public let postTypeID:  UUID?
 	public var postType:    PostTypeDTO?
-	public var userID:      UUID
+	public var userID:      UUID?
 	public var user:        UserDTO?
 	public var coordinates: Coordinates?
 	public var name:        String?
 	public var description: String?
 	public var url:         String?
-	public var favorited:   Bool?
 	public var media:      [MediumDTO]?
+	public var comments:    Int?
+	public var likes:       Int?
 	public let created:     Date?
 	public let updated:     Date?
 
@@ -27,14 +28,15 @@ public struct PostDTO: Codable,  Sendable,
 		id:          UUID         = UUID(),
 		postTypeID:  UUID?        = nil,
 		postType:    PostTypeDTO? = nil,
-		userID:      UUID         = UUID(),
+		userID:      UUID?        = nil,
 		user:        UserDTO?     = nil,
 		coordinates: Coordinates? = nil,
 		name:        String?      = nil,
 		description: String?      = nil,
 		url:         String?      = nil,
-		favorited:   Bool?        = nil,
 		media:      [MediumDTO]?  = nil,
+		comments:    Int?         = nil,
+		likes:       Int?         = nil,
 		created:     Date?        = nil,
 		updated:     Date?        = nil
 	) {
@@ -47,8 +49,9 @@ public struct PostDTO: Codable,  Sendable,
 		self.name        = name
 		self.description = description
 		self.url         = url
-		self.favorited   = favorited
 		self.media       = media
+		self.comments    = comments
+		self.likes       = likes
 		self.created     = created
 		self.updated     = updated
 	}

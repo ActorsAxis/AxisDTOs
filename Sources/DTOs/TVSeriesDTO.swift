@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct TVSeriesDTO: Codable,  Sendable,
-						   Hashable, Identifiable {
+public struct TVSeriesDTO: Codable, Hashable, Sendable,
+						   Identifiable {
 	public let id:         UUID
-	public var workID:     UUID
+	public var workID:     UUID?
 	public var name:       String?
 	public var airDate:    Date?
 	public var creditedAs: String?
@@ -21,7 +21,7 @@ public struct TVSeriesDTO: Codable,  Sendable,
 
 	public init(
 		id:         UUID    = UUID(),
-		workID:     UUID    = UUID(),
+		workID:     UUID?   = nil,
 		name:       String? = nil,
 		airDate:    Date?   = nil,
 		creditedAs: String? = nil,

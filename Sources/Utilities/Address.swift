@@ -5,7 +5,7 @@
 //  Created by William J. C. Nesbitt on 12/9/24.
 //
 
-public struct Address: Codable, Sendable {
+public struct Address: Codable, Hashable, Sendable {
 	public var address: [String]
 	public var city:     String
 	public var state:    String
