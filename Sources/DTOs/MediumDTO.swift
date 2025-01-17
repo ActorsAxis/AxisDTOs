@@ -15,6 +15,7 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 	public var storyID:                UUID?
 	public var userID:                 UUID?
 	public var url:                    String?
+	public var s3Key:                  String?
 	public var order:                  Int?
 	public var imageWidth:             Int?
 	public var imageHeight:            Int?
@@ -32,6 +33,7 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 		storyID:                UUID?          = nil,
 		userID:                 UUID?          = nil,
 		url:                    String?        = nil,
+		s3Key:                  String?        = nil,
 		order:                  Int?           = nil,
 		imageWidth:             Int?           = nil,
 		imageHeight:            Int?           = nil,
@@ -48,6 +50,7 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 		self.storyID                = storyID
 		self.userID                 = userID
 		self.url                    = url
+		self.s3Key                  = s3Key
 		self.order                  = order
 		self.imageWidth             = imageWidth
 		self.imageHeight            = imageHeight
