@@ -12,6 +12,7 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 	public let id:                     UUID
 	public var eventID:                UUID?
 	public var postID:                 UUID?
+	public var sponsorID:              UUID?
 	public var storyID:                UUID?
 	public var userID:                 UUID?
 	public var url:                    String?
@@ -30,6 +31,7 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 		id:                     UUID           = UUID(),
 		eventID:                UUID?          = nil,
 		postID:                 UUID?          = nil,
+		sponsorID:              UUID?          = nil,
 		storyID:                UUID?          = nil,
 		userID:                 UUID?          = nil,
 		url:                    String?        = nil,
@@ -47,6 +49,7 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 		self.id                     = id
 		self.eventID                = eventID
 		self.postID                 = postID
+		self.sponsorID              = sponsorID
 		self.storyID                = storyID
 		self.userID                 = userID
 		self.url                    = url
