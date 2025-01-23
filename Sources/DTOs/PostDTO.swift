@@ -19,8 +19,6 @@ public struct PostDTO: Codable, Hashable, Sendable,
 	public var description: String?
 	public var url:         String?
 	public var media:      [MediumDTO]?
-	public var comments:    Int?
-	public var likes:       Int?
 	public let created:     Date?
 	public let updated:     Date?
 
@@ -35,8 +33,6 @@ public struct PostDTO: Codable, Hashable, Sendable,
 		description: String?      = nil,
 		url:         String?      = nil,
 		media:      [MediumDTO]?  = nil,
-		comments:    Int?         = nil,
-		likes:       Int?         = nil,
 		created:     Date?        = nil,
 		updated:     Date?        = nil
 	) {
@@ -50,8 +46,6 @@ public struct PostDTO: Codable, Hashable, Sendable,
 		self.description = description
 		self.url         = url
 		self.media       = media
-		self.comments    = comments
-		self.likes       = likes
 		self.created     = created
 		self.updated     = updated
 	}
