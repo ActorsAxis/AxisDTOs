@@ -10,7 +10,7 @@ import Foundation
 public struct PostDTO: Codable, Hashable, Sendable,
 					   Identifiable {
 	public let id:          UUID
-	public let postTypeID:  UUID?
+	public var postTypeID:  UUID?
 	public var postType:    PostTypeDTO?
 	public var userID:      UUID?
 	public var user:        UserDTO?
@@ -19,6 +19,8 @@ public struct PostDTO: Codable, Hashable, Sendable,
 	public var description: String?
 	public var url:         String?
 	public var media:      [MediumDTO]?
+	public var favorites:   Int
+	public var likes:       Int
 	public let created:     Date?
 	public let updated:     Date?
 
@@ -33,6 +35,8 @@ public struct PostDTO: Codable, Hashable, Sendable,
 		description: String?      = nil,
 		url:         String?      = nil,
 		media:      [MediumDTO]?  = nil,
+		favorites:   Int          = 0,
+		likes:       Int          = 0,
 		created:     Date?        = nil,
 		updated:     Date?        = nil
 	) {
@@ -46,6 +50,8 @@ public struct PostDTO: Codable, Hashable, Sendable,
 		self.description = description
 		self.url         = url
 		self.media       = media
+		self.favorites   = favorites
+		self.likes       = likes
 		self.created     = created
 		self.updated     = updated
 	}
