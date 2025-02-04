@@ -10,7 +10,7 @@ import Foundation
 public struct SponsorDTO: Codable, Hashable, Sendable,
 						  Identifiable {
 	public let id:            UUID
-	public var title:         String?
+	public var title:         String
 	public var titleMediumID: UUID?
 	public var titleMedium:   MediumDTO?
 	public var description:   String?
@@ -22,7 +22,7 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 
 	public init(
 		id:            UUID        = UUID(),
-		title:         String?     = nil,
+		title:         String      = "",
 		titleMediumID: UUID?       = nil,
 		titleMedium:   MediumDTO?  = nil,
 		description:   String?     = nil,
