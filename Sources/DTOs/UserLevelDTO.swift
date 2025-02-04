@@ -16,7 +16,7 @@ public struct UserLevelDTO: Codable, Hashable, Sendable,
 	public let updated:     Date?
 
 	public init(
-		id:          UUID,
+		id:          UUID  = UUID(),
 		title:       String,
 		coinsNeeded: Int,
 		created:     Date? = nil,
