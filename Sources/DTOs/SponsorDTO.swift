@@ -15,6 +15,7 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 	public var titleMedium:   MediumDTO?
 	public var description:   String?
 	public var media:        [MediumDTO]?
+	public var url:           String?
 	public var order:         Int?
 	public let created:       Date?
 	public let updated:       Date?
@@ -26,6 +27,7 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		titleMedium:   MediumDTO?  = nil,
 		description:   String?     = nil,
 		media:        [MediumDTO]? = nil,
+		url:           String?     = nil,
 		order:         Int?        = nil,
 		created:       Date?       = nil,
 		updated:       Date?       = nil
@@ -36,6 +38,7 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		self.titleMedium   = titleMedium
 		self.description   = description
 		self.media         = media
+		self.url           = url
 		self.order         = order
 		self.created       = created
 		self.updated       = updated
