@@ -22,7 +22,7 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 
 	public init(
 		id:            UUID        = UUID(),
-		title:         String      = "",
+		title:         String,
 		titleMediumID: UUID?       = nil,
 		titleMedium:   MediumDTO?  = nil,
 		description:   String?     = nil,
