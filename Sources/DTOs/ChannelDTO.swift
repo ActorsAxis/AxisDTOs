@@ -12,7 +12,7 @@ public struct ChannelDTO: Codable, Hashable, Sendable,
 	public let id:                 UUID
 	public var userID:             UUID?
 	public var name:               String?
-	public var description:        String?
+	public var channelDescription: String?
 	public var beginBroadcasting:  Date?
 	public var endBroadcasting:    Date?
 	public var scheduledBroadcast: Date?
@@ -25,7 +25,7 @@ public struct ChannelDTO: Codable, Hashable, Sendable,
 		id:                 UUID     = UUID(),
 		userID:             UUID?    = nil,
 		name:               String?  = nil,
-		description:        String?  = nil,
+		channelDescription: String?  = nil,
 		beginBroadcasting:  Date?    = nil,
 		endBroadcasting:    Date?    = nil,
 		scheduledBroadcast: Date?    = nil,
@@ -37,7 +37,7 @@ public struct ChannelDTO: Codable, Hashable, Sendable,
 		self.id                 = id
 		self.userID             = userID
 		self.name               = name
-		self.description        = description
+		self.channelDescription = channelDescription
 		self.beginBroadcasting  = beginBroadcasting
 		self.endBroadcasting    = endBroadcasting
 		self.scheduledBroadcast = scheduledBroadcast
