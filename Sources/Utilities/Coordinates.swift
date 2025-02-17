@@ -10,8 +10,8 @@ public struct Coordinates: Codable, Hashable, Sendable {
 	public var longitude: Double
 
 	public init(
-		latitude:  Double,
-		longitude: Double
+		latitude:  Double = 0,
+		longitude: Double = 0
 	) {
 		self.latitude  = latitude
 		self.longitude = longitude
