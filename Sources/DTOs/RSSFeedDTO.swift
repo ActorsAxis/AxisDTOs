@@ -16,7 +16,7 @@ public struct RSSFeedDTO: Codable, Hashable, Sendable,
 	public let updated: Date?
 
 	public init(
-		id:      UUID,
+		id:      UUID  = UUID(),
 		name:    String,
 		url:     String,
 		created: Date? = nil,

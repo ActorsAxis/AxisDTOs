@@ -15,7 +15,7 @@ public struct WorkTypeDTO: Codable, Hashable, Sendable,
 	public let updated: Date?
 
 	public init(
-		id:      UUID,
+		id:      UUID  = UUID(),
 		name:    String,
 		created: Date? = nil,
 		updated: Date? = nil

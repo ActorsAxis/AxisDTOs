@@ -9,29 +9,35 @@ import Foundation
 
 public struct StoryDTO: Codable, Hashable, Sendable,
 						Identifiable {
-	public let id:      UUID
-	public var userID:  UUID?
-	public var user:    UserDTO?
-	public var media:  [MediumDTO]?
-	public var seen:    Bool?
-	public let created: Date?
-	public let updated: Date?
+	public let id:        UUID
+	public var userID:    UUID?
+	public var user:      UserDTO?
+	public var media:    [MediumDTO]?
+	public var seen:      Bool?
+	public var favorites: Int
+	public var likes:     Int
+	public let created:   Date?
+	public let updated:   Date?
 
 	public init(
-		id:      UUID        = UUID(),
-		userID:  UUID?       = nil,
-		user:    UserDTO?    = nil,
-		media:  [MediumDTO]? = nil,
-		seen:    Bool?       = nil,
-		created: Date?       = nil,
-		updated: Date?       = nil
+		id:        UUID        = UUID(),
+		userID:    UUID?       = nil,
+		user:      UserDTO?    = nil,
+		media:    [MediumDTO]? = nil,
+		seen:      Bool?       = nil,
+		favorites: Int         = 0,
+		likes:     Int         = 0,
+		created:   Date?       = nil,
+		updated:   Date?       = nil
 	) {
-		self.id      = id
-		self.userID  = userID
-		self.user    = user
-		self.media   = media
-		self.seen    = seen
-		self.created = created
-		self.updated = updated
+		self.id        = id
+		self.userID    = userID
+		self.user      = user
+		self.media     = media
+		self.seen      = seen
+		self.favorites = favorites
+		self.likes     = likes
+		self.created   = created
+		self.updated   = updated
 	}
 }
