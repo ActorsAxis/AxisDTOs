@@ -25,4 +25,20 @@ public struct Address: Codable, Hashable, Sendable {
 		self.postcode = postcode
 		self.country  = country
 	}
+
+	public init(
+		addressCount: Int,
+		city:         String = "",
+		state:        String = "",
+		postCode:     String = "",
+		country:      String = ""
+	) {
+		self.init(
+			address: [String](repeating: "", count: addressCount),
+			city:     city,
+			state:    state,
+			postcode: postCode,
+			country:  country
+		)
+	}
 }
