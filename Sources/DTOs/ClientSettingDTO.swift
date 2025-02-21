@@ -10,6 +10,7 @@ import Foundation
 public struct ClientSettingDTO: Codable, Hashable, Sendable,
 								Identifiable {
 	public let id:                       UUID
+	public var userID:                   UUID?
 	public var enableSoundEffects:       Bool?
 	public var rememberSignIn:           Bool?
 	public var newPostNotifications:     Bool?
@@ -24,6 +25,7 @@ public struct ClientSettingDTO: Codable, Hashable, Sendable,
 
 	public init(
 		id:                       UUID  = UUID(),
+		userID:                   UUID? = nil,
 		enableSoundEffects:       Bool? = nil,
 		rememberSignIn:           Bool? = nil,
 		newPostNotifications:     Bool? = nil,
@@ -37,6 +39,7 @@ public struct ClientSettingDTO: Codable, Hashable, Sendable,
 		updated:                  Date? = nil
 	) {
 		self.id                       = id
+		self.userID                   = userID
 		self.enableSoundEffects       = enableSoundEffects
 		self.rememberSignIn           = rememberSignIn
 		self.newPostNotifications     = newPostNotifications
