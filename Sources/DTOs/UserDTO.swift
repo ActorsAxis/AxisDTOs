@@ -12,11 +12,13 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public let id: UUID
 
 	public var accountTypeID: UUID?
+	public var settingsID:    UUID?
 	public var unionTypeID:   UUID?
 	public var userLevelID:   UUID?
 	public var userTypeID:    UUID?
 
 	public var accountType: AccountTypeDTO?
+	public var settings:    ClientSettingDTO?
 	public var unionType:   UnionTypeDTO?
 	public var userLevel:   UserLevelDTO?
 	public var userType:    UserTypeDTO?
@@ -48,14 +50,16 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		id: UUID = UUID(),
 
 		accountTypeID: UUID? = nil,
+		settingsID:    UUID? = nil,
 		unionTypeID:   UUID? = nil,
 		userLevelID:   UUID? = nil,
 		userTypeID:    UUID? = nil,
 
-		accountType: AccountTypeDTO? = nil,
-		unionType:   UnionTypeDTO?   = nil,
-		userLevel:   UserLevelDTO?   = nil,
-		userType:    UserTypeDTO?    = nil,
+		accountType: AccountTypeDTO?   = nil,
+		settings:    ClientSettingDTO? = nil,
+		unionType:   UnionTypeDTO?     = nil,
+		userLevel:   UserLevelDTO?     = nil,
+		userType:    UserTypeDTO?      = nil,
 
 		blocking:    [UserDTO]?         = nil,
 		devices:     [DeviceDTO]?       = nil,
@@ -83,11 +87,13 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.id = id
 
 		self.accountTypeID = accountTypeID
+		self.settingsID    = settingsID
 		self.unionTypeID   = unionTypeID
 		self.userLevelID   = userLevelID
 		self.userTypeID    = userTypeID
 
 		self.accountType = accountType
+		self.settings    = settings
 		self.unionType   = unionType
 		self.userLevel   = userLevel
 		self.userType    = userType
