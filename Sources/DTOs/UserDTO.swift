@@ -27,28 +27,28 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var devices:     [DeviceDTO]?
 	public var socialMedia: [SocialMediumDTO]?
 
-	public var email:       String?
-	public var password:    String?
-	public var issuer:      String?
-	public var subject:     String?
-	public var givenName:   String?
-	public var familyName:  String?
-	public var name:        String?
-	public var username:    String?
-	public var picture:     String?
-	public var biography:   String?
-	public var resume:      String?
-	public var goldCoins:   Double?
-	public var purpleCoins: Double?
-	public var liveStreams: Int?
-	public var posts:       Int?
-	public var stages:      Int?
-	public var stars:       Int?
-	public var chat:        Chat?
-	public var followers:   Int?
-	public var following:   Int?
-	public let created:     Date?
-	public let updated:     Date?
+	public var email:           String?
+	public var password:        String?
+	public var issuer:          String?
+	public var subject:         String?
+	public var givenName:       String?
+	public var familyName:      String?
+	public var name:            String?
+	public var username:        String?
+	public var picture:         String?
+	public var biography:       String?
+	public var resume:          String?
+	public var goldCoins:       Double?
+	public var purpleCoins:     Double?
+	public var liveStreamCount: Int?
+	public var postCount:       Int?
+	public var stageCount:      Int?
+	public var stars:           Int?
+	public var chat:            Chat?
+	public var followers:       Int?
+	public var following:       Int?
+	public let created:         Date?
+	public let updated:         Date?
 
 	public init(
 		id: UUID = UUID(),
@@ -69,28 +69,28 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		devices:     [DeviceDTO]?       = nil,
 		socialMedia: [SocialMediumDTO]? = nil,
 
-		email:       String? = nil,
-		password:    String? = nil,
-		issuer:      String? = nil,
-		subject:     String? = nil,
-		givenName:   String? = nil,
-		familyName:  String? = nil,
-		name:        String? = nil,
-		username:    String? = nil,
-		picture:     String? = nil,
-		biography:   String? = nil,
-		resume:      String? = nil,
-		goldCoins:   Double? = nil,
-		purpleCoins: Double? = nil,
-		liveStreams: Int?    = nil,
-		posts:       Int?    = nil,
-		stages:      Int?    = nil,
-		stars:       Int?    = nil,
-		chat:        Chat?   = nil,
-		followers:   Int?    = nil,
-		following:   Int?    = nil,
-		created:     Date?   = nil,
-		updated:     Date?   = nil
+		email:           String? = nil,
+		password:        String? = nil,
+		issuer:          String? = nil,
+		subject:         String? = nil,
+		givenName:       String? = nil,
+		familyName:      String? = nil,
+		name:            String? = nil,
+		username:        String? = nil,
+		picture:         String? = nil,
+		biography:       String? = nil,
+		resume:          String? = nil,
+		goldCoins:       Double? = nil,
+		purpleCoins:     Double? = nil,
+		liveStreamCount: Int?    = nil,
+		postCount:       Int?    = nil,
+		stageCount:      Int?    = nil,
+		stars:           Int?    = nil,
+		chat:            Chat?   = nil,
+		followers:       Int?    = nil,
+		following:       Int?    = nil,
+		created:         Date?   = nil,
+		updated:         Date?   = nil
 	) {
 		self.id = id
 
@@ -110,28 +110,28 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.devices     = devices
 		self.socialMedia = socialMedia
 
-		self.email       = email
-		self.password    = password
-		self.issuer      = issuer
-		self.subject     = subject
-		self.givenName   = givenName
-		self.familyName  = familyName
-		self.name        = name
-		self.username    = username
-		self.picture     = picture
-		self.biography   = biography
-		self.resume      = resume
-		self.goldCoins   = goldCoins
-		self.purpleCoins = purpleCoins
-		self.liveStreams = liveStreams
-		self.posts       = posts
-		self.stages      = stages
-		self.stars       = stars
-		self.chat        = chat
-		self.followers   = followers
-		self.following   = following
-		self.created     = created
-		self.updated     = updated
+		self.email           = email
+		self.password        = password
+		self.issuer          = issuer
+		self.subject         = subject
+		self.givenName       = givenName
+		self.familyName      = familyName
+		self.name            = name
+		self.username        = username
+		self.picture         = picture
+		self.biography       = biography
+		self.resume          = resume
+		self.goldCoins       = goldCoins
+		self.purpleCoins     = purpleCoins
+		self.liveStreamCount = liveStreamCount
+		self.postCount       = postCount
+		self.stageCount      = stageCount
+		self.stars           = stars
+		self.chat            = chat
+		self.followers       = followers
+		self.following       = following
+		self.created         = created
+		self.updated         = updated
 	}
 }
 
