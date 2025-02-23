@@ -40,6 +40,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var resume:      String?
 	public var goldCoins:   Double?
 	public var purpleCoins: Double?
+	public var liveStreams: Int?
+	public var posts:       Int?
+	public var stages:      Int?
 	public var stars:       Int?
 	public var chat:        Chat?
 	public var followers:   Int?
@@ -79,6 +82,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		resume:      String? = nil,
 		goldCoins:   Double? = nil,
 		purpleCoins: Double? = nil,
+		liveStreams: Int?    = nil,
+		posts:       Int?    = nil,
+		stages:      Int?    = nil,
 		stars:       Int?    = nil,
 		chat:        Chat?   = nil,
 		followers:   Int?    = nil,
@@ -117,6 +123,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.resume      = resume
 		self.goldCoins   = goldCoins
 		self.purpleCoins = purpleCoins
+		self.liveStreams = liveStreams
+		self.posts       = posts
+		self.stages      = stages
 		self.stars       = stars
 		self.chat        = chat
 		self.followers   = followers
