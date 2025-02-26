@@ -10,20 +10,41 @@ import Foundation
 public struct ServerSettingDTO: Codable, Hashable, Sendable,
 								Identifiable {
 	public let id:       UUID
+	public var coins:    Coins?
 	public var missions: Missions?
 	public let created:  Data?
 	public let updated:  Data?
 
 	public init(
 		id:       UUID      = UUID(),
+		coins:    Coins?    = nil,
 		missions: Missions? = nil,
 		created:  Data?     = nil,
 		updated:  Data?     = nil
 	) {
 		self.id       = id
+		self.coins    = coins
 		self.missions = missions
 		self.created  = created
 		self.updated  = updated
+	}
+}
+
+// MARK: -
+
+public struct Coins: Codable, Hashable, Sendable {
+	public var purpleCoinsPerGoldCoin:     Int?
+	public var purpleCoinMultiple:         Int?
+	public var starsPerPurpleCoinMultiple: Int?
+
+	public init(
+		purpleCoinsPerGoldCoin:     Int? = nil,
+		purpleCoinMultiple:         Int? = nil,
+		starsPerPurpleCoinMultiple: Int? = nil
+	) {
+		self.purpleCoinsPerGoldCoin     = purpleCoinsPerGoldCoin
+		self.purpleCoinMultiple         = purpleCoinMultiple
+		self.starsPerPurpleCoinMultiple = starsPerPurpleCoinMultiple
 	}
 }
 
