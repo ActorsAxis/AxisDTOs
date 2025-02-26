@@ -30,20 +30,32 @@ public struct ServerSettingDTO: Codable, Hashable, Sendable,
 // MARK: -
 
 public struct Missions: Codable, Hashable, Sendable {
-	public var coinGiveawayRequirement: Int?
-	public var liveStreamRequirement:   Int?
-	public var postRequirement:         Int?
-	public var stageRequirement:        Int?
+	public var coinGiveawayChallenge: Int?
+	public var coinGiveawayReward:    Int?
+	public var liveStreamChallenge:   Int?
+	public var liveStreamReward:      Int?
+	public var postChallenge:         Int?
+	public var postReward:            Int?
+	public var stageChallenge:        Int?
+	public var stageReward:           Int?
 
 	public init(
-		coinGiveawayRequirement: Int? = nil,
-		liveStreamRequirement:   Int? = nil,
-		postRequirement:         Int? = nil,
-		stageRequirement:        Int? = nil
+		coinGiveawayChallenge: Int? = nil,
+		coinGiveawayReward:    Int? = nil,
+		liveStreamChallenge:   Int? = nil,
+		liveStreamReward:      Int? = nil,
+		postChallenge:         Int? = nil,
+		postReward:            Int? = nil,
+		stageChallenge:        Int? = nil,
+		stageReward:           Int? = nil
 	) {
-		self.coinGiveawayRequirement = coinGiveawayRequirement
-		self.liveStreamRequirement   = liveStreamRequirement
-		self.postRequirement         = postRequirement
-		self.stageRequirement        = stageRequirement
+		self.coinGiveawayChallenge = coinGiveawayChallenge
+		self.coinGiveawayReward    = coinGiveawayReward
+		self.liveStreamChallenge   = liveStreamChallenge
+		self.liveStreamReward      = liveStreamReward
+		self.postChallenge         = postChallenge
+		self.postReward            = postReward
+		self.stageChallenge        = stageChallenge
+		self.stageReward           = stageReward
 	}
 }
