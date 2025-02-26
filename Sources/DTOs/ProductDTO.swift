@@ -10,6 +10,8 @@ import Foundation
 public struct ProductDTO: Codable, Hashable, Sendable,
 						  Identifiable {
 	public let id:               UUID
+	public var userLevelID:      UUID?
+	public var userLevel:        UserLevelDTO?
 	public var stockKeepingUnit: String?
 	public var title:            String?
 	public var shortDescription: String?
@@ -23,20 +25,24 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public let updated:          Date?
 
 	public init(
-		id:               UUID    = UUID(),
-		stockKeepingUnit: String? = nil,
-		title:            String? = nil,
-		shortDescription: String? = nil,
-		longDescription:  String? = nil,
-		url:              String? = nil,
-		order:            Int?    = nil,
-		level:            Int?    = nil,
-		quantity:         Int?    = nil,
-		discount:         Double? = nil,
-		created:          Date?   = nil,
-		updated:          Date?   = nil
+		id:               UUID          = UUID(),
+		userLevelID:      UUID?         = nil,
+		userLevel:        UserLevelDTO? = nil,
+		stockKeepingUnit: String?       = nil,
+		title:            String?       = nil,
+		shortDescription: String?       = nil,
+		longDescription:  String?       = nil,
+		url:              String?       = nil,
+		order:            Int?          = nil,
+		level:            Int?          = nil,
+		quantity:         Int?          = nil,
+		discount:         Double?       = nil,
+		created:          Date?         = nil,
+		updated:          Date?         = nil
 	) {
 		self.id               = id
+		self.userLevelID      = userLevelID
+		self.userLevel        = userLevel
 		self.stockKeepingUnit = stockKeepingUnit
 		self.title            = title
 		self.shortDescription = shortDescription
