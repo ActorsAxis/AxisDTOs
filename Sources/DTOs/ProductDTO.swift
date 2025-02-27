@@ -17,10 +17,11 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var shortDescription: String?
 	public var longDescription:  String?
 	public var url:              String?
-	public var order:            Int?
+	public var priority:         Int?
 	public var level:            Int?
 	public var quantity:         Int?
 	public var discount:         Double?
+	public var media:           [MediumDTO]?
 	public let created:          Date?
 	public let updated:          Date?
 
@@ -33,10 +34,11 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		shortDescription: String?       = nil,
 		longDescription:  String?       = nil,
 		url:              String?       = nil,
-		order:            Int?          = nil,
+		priority:         Int?          = nil,
 		level:            Int?          = nil,
 		quantity:         Int?          = nil,
 		discount:         Double?       = nil,
+		media:           [MediumDTO]?   = nil,
 		created:          Date?         = nil,
 		updated:          Date?         = nil
 	) {
@@ -48,10 +50,11 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		self.shortDescription = shortDescription
 		self.longDescription  = longDescription
 		self.url              = url
-		self.order            = order
+		self.priority         = priority
 		self.level            = level
 		self.quantity         = quantity
 		self.discount         = discount
+		self.media            = media
 		self.created          = created
 		self.updated          = updated
 	}
