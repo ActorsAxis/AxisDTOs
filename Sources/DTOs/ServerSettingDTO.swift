@@ -9,24 +9,27 @@ import Foundation
 
 public struct ServerSettingDTO: Codable, Hashable, Sendable,
 								Identifiable {
-	public let id:       UUID
-	public var coins:    Coins?
-	public var missions: Missions?
-	public let created:  Data?
-	public let updated:  Data?
+	public let id:             UUID
+	public var purchaseCoins: [String: Int]?
+	public var coins:          Coins?
+	public var missions:       Missions?
+	public let created:        Data?
+	public let updated:        Data?
 
 	public init(
-		id:       UUID      = UUID(),
-		coins:    Coins?    = nil,
-		missions: Missions? = nil,
-		created:  Data?     = nil,
-		updated:  Data?     = nil
+		id:             UUID          = UUID(),
+		purchaseCoins: [String: Int]? = nil,
+		coins:          Coins?        = nil,
+		missions:       Missions?     = nil,
+		created:        Data?         = nil,
+		updated:        Data?         = nil
 	) {
-		self.id       = id
-		self.coins    = coins
-		self.missions = missions
-		self.created  = created
-		self.updated  = updated
+		self.id            = id
+		self.purchaseCoins = purchaseCoins
+		self.coins         = coins
+		self.missions      = missions
+		self.created       = created
+		self.updated       = updated
 	}
 }
 
