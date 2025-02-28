@@ -12,19 +12,19 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 	public let id:         UUID
 	public var productID:  UUID?
 	public var userID:     UUID?
-	public var code:       String?
-	public var usageCount: Int?
+	public var code:       String
+	public var usageCount: Int
 	public var created:    Date?
 	public var updated:    Date?
 
 	public init(
-		id:         UUID    = UUID(),
-		productID:  UUID?   = nil,
-		userID:     UUID?   = nil,
-		code:       String? = nil,
-		usageCount: Int?    = nil,
-		created:    Date?   = nil,
-		updated:    Date?   = nil
+		id:         UUID  = UUID(),
+		productID:  UUID? = nil,
+		userID:     UUID? = nil,
+		code:       String,
+		usageCount: Int,
+		created:    Date? = nil,
+		updated:    Date? = nil
 	) {
 		self.id         = id
 		self.productID  = productID
