@@ -19,9 +19,11 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var url:              String?
 	public var priority:         Int?
 	public var level:            Int?
-	public var quantity:         Int?
+	public var couponsAvailable: Int?
 	public var discount:         Double?
 	public var media:           [MediumDTO]?
+	public var beginDate:        Date?
+	public var endDate:          Date?
 	public var created:          Date?
 	public var updated:          Date?
 
@@ -36,9 +38,11 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		url:              String?       = nil,
 		priority:         Int?          = nil,
 		level:            Int?          = nil,
-		quantity:         Int?          = nil,
+		couponsAvailable: Int?          = nil,
 		discount:         Double?       = nil,
 		media:           [MediumDTO]?   = nil,
+		beginDate:        Date?         = nil,
+		endDate:          Date?         = nil,
 		created:          Date?         = nil,
 		updated:          Date?         = nil
 	) {
@@ -52,9 +56,11 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		self.url              = url
 		self.priority         = priority
 		self.level            = level
-		self.quantity         = quantity
+		self.couponsAvailable = couponsAvailable
 		self.discount         = discount
 		self.media            = media
+		self.beginDate        = beginDate
+		self.endDate          = endDate
 		self.created          = created
 		self.updated          = updated
 	}
