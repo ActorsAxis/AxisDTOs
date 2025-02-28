@@ -12,8 +12,8 @@ public struct UserLevelDTO: Codable, Hashable, Sendable,
 	public let id:          UUID
 	public var title:       String
 	public var starsNeeded: Int
-	public let created:     Date?
-	public let updated:     Date?
+	public var created:     Date?
+	public var updated:     Date?
 
 	public init(
 		id:          UUID  = UUID(),

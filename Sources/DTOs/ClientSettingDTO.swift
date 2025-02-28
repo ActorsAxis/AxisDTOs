@@ -20,8 +20,8 @@ public struct ClientSettingDTO: Codable, Hashable, Sendable,
 	public var likeStageNotifications: Bool?
 	public var likeStoryNotifications: Bool?
 	public var giftCoinsNotifications: Bool?
-	public let created:                Date?
-	public let updated:                Date?
+	public var created:                Date?
+	public var updated:                Date?
 
 	public init(
 		id:                     UUID  = UUID(),

@@ -13,8 +13,8 @@ public struct ServerSettingDTO: Codable, Hashable, Sendable,
 	public var purchaseCoins: [String: Int]?
 	public var coins:          Coins?
 	public var missions:       Missions?
-	public let created:        Data?
-	public let updated:        Data?
+	public var created:        Data?
+	public var updated:        Data?
 
 	public init(
 		id:             UUID          = UUID(),

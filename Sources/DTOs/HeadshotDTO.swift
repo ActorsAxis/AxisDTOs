@@ -20,8 +20,8 @@ public struct HeadshotDTO: Codable, Hashable, Sendable,
 	public var picture:     String?
 	public var website:     String?
 	public var weight:      String?
-	public let created:     Date?
-	public let updated:     Date?
+	public var created:     Date?
+	public var updated:     Date?
 
 	public init(
 		id:          UUID         = UUID(),

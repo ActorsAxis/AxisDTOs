@@ -17,8 +17,8 @@ public struct StageDTO: Codable, Hashable, Sendable,
 	public var stageDescription: String?
 	public var favorites:        Int
 	public var likes:            Int
-	public let created:          Date?
-	public let updated:          Date?
+	public var created:          Date?
+	public var updated:          Date?
 
 	public init(
 		id:               UUID       = UUID(),

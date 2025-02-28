@@ -23,8 +23,8 @@ public struct DeviceDTO: Codable, Hashable, Sendable,
 	public var screenDensity:    String?
 	public var screenResolution: String?
 	public var timezone:         String?
-	public let created:          Date?
-	public let updated:          Date?
+	public var created:          Date?
+	public var updated:          Date?
 
 	public init(
 		id:               UUID    = UUID(),

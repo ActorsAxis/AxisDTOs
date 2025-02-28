@@ -28,8 +28,8 @@ public struct MediumDTO: Codable, Hashable, Sendable,
 	public var contentType:            String?
 	public var thumbnailURL:           String?
 	public var videoDurationInSeconds: Int?
-	public let created:                Date?
-	public let updated:                Date?
+	public var created:                Date?
+	public var updated:                Date?
 
 	public var ui: UserInterface?
 

@@ -24,8 +24,8 @@ public struct EventDTO: Codable, Hashable, Sendable,
 	public var title:            String?
 	public var subtitle:         String?
 	public var venue:            String?
-	public let created:          Date?
-	public let updated:          Date?
+	public var created:          Date?
+	public var updated:          Date?
 
 	public init(
 		id:               UUID         = UUID(),

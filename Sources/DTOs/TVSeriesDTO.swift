@@ -16,8 +16,8 @@ public struct TVSeriesDTO: Codable, Hashable, Sendable,
 	public var creditedAs: String?
 	public var season:     Int?
 	public var episode:    Int?
-	public let created:    Date?
-	public let updated:    Date?
+	public var created:    Date?
+	public var updated:    Date?
 
 	public init(
 		id:         UUID    = UUID(),

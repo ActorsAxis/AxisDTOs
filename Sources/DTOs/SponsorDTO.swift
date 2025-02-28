@@ -18,8 +18,8 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 	public var url:                String?
 	public var urlTitle:           String?
 	public var order:              Int?
-	public let created:            Date?
-	public let updated:            Date?
+	public var created:            Date?
+	public var updated:            Date?
 
 	public init(
 		id:                 UUID        = UUID(),

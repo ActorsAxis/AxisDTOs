@@ -48,8 +48,8 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var chat:              Chat?
 	public var followers:         Int?
 	public var following:         Int?
-	public let created:           Date?
-	public let updated:           Date?
+	public var created:           Date?
+	public var updated:           Date?
 
 	public init(
 		id: UUID = UUID(),

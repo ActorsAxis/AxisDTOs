@@ -12,8 +12,8 @@ public struct SocialMediumTypeDTO: Codable, Hashable, Sendable,
 	public let id:      UUID
 	public let name:    String
 	public let logo:    String?
-	public let created: Date?
-	public let updated: Date?
+	public var created: Date?
+	public var updated: Date?
 
 	public init(
 		id:      UUID    = UUID(),

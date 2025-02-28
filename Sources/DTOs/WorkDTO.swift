@@ -15,8 +15,8 @@ public struct WorkDTO: Codable, Hashable, Sendable,
 	public var name:       String?
 	public var startDate:  Date?
 	public var endDate:    Date?
-	public let created:    Date?
-	public let updated:    Date?
+	public var created:    Date?
+	public var updated:    Date?
 
 	public init(
 		id:         UUID    = UUID(),

@@ -22,8 +22,8 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var quantity:         Int?
 	public var discount:         Double?
 	public var media:           [MediumDTO]?
-	public let created:          Date?
-	public let updated:          Date?
+	public var created:          Date?
+	public var updated:          Date?
 
 	public init(
 		id:               UUID          = UUID(),
