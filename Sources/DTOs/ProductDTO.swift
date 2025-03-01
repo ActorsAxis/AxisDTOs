@@ -17,8 +17,8 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var shortDescription: String?
 	public var longDescription:  String?
 	public var url:              String?
-	public var priority:         Int?
 	public var level:            Int?
+	public var priority:         Int?
 	public var couponsAvailable: Int?
 	public var discount:         Double?
 	public var media:           [MediumDTO]?
@@ -36,8 +36,8 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		shortDescription: String?       = nil,
 		longDescription:  String?       = nil,
 		url:              String?       = nil,
-		priority:         Int?          = nil,
 		level:            Int?          = nil,
+		priority:         Int?          = nil,
 		couponsAvailable: Int?          = nil,
 		discount:         Double?       = nil,
 		media:           [MediumDTO]?   = nil,
@@ -54,8 +54,8 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		self.shortDescription = shortDescription
 		self.longDescription  = longDescription
 		self.url              = url
-		self.priority         = priority
 		self.level            = level
+		self.priority         = priority
 		self.couponsAvailable = couponsAvailable
 		self.discount         = discount
 		self.media            = media
