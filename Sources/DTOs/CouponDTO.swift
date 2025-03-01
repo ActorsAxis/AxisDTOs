@@ -14,6 +14,7 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 	public var userID:     UUID?
 	public var code:       String
 	public var usageCount: Int
+	public var redeemed:   Date?
 	public var created:    Date?
 	public var updated:    Date?
 
@@ -23,6 +24,7 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 		userID:     UUID? = nil,
 		code:       String,
 		usageCount: Int,
+		redeemed:   Date? = nil,
 		created:    Date? = nil,
 		updated:    Date? = nil
 	) {
@@ -31,6 +33,7 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 		self.userID     = userID
 		self.code       = code
 		self.usageCount = usageCount
+		self.redeemed   = redeemed
 		self.created    = created
 		self.updated    = updated
 	}
