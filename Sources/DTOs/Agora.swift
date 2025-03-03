@@ -33,34 +33,21 @@ public struct AgoraRTCTokenRequest: Codable, Sendable {
 
 // MARK: -
 
-public struct AgoraRTMRegisterRequest: Codable, Sendable {
-	public let userID:   UUID
-	public let username: String
-
-	public init(
-		userID:   UUID,
-		username: String
-	) {
-		self.userID   = userID
-		self.username = username
-	}
-}
-
-public struct AgoraRTMRegisterResponse: Codable, Sendable {
-	public let username: String
-
-	public init(username: String) {
-		self.username = username
-	}
-}
-
-// MARK: -
-
 public struct AgoraRTMTokenRequest: Codable, Sendable {
 	public let userID: UUID
 
 	public init(userID: UUID) {
 		self.userID = userID
+	}
+}
+
+// MARK: -
+
+public struct AgoraTokenResponse: Codable, Sendable {
+	public let token: String
+
+	public init(token: String) {
+		self.token = token
 	}
 }
 
@@ -74,15 +61,33 @@ public struct AgoraAppIDResponse: Codable, Sendable {
 	}
 }
 
+#if false // This was support for Agora RTM Chat.
+
 // MARK: -
 
-public struct AgoraTokenResponse: Codable, Sendable {
-	public let token: String
+public struct AgoraRTMRegisterRequest: Codable, Sendable {
+	public let userID:   UUID
+	public let username: String
 
-	public init(token: String) {
-		self.token = token
+	public init(
+		userID:   UUID,
+		username: String
+	) {
+		self.userID   = userID
+		self.username = username
 	}
 }
+
+// MARK: -
+
+public struct AgoraRTMRegisterResponse: Codable, Sendable {
+	public let username: String
+
+	public init(username: String) {
+		self.username = username
+	}
+}
+
 
 // MARK: -
 
@@ -164,3 +169,4 @@ public struct AgoraUserResponse: Codable, Sendable {
 		}
 	}
 }
+#endif
