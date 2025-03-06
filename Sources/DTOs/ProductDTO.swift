@@ -20,7 +20,9 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var level:            Int?
 	public var priority:         Int?
 	public var couponsAvailable: Int?
-	public var discount:         Double?
+	public var discountAmount:   Double?
+	public var discountPercent:  Double?
+	public var purpleCoins:      Double?
 	public var media:           [MediumDTO]?
 	public var beginDate:        Date?
 	public var endDate:          Date?
@@ -39,7 +41,9 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		level:            Int?          = nil,
 		priority:         Int?          = nil,
 		couponsAvailable: Int?          = nil,
-		discount:         Double?       = nil,
+		discountAmount:   Double?       = nil,
+		discountPercent:  Double?       = nil,
+		purpleCoins:      Double?       = nil,
 		media:           [MediumDTO]?   = nil,
 		beginDate:        Date?         = nil,
 		endDate:          Date?         = nil,
@@ -57,7 +61,9 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		self.level            = level
 		self.priority         = priority
 		self.couponsAvailable = couponsAvailable
-		self.discount         = discount
+		self.discountAmount   = discountAmount
+		self.discountPercent  = discountPercent
+		self.purpleCoins      = purpleCoins
 		self.media            = media
 		self.beginDate        = beginDate
 		self.endDate          = endDate
