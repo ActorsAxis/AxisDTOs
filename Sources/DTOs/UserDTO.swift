@@ -141,14 +141,14 @@ public struct UserDTO: Codable, Hashable, Sendable,
 // MARK: -
 
 public struct Chat: Codable, Hashable, Sendable {
-	public var username: String?
-	public var token:    String?
+	public var nickname:    String?
+	public var accessToken: String?
 
 	public init(
-		username: String? = nil,
-		token:    String? = nil
+		nickname:    String? = nil,
+		accessToken: String? = nil
 	) {
-		self.username = username
-		self.token    = token
+		self.nickname    = nickname
+		self.accessToken = accessToken
 	}
 }
