@@ -34,7 +34,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var givenName:         String?
 	public var familyName:        String?
 	public var name:              String?
-	public var username:          String?
+	public var nickname:          String?
 	public var picture:           String?
 	public var biography:         String?
 	public var resume:            String?
@@ -45,7 +45,6 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var postCount:         Int?
 	public var stageCount:        Int?
 	public var stars:             Int?
-	public var chat:              Chat?
 	public var followers:         Int?
 	public var following:         Int?
 	public var created:           Date?
@@ -77,7 +76,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		givenName:         String? = nil,
 		familyName:        String? = nil,
 		name:              String? = nil,
-		username:          String? = nil,
+		nickname:          String? = nil,
 		picture:           String? = nil,
 		biography:         String? = nil,
 		resume:            String? = nil,
@@ -88,7 +87,6 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		postCount:         Int?    = nil,
 		stageCount:        Int?    = nil,
 		stars:             Int?    = nil,
-		chat:              Chat?   = nil,
 		followers:         Int?    = nil,
 		following:         Int?    = nil,
 		created:           Date?   = nil,
@@ -119,7 +117,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.givenName         = givenName
 		self.familyName        = familyName
 		self.name              = name
-		self.username          = username
+		self.nickname          = nickname
 		self.picture           = picture
 		self.biography         = biography
 		self.resume            = resume
@@ -130,25 +128,9 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.postCount         = postCount
 		self.stageCount        = stageCount
 		self.stars             = stars
-		self.chat              = chat
 		self.followers         = followers
 		self.following         = following
 		self.created           = created
 		self.updated           = updated
-	}
-}
-
-// MARK: -
-
-public struct Chat: Codable, Hashable, Sendable {
-	public var nickname:    String?
-	public var accessToken: String?
-
-	public init(
-		nickname:    String? = nil,
-		accessToken: String? = nil
-	) {
-		self.nickname    = nickname
-		self.accessToken = accessToken
 	}
 }
