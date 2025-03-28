@@ -20,6 +20,7 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var level:            Int?
 	public var priority:         Int?
 	public var couponsAvailable: Int?
+	public var couponUsageCount: Int?
 	public var discountAmount:   Double?
 	public var discountPercent:  Double?
 	public var purpleCoins:      Double?
@@ -41,6 +42,7 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		level:            Int?          = nil,
 		priority:         Int?          = nil,
 		couponsAvailable: Int?          = nil,
+		couponUsageCount: Int?          = nil,
 		discountAmount:   Double?       = nil,
 		discountPercent:  Double?       = nil,
 		purpleCoins:      Double?       = nil,
@@ -61,6 +63,7 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		self.level            = level
 		self.priority         = priority
 		self.couponsAvailable = couponsAvailable
+		self.couponUsageCount = couponUsageCount
 		self.discountAmount   = discountAmount
 		self.discountPercent  = discountPercent
 		self.purpleCoins      = purpleCoins
