@@ -34,7 +34,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 	public var givenName:         String?
 	public var familyName:        String?
 	public var name:              String?
-	public var nickname:          String?
+	public var chatName:          String?
 	public var picture:           String?
 	public var biography:         String?
 	public var resume:            String?
@@ -76,7 +76,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		givenName:         String? = nil,
 		familyName:        String? = nil,
 		name:              String? = nil,
-		nickname:          String? = nil,
+		chatName:          String? = nil,
 		picture:           String? = nil,
 		biography:         String? = nil,
 		resume:            String? = nil,
@@ -117,7 +117,7 @@ public struct UserDTO: Codable, Hashable, Sendable,
 		self.givenName         = givenName
 		self.familyName        = familyName
 		self.name              = name
-		self.nickname          = nickname
+		self.chatName          = chatName
 		self.picture           = picture
 		self.biography         = biography
 		self.resume            = resume
