@@ -32,8 +32,7 @@ let package = Package(
 				.product(name: "Collections", package: "swift-collections"),
 			],
 			swiftSettings: [
-				.enableExperimentalFeature("StrictConcurrency=complete"),
-				.swiftLanguageMode(.v6),
+				.enableUpcomingFeature("ExistentialAny"),
 			]
 		),
 	]
