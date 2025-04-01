@@ -27,7 +27,7 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var media:           [MediumDTO]?
 	public var beginDate:        Date?
 	public var endDate:          Date?
-	public var active:           Bool
+	public var active:           Bool?
 	public var created:          Date?
 	public var updated:          Date?
 
@@ -50,7 +50,7 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		media:           [MediumDTO]?   = nil,
 		beginDate:        Date?         = nil,
 		endDate:          Date?         = nil,
-		active:           Bool          = false,
+		active:           Bool?         = nil,
 		created:          Date?         = nil,
 		updated:          Date?         = nil
 	) {
