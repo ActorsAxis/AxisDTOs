@@ -11,6 +11,7 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 						 Identifiable {
 	public let id:         UUID
 	public var productID:  UUID?
+	public var sponsorID:  UUID?
 	public var userID:     UUID?
 	public var code:       String
 	public var usageCount: Int
@@ -21,6 +22,7 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 	public init(
 		id:         UUID  = UUID(),
 		productID:  UUID? = nil,
+		sponsorID:  UUID? = nil,
 		userID:     UUID? = nil,
 		code:       String,
 		usageCount: Int,
@@ -30,6 +32,7 @@ public struct CouponDTO: Codable, Hashable, Sendable,
 	) {
 		self.id         = id
 		self.productID  = productID
+		self.sponsorID  = sponsorID
 		self.userID     = userID
 		self.code       = code
 		self.usageCount = usageCount
