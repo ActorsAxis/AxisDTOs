@@ -55,4 +55,21 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		self.created         = created
 		self.updated         = updated
 	}
+
+	private enum CodingKeys: String, CodingKey {
+		case id
+		case title
+		case subtitle
+		case summary
+		case description = "sponsorDescription" // For Compatibility
+		case couponCode
+		case discountAmount
+		case discountPercent
+		case media
+		case url
+		case urlTitle
+		case order
+		case created
+		case updated
+	}
 }
