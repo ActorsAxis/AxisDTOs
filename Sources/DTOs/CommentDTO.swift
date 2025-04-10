@@ -12,6 +12,8 @@ public struct CommentDTO: Codable, Hashable, Sendable,
 	public let id:        UUID
 	public var parentID:  UUID?
 	public var postID:    UUID?
+	public var userID:    UUID?
+	public var user:      UserDTO?
 	public var comment:   String
 	public var imageURL:  String?
 	public var level:     Int
@@ -23,6 +25,8 @@ public struct CommentDTO: Codable, Hashable, Sendable,
 		id:        UUID        = UUID(),
 		parentID:  UUID?       = nil,
 		postID:    UUID?       = nil,
+		userID:    UUID?       = nil,
+		user:      UserDTO?    = nil,
 		comment:   String      = "",
 		imageURL:  String?     = nil,
 		level:     Int         = 0,
@@ -33,6 +37,8 @@ public struct CommentDTO: Codable, Hashable, Sendable,
 		self.id       = id
 		self.parentID = parentID
 		self.postID   = postID
+		self.userID   = userID
+		self.user     = user
 		self.comment  = comment
 		self.imageURL = imageURL
 		self.level    = level
