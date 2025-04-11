@@ -17,7 +17,6 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 	public var couponCode:      String?
 	public var discountAmount:  Double?
 	public var discountPercent: Double?
-	public var coupons:        [CouponDTO]?
 	public var media:          [MediumDTO]?
 	public var url:             String?
 	public var urlTitle:        String?
@@ -35,7 +34,6 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		couponCode:      String?     = nil,
 		discountAmount:  Double?     = nil,
 		discountPercent: Double?     = nil,
-		coupons:        [CouponDTO]? = nil,
 		media:          [MediumDTO]? = nil,
 		url:             String?     = nil,
 		urlTitle:        String?     = nil,
@@ -52,7 +50,6 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		self.couponCode      = couponCode
 		self.discountAmount  = discountAmount
 		self.discountPercent = discountPercent
-		self.coupons         = coupons
 		self.media           = media
 		self.url             = url
 		self.urlTitle        = urlTitle
