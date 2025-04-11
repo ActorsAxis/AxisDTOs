@@ -17,9 +17,11 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 	public var couponCode:      String?
 	public var discountAmount:  Double?
 	public var discountPercent: Double?
+	public var coupons:        [CouponDTO]?
 	public var media:          [MediumDTO]?
 	public var url:             String?
 	public var urlTitle:        String?
+	public var glowing:         Bool?
 	public var order:           Int?
 	public var created:         Date?
 	public var updated:         Date?
@@ -33,9 +35,11 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		couponCode:      String?     = nil,
 		discountAmount:  Double?     = nil,
 		discountPercent: Double?     = nil,
+		coupons:        [CouponDTO]? = nil,
 		media:          [MediumDTO]? = nil,
 		url:             String?     = nil,
 		urlTitle:        String?     = nil,
+		glowing:         Bool?       = nil,
 		order:           Int?        = nil,
 		created:         Date?       = nil,
 		updated:         Date?       = nil
@@ -48,9 +52,11 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		self.couponCode      = couponCode
 		self.discountAmount  = discountAmount
 		self.discountPercent = discountPercent
+		self.coupons         = coupons
 		self.media           = media
 		self.url             = url
 		self.urlTitle        = urlTitle
+		self.glowing         = glowing
 		self.order           = order
 		self.created         = created
 		self.updated         = updated
@@ -59,17 +65,6 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 	private enum CodingKeys: String, CodingKey {
 		case id
 		case title
-		case subtitle
-		case summary
-		case description = "sponsorDescription" // For Compatibility
-		case couponCode
-		case discountAmount
-		case discountPercent
-		case media
-		case url
-		case urlTitle
-		case order
-		case created
-		case updated
+		case description = "sponsorDescription" // For JSON Compatibility
 	}
 }
