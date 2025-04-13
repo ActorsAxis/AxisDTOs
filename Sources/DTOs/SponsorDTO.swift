@@ -62,6 +62,18 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 	private enum CodingKeys: String, CodingKey {
 		case id
 		case title
+		case subtitle
+		case summary
 		case description = "sponsorDescription" // For JSON Compatibility
+		case couponCode
+		case discountAmount
+		case discountPercent
+		case media
+		case url
+		case urlTitle
+		case glowing
+		case order
+		case created
+		case updated
 	}
 }
