@@ -19,7 +19,8 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 	public var url:              String?
 	public var level:            Int?
 	public var priority:         Int?
-	public var couponsAvailable: Int?
+	public var couponsAvailable: Int
+	public var couponsToRedeem:  Int
 	public var couponUsageCount: Int?
 	public var discountAmount:   Double?
 	public var discountPercent:  Double?
@@ -42,7 +43,8 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		url:              String?       = nil,
 		level:            Int?          = nil,
 		priority:         Int?          = nil,
-		couponsAvailable: Int?          = nil,
+		couponsAvailable: Int           = 0,
+		couponsToRedeem:  Int           = 0,
 		couponUsageCount: Int?          = nil,
 		discountAmount:   Double?       = nil,
 		discountPercent:  Double?       = nil,
@@ -65,6 +67,7 @@ public struct ProductDTO: Codable, Hashable, Sendable,
 		self.level            = level
 		self.priority         = priority
 		self.couponsAvailable = couponsAvailable
+		self.couponsToRedeem  = couponsToRedeem
 		self.couponUsageCount = couponUsageCount
 		self.discountAmount   = discountAmount
 		self.discountPercent  = discountPercent
