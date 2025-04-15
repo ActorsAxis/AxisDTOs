@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct MediumDTO: Codable, Hashable, Sendable,
-						 Identifiable {
+public struct MediumDTO: Codable,  Sendable,
+						 Hashable, Identifiable {
 	public let id: UUID
 
 	public var eventID:   UUID?

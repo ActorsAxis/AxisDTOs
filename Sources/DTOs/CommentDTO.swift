@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct CommentDTO: Codable, Hashable, Sendable,
-						  Identifiable {
+public struct CommentDTO: Codable,  Sendable,
+						  Hashable, Identifiable {
 	public let id:        UUID
 	public var parentID:  UUID?
 	public var postID:    UUID?

@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct SponsorDTO: Codable, Hashable, Sendable,
-						  Identifiable {
+public struct SponsorDTO: Codable,  Sendable,
+						  Hashable, Identifiable {
 	public let id:               UUID
 	public var title:            String
 	public var subtitle:         String?
@@ -73,7 +73,7 @@ public struct SponsorDTO: Codable, Hashable, Sendable,
 		case title
 		case subtitle
 		case summary
-		case description = "sponsorDescription" // For JSON Compatibility
+		case description = "sponsorDescription" // For Backward Compatibility
 		case couponCode
 		case discountAmount
 		case discountPercent

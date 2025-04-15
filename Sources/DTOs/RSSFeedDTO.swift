@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct RSSFeedDTO: Codable, Hashable, Sendable,
-						  Identifiable {
+public struct RSSFeedDTO: Codable,  Sendable,
+						  Hashable, Identifiable {
 	public let id:      UUID
 	public var name:    String
 	public var url:     String

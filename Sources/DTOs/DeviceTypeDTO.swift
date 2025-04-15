@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct DeviceTypeDTO: Codable, Hashable, Sendable,
-							 Identifiable {
+public struct DeviceTypeDTO: Codable,  Sendable,
+							 Hashable, Identifiable {
 	public let id:      UUID
 	public var name:    String
 	public var created: Date?

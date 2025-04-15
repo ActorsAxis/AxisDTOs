@@ -9,7 +9,7 @@ import Foundation
 
 public enum FCM {
 	public enum Messages {
-		public struct Payload: Codable, Hashable, Sendable {
+		public struct Payload: Codable, Sendable {
 			public var message: Message
 
 			public init(message: Message) {
@@ -17,7 +17,7 @@ public enum FCM {
 			}
 		}
 
-		public struct Message: Codable, Hashable, Sendable {
+		public struct Message: Codable, Sendable {
 			public var token:        String
 			public var notification: Notification?
 			public var data:        [String: String]?
@@ -38,7 +38,7 @@ public enum FCM {
 	}
 
 	public enum Topics {
-		public struct Payload: Codable, Hashable, Sendable {
+		public struct Payload: Codable, Sendable {
 			public var message: Message
 
 			public init(message: Message) {
@@ -46,7 +46,7 @@ public enum FCM {
 			}
 		}
 
-		public struct Message: Codable, Hashable, Sendable {
+		public struct Message: Codable, Sendable {
 			public var topic:        String
 			public var notification: Notification
 			public var data:        [String: String]?
@@ -66,7 +66,7 @@ public enum FCM {
 		}
 	}
 
-	public struct Notification: Codable, Hashable, Sendable {
+	public struct Notification: Codable, Sendable {
 		public var title: String
 		public var body:  String
 
@@ -80,7 +80,7 @@ public enum FCM {
 	}
 
 	public enum Apple {
-		public struct APNS: Codable, Hashable, Sendable {
+		public struct APNS: Codable, Sendable {
 			public var headers: Headers?
 			public var payload: Payload
 
@@ -93,7 +93,7 @@ public enum FCM {
 			}
 		}
 
-		public struct Headers: Codable, Hashable, Sendable {
+		public struct Headers: Codable, Sendable {
 			public var priority: String
 			public var pushType: String
 			public var topic:    String?
@@ -104,11 +104,11 @@ public enum FCM {
 				topic:    String? = nil
 			) {
 				self.priority = String(priority)
-				self.pushType = pushType.description
+				self.pushType = pushType.rawValue
 				self.topic    = topic
 			}
 
-			public enum PushType: CustomStringConvertible {
+			public enum PushType: String, Codable, Sendable {
 				case alert
 				case background
 				case complication
@@ -117,16 +117,14 @@ public enum FCM {
 				case mdm
 				case voip
 
-				public var description: String {
-					switch self {
-						case .alert:        "alert"
-						case .background:   "background"
-						case .complication: "complication"
-						case .fileProvider: "fileprovider"
-						case .liveActivity: "liveactivity"
-						case .mdm:          "mdm"
-						case .voip:         "voip"
-					}
+				private enum CodingKeys: String, CodingKey {
+					case alert
+					case background
+					case complication
+					case fileProvider = "fileprovider"
+					case liveActivity = "liveactivity"
+					case mdm
+					case voip
 				}
 			}
 
@@ -137,7 +135,7 @@ public enum FCM {
 			}
 		}
 
-		public struct Payload: Codable, Hashable, Sendable {
+		public struct Payload: Codable, Sendable {
 			public var aps: APS?
 
 			public init(aps: APS? = nil) {
@@ -145,7 +143,7 @@ public enum FCM {
 			}
 		}
 
-		public struct APS: Codable, Hashable, Sendable {
+		public struct APS: Codable, Sendable {
 			public var alert:            Alert?
 			public var badge:            Int?
 			public var sound:            Sound?
@@ -171,7 +169,7 @@ public enum FCM {
 			}
 		}
 
-		public struct Alert: Codable, Hashable, Sendable {
+		public struct Alert: Codable, Sendable {
 			public var title:    String
 			public var subtitle: String?
 			public var body:     String
@@ -187,7 +185,7 @@ public enum FCM {
 			}
 		}
 
-		public struct Sound: Codable, Hashable, Sendable {
+		public struct Sound: Codable, Sendable {
 			public var name:     String
 			public var volume:   Double?
 			public var critical: Int?

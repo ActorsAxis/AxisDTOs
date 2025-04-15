@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct ServerSettingDTO: Codable, Hashable, Sendable,
-								Identifiable {
+public struct ServerSettingDTO: Codable,  Sendable,
+								Hashable, Identifiable {
 	public let id:             UUID
 	public var purchaseCoins: [String: Int]?
 	public var coins:          Coins?

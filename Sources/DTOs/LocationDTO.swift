@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct LocationDTO: Codable, Hashable, Sendable,
-						   Identifiable {
+public struct LocationDTO: Codable,  Sendable,
+						   Hashable, Identifiable {
 	public let id:          UUID
 	public var url:         String?
 	public var coordinates: Coordinates?

@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct CouponDTO: Codable, Hashable, Sendable,
-						 Identifiable {
+public struct CouponDTO: Codable,  Sendable,
+						 Hashable, Identifiable {
 	public let id:         UUID
 	public var productID:  UUID?
 	public var sponsorID:  UUID?

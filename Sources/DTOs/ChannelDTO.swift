@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct ChannelDTO: Codable, Hashable, Sendable,
-						  Identifiable {
+public struct ChannelDTO: Codable,  Sendable,
+						  Hashable, Identifiable {
 	public let id:                 UUID
 	public var userID:             UUID?
 	public var name:               String?

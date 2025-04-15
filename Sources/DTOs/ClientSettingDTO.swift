@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct ClientSettingDTO: Codable, Hashable, Sendable,
-								Identifiable {
+public struct ClientSettingDTO: Codable,  Sendable,
+								Hashable, Identifiable {
 	public let id:                     UUID
 	public var userID:                 UUID?
 	public var enableSoundEffects:     Bool?

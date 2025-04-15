@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct UserLevelDTO: Codable, Hashable, Sendable,
-							Identifiable {
+public struct UserLevelDTO: Codable,  Sendable,
+							Hashable, Identifiable {
 	public let id:          UUID
 	public var title:       String
 	public var starsNeeded: Int

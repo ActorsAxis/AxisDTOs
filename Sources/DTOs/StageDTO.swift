@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct StageDTO: Codable, Hashable, Sendable,
-						Identifiable {
+public struct StageDTO: Codable,  Sendable,
+						Hashable, Identifiable {
 	public let id:               UUID
 	public var userID:           UUID?
 	public var user:             UserDTO?

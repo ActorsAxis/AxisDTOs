@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct SocialMediumTypeDTO: Codable, Hashable, Sendable,
-								   Identifiable {
+public struct SocialMediumTypeDTO: Codable,  Sendable,
+								   Hashable, Identifiable {
 	public let id:      UUID
 	public let name:    String
 	public let logo:    String?

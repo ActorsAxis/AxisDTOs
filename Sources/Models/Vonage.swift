@@ -19,13 +19,13 @@ public enum VonageRequest {
 		public let workflow:       [Workflow]
 
 		public init(
-			locale:          String? = nil,
-			channelTimeout:  Int?    = nil,
-			clientRef:       String? = nil,
-			codeLength:      Int?    = nil,
-			code:            String? = nil,
+			locale:          String? =  nil,
+			channelTimeout:  Int?    =  nil,
+			clientRef:       String? =  nil,
+			codeLength:      Int?    =  nil,
+			code:            String? =  nil,
 			brand:           String  = .vonage.brand,
-			templateID:      UUID?   = nil,
+			templateID:      UUID?   =  nil,
 			workflow:       [Workflow]
 		) {
 			self.locale          = locale
@@ -56,7 +56,7 @@ public enum VonageRequest {
 				contentID: String? = nil,
 				appHash:   String? = nil
 			) {
-				self.channel   = channel.description
+				self.channel   = channel.rawValue
 				self.to        = to
 				self.from      = from
 				self.entityID  = entityID
@@ -66,21 +66,19 @@ public enum VonageRequest {
 
 			// MARK: -
 
-			public enum Channel: CustomStringConvertible {
+			public enum Channel: String, Codable, Sendable {
 				case email
 				case silentAuth
 				case sms
 				case voice
 				case whatsApp
 
-				public var description: String {
-					switch self {
-						case .email:      "email"
-						case .silentAuth: "silent_auth"
-						case .sms:        "sms"
-						case .voice:      "voice"
-						case .whatsApp:   "whatsapp"
-					}
+				private enum CodingKeys: String, CodingKey {
+					case email
+					case silentAuth
+					case sms
+					case voice
+					case whatsApp = "whatsapp"
 				}
 			}
 		}
