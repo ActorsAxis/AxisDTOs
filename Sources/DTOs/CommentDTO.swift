@@ -12,6 +12,7 @@ public struct CommentDTO: Codable,  Sendable,
 	public let id:        UUID
 	public var parentID:  UUID?
 	public var postID:    UUID?
+	public var stageID:   UUID?
 	public var userID:    UUID?
 	public var user:      UserDTO?
 	public var comment:   String
@@ -25,6 +26,7 @@ public struct CommentDTO: Codable,  Sendable,
 		id:        UUID        = UUID(),
 		parentID:  UUID?       = nil,
 		postID:    UUID?       = nil,
+		stageID:   UUID?       = nil,
 		userID:    UUID?       = nil,
 		user:      UserDTO?    = nil,
 		comment:   String      = "",
@@ -37,6 +39,7 @@ public struct CommentDTO: Codable,  Sendable,
 		self.id       = id
 		self.parentID = parentID
 		self.postID   = postID
+		self.stageID  = stageID
 		self.userID   = userID
 		self.user     = user
 		self.comment  = comment
