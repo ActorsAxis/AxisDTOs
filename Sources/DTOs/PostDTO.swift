@@ -19,9 +19,9 @@ public struct PostDTO: Codable,  Sendable,
 	public var postDescription: String?
 	public var url:             String?
 	public var media:          [MediumDTO]?
-	public var comments:        Int
-	public var favorites:       Int
-	public var likes:           Int
+	public var comments:        Int?
+	public var favorites:       Int?
+	public var likes:           Int?
 	public var created:         Date?
 	public var updated:         Date?
 
@@ -36,9 +36,9 @@ public struct PostDTO: Codable,  Sendable,
 		postDescription: String?      = nil,
 		url:             String?      = nil,
 		media:          [MediumDTO]?  = nil,
-		comments:        Int          = 0,
-		favorites:       Int          = 0,
-		likes:           Int          = 0,
+		comments:        Int?         = nil,
+		favorites:       Int?         = nil,
+		likes:           Int?         = nil,
 		created:         Date?        = nil,
 		updated:         Date?        = nil
 	) {
