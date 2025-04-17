@@ -14,8 +14,8 @@ public struct StoryDTO: Codable,  Sendable,
 	public var user:      UserDTO?
 	public var media:    [MediumDTO]?
 	public var seen:      Bool?
-	public var favorites: Int
-	public var likes:     Int
+	public var favorites: Int?
+	public var likes:     Int?
 	public var created:   Date?
 	public var updated:   Date?
 
@@ -25,8 +25,8 @@ public struct StoryDTO: Codable,  Sendable,
 		user:      UserDTO?    = nil,
 		media:    [MediumDTO]? = nil,
 		seen:      Bool?       = nil,
-		favorites: Int         = 0,
-		likes:     Int         = 0,
+		favorites: Int?        = nil,
+		likes:     Int?        = nil,
 		created:   Date?       = nil,
 		updated:   Date?       = nil
 	) {

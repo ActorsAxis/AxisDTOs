@@ -15,8 +15,8 @@ public struct StageDTO: Codable,  Sendable,
 	public var mediumID:         UUID?
 	public var medium:           MediumDTO?
 	public var stageDescription: String?
-	public var favorites:        Int
-	public var likes:            Int
+	public var favorites:        Int?
+	public var likes:            Int?
 	public var created:          Date?
 	public var updated:          Date?
 
@@ -27,8 +27,8 @@ public struct StageDTO: Codable,  Sendable,
 		mediumID:         UUID?      = nil,
 		medium:           MediumDTO? = nil,
 		stageDescription: String?    = nil,
-		favorites:        Int        = 0,
-		likes:            Int        = 0,
+		favorites:        Int?       = nil,
+		likes:            Int?       = nil,
 		created:          Date?      = nil,
 		updated:          Date?      = nil
 	) {
