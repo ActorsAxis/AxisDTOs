@@ -18,6 +18,7 @@ public struct CommentDTO: Codable,  Sendable,
 	public var comment:   String
 	public var imageURL:  String?
 	public var level:     Int
+	public var likes:     Int
 	public var children: [CommentDTO]
 	public var created:   Date?
 	public var updated:   Date?
@@ -32,6 +33,7 @@ public struct CommentDTO: Codable,  Sendable,
 		comment:   String      = "",
 		imageURL:  String?     = nil,
 		level:     Int         = 0,
+		likes:     Int         = 0,
 		children: [CommentDTO] = [],
 		created:   Date?       = nil,
 		updated:   Date?       = nil
@@ -45,6 +47,7 @@ public struct CommentDTO: Codable,  Sendable,
 		self.comment  = comment
 		self.imageURL = imageURL
 		self.level    = level
+		self.likes    = likes
 		self.children = children
 		self.created  = created
 		self.updated  = updated
