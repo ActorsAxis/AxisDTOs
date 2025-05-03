@@ -25,6 +25,11 @@ public struct PostDTO: Codable,  Sendable,
 	public var created:     Date?
 	public var updated:     Date?
 
+	public var postDescription: String? {
+		get { description            }
+		set { description = newValue }
+	}
+
 	public init(
 		id:          UUID         = UUID(),
 		postTypeID:  UUID?        = nil,
