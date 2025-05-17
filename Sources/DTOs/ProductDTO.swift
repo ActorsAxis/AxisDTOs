@@ -13,6 +13,7 @@ public struct ProductDTO: Codable,  Sendable,
 	public var userLevelID:      UUID?
 	public var userLevel:        UserLevelDTO?
 	public var stockKeepingUnit: String?
+	public var name:             String?
 	public var title:            String?
 	public var shortDescription: String?
 	public var longDescription:  String?
@@ -28,7 +29,7 @@ public struct ProductDTO: Codable,  Sendable,
 	public var media:           [MediumDTO]?
 	public var beginDate:        Date?
 	public var endDate:          Date?
-	public var active:           Bool?
+	public var active:           Bool
 	public var created:          Date?
 	public var updated:          Date?
 
@@ -37,6 +38,7 @@ public struct ProductDTO: Codable,  Sendable,
 		userLevelID:      UUID?         = nil,
 		userLevel:        UserLevelDTO? = nil,
 		stockKeepingUnit: String?       = nil,
+		name:             String?       = nil,
 		title:            String?       = nil,
 		shortDescription: String?       = nil,
 		longDescription:  String?       = nil,
@@ -52,7 +54,7 @@ public struct ProductDTO: Codable,  Sendable,
 		media:           [MediumDTO]?   = nil,
 		beginDate:        Date?         = nil,
 		endDate:          Date?         = nil,
-		active:           Bool?         = nil,
+		active:           Bool          = false,
 		created:          Date?         = nil,
 		updated:          Date?         = nil
 	) {
@@ -60,6 +62,7 @@ public struct ProductDTO: Codable,  Sendable,
 		self.userLevelID      = userLevelID
 		self.userLevel        = userLevel
 		self.stockKeepingUnit = stockKeepingUnit
+		self.name             = name
 		self.title            = title
 		self.shortDescription = shortDescription
 		self.longDescription  = longDescription

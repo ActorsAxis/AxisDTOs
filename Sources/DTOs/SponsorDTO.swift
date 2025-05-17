@@ -10,6 +10,7 @@ import Foundation
 public struct SponsorDTO: Codable,  Sendable,
 						  Hashable, Identifiable {
 	public let id:               UUID
+	public var name:             String?
 	public var title:            String
 	public var subtitle:         String?
 	public var summary:          String?
@@ -25,11 +26,13 @@ public struct SponsorDTO: Codable,  Sendable,
 	public var urlTitle:         String?
 	public var glowing:          Bool?
 	public var order:            Int?
+	public var active:           Bool
 	public var created:          Date?
 	public var updated:          Date?
 
 	public init(
 		id:               UUID        = UUID(),
+		name:             String?     = nil,
 		title:            String,
 		subtitle:         String?     = nil,
 		summary:          String?     = nil,
@@ -45,10 +48,12 @@ public struct SponsorDTO: Codable,  Sendable,
 		urlTitle:         String?     = nil,
 		glowing:          Bool?       = nil,
 		order:            Int?        = nil,
+		active:           Bool        = false,
 		created:          Date?       = nil,
 		updated:          Date?       = nil
 	) {
 		self.id               = id
+		self.name             = name
 		self.title            = title
 		self.subtitle         = subtitle
 		self.summary          = summary
@@ -64,12 +69,14 @@ public struct SponsorDTO: Codable,  Sendable,
 		self.urlTitle         = urlTitle
 		self.glowing          = glowing
 		self.order            = order
+		self.active           = active
 		self.created          = created
 		self.updated          = updated
 	}
 
 	private enum CodingKeys: String, CodingKey {
 		case id
+		case name
 		case title
 		case subtitle
 		case summary
@@ -85,6 +92,7 @@ public struct SponsorDTO: Codable,  Sendable,
 		case urlTitle
 		case glowing
 		case order
+		case active
 		case created
 		case updated
 	}
