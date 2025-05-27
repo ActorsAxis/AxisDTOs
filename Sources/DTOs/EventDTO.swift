@@ -13,6 +13,9 @@ public struct EventDTO: Codable,  Sendable,
 	public var eventTypeID:      UUID?
 	public var website:          String?
 	public var dateTime:         Date?
+	// The “event” prefix before “description” is redundant on
+	// “EventDTO,” but “description” alone would conflict with
+	// future CustomStringConvertible protocol conformance.
 	public var eventDescription: String?
 	public var email:            String?
 	public var coverImage:       String?

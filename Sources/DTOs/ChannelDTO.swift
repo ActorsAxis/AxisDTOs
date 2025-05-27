@@ -12,6 +12,9 @@ public struct ChannelDTO: Codable,  Sendable,
 	public let id:                 UUID
 	public var userID:             UUID?
 	public var name:               String?
+	// The “channel” prefix before “description” is redundant on
+	// “ChannelDTO,” but “description” alone would conflict with
+	// future CustomStringConvertible protocol conformance.
 	public var channelDescription: String?
 	public var beginBroadcasting:  Date?
 	public var endBroadcasting:    Date?

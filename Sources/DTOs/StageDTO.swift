@@ -14,6 +14,9 @@ public struct StageDTO: Codable,  Sendable,
 	public var user:             UserDTO?
 	public var mediumID:         UUID?
 	public var medium:           MediumDTO?
+	// The “stage” prefix before “description” is redundant on
+	// “StageDTO,” but “description” alone would conflict with
+	// future CustomStringConvertible protocol conformance.
 	public var stageDescription: String?
 	public var favorites:        Int
 	public var likes:            Int
