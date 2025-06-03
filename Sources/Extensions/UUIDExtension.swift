@@ -6,12 +6,10 @@
 //
 
 import Foundation
+import zlib
 
 extension UUID {
 	public var uniqueID: UInt {
-#if true
-		UInt(bitPattern: hashValue) & UInt(UInt32.max)
-#else
 		withUnsafeBytes(of: uuid) { buffer in
 			crc32(
 				0,
@@ -19,6 +17,5 @@ extension UUID {
 				UInt32(buffer.count)
 			)
 		}
-#endif
 	}
 }
