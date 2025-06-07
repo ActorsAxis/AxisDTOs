@@ -45,7 +45,7 @@ public struct UserDTO: Codable,  Sendable,
 	public var postCount:         Int?
 	public var stageCount:        Int?
 	public var stars:             Int?
-	public var administrator:     Bool
+	public var administrator:     Bool?
 	public var followers:         Int?
 	public var following:         Int?
 	public var created:           Date?
@@ -88,7 +88,7 @@ public struct UserDTO: Codable,  Sendable,
 		postCount:         Int?    = nil,
 		stageCount:        Int?    = nil,
 		stars:             Int?    = nil,
-		administrator:     Bool    = false,
+		administrator:     Bool?   = nil,
 		followers:         Int?    = nil,
 		following:         Int?    = nil,
 		created:           Date?   = nil,
