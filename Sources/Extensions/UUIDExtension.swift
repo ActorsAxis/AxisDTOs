@@ -1,5 +1,3 @@
-#warning("This extension should be moved to the iOS app project.")
-
 //
 //  UUIDExtension.swift
 //  AxisDTOs
@@ -14,15 +12,16 @@ extension UUID {
 		binaryUnsignedIntegerUniqueID()
 	}
 
-	private func binaryUnsignedIntegerUniqueID<Result: BinaryInteger & UnsignedInteger>() -> Result {
-		var bytes = uuid
-		return withUnsafeBytes(of: &bytes) { bytes in
-			var result: Result = .zero
-			let parts = bytes.bindMemory(to: Result.self)
-			for part in parts {
-				result ^= part
-			}
-			return result
+	private func binaryUnsignedIntegerUniqueID<T: BinaryInteger & UnsignedInteger>() -> T {
+		precondition(
+			MemoryLayout<Self>.stride.isMultiple(of: MemoryLayout<T>.stride),
+			"The result type must evenly divide into \(MemoryLayout<Self>.stride) bits."
+		)
+
+		return withUnsafeBytes(of: self) { bytes in
+			bytes
+				.bindMemory(to: T.self)
+				.reduce(T.zero, ^)
 		}
 	}
 }
