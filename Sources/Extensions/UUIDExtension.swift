@@ -9,13 +9,13 @@ import Foundation
 
 extension UUID {
 	public var uniqueID: UInt32 {
-		binaryUnsignedIntegerUniqueID()
+		unsignedIntegerUniqueID()
 	}
 
-	private func binaryUnsignedIntegerUniqueID<T: BinaryInteger & UnsignedInteger>() -> T {
+	private func unsignedIntegerUniqueID<T: UnsignedInteger>() -> T {
 		precondition(
 			MemoryLayout<Self>.stride.isMultiple(of: MemoryLayout<T>.stride),
-			"The result type must evenly divide into \(MemoryLayout<Self>.stride) bits."
+			"The result type must evenly divide into \(MemoryLayout<Self>.stride) bytes."
 		)
 
 		return withUnsafeBytes(of: self) { bytes in
