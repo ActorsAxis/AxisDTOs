@@ -13,6 +13,7 @@ public struct ServerSettingDTO: Codable,  Sendable,
 	public var purchaseCoins: [String: Int]?
 	public var coins:          Coins?
 	public var missions:       Missions?
+	public var newUser:        NewUser?
 	public var created:        Data?
 	public var updated:        Data?
 
@@ -21,6 +22,7 @@ public struct ServerSettingDTO: Codable,  Sendable,
 		purchaseCoins: [String: Int]? = nil,
 		coins:          Coins?        = nil,
 		missions:       Missions?     = nil,
+		newUser:        NewUser?      = nil,
 		created:        Data?         = nil,
 		updated:        Data?         = nil
 	) {
@@ -28,6 +30,7 @@ public struct ServerSettingDTO: Codable,  Sendable,
 		self.purchaseCoins = purchaseCoins
 		self.coins         = coins
 		self.missions      = missions
+		self.newUser       = newUser
 		self.created       = created
 		self.updated       = updated
 	}
