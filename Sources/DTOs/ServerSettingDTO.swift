@@ -83,3 +83,18 @@ public struct Missions: Codable, Hashable, Sendable {
 		self.stageReward           = stageReward
 	}
 }
+
+// MARK: -
+
+public struct NewUser: Codable, Hashable, Sendable {
+	public var goldCoins:   Int?
+	public var purpleCoins: Int?
+
+	public init(
+		goldCoins:   Int? = nil,
+		purpleCoins: Int? = nil
+	) {
+		self.goldCoins   = goldCoins
+		self.purpleCoins = purpleCoins
+	}
+}
